@@ -1,12 +1,15 @@
 import './App.css'
+import MainComponent from './components/layout/MainComponent/MainComponent'
+import HeaderComponent from './components/layout/HeaderComponent/HeaderComponent'
+import FooterComponent from './components/layout/FooterComponent/FooterComponent'
 
 function App() {
 
   return (
     <>
-      <header>header</header>
-      <main>main</main>
-      <footer>footer</footer>
+      <HeaderComponent />
+      <MainComponent />
+      <FooterComponent />
     </>
   )
 }
