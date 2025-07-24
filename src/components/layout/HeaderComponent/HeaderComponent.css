@@ -1,8 +1,6 @@
 /* Asegurar que el header es flex y distribuye elementos con space-between */
+
 .HeaderComponent {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
@@ -11,109 +9,95 @@
   border: 1px solid white;
   border-radius: 1rem;
   box-sizing: border-box;
+}
+
+.HeaderComponent nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   gap: 1rem;
 }
 
-/* Contenedor hamburguesa con order alto para estar a la derecha */
-.header-element.burguer {
-  order: 99;
-  flex: 0 0 auto;
-  padding: 0.25rem 0.5rem;
-  background-color: rgba(255, 255, 255, 0.155);
-  border-radius: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  cursor: pointer;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-}
-
-.burguer-label {
-  font-size: 2rem;
-  user-select: none;
-}
-
-/* Hide menu-toggle checkbox completely */
-.menu-toggle {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-/* Styles for header-element logo, navbar and switches */
-.header-element.logo {
-  flex: 0 0 auto;
-  order: 0;
-  background-color: rgba(255, 255, 255, 0.155);
+.logo-group {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
-  padding: 0.5rem 1rem;
-  border: 1px solid white;
-  border-radius: 0.5rem;
-  gap: 1rem;
-}
-
-.header-element.navbar {
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-width: 0;
-  gap: 1rem;
-}
-
-.header-element.switches {
-  flex: 0 0 auto;
-  order: 2;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 0.25rem;
-  padding: 0.25rem 0.5rem;
-  display: flex;
   gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  border-radius: 1rem;
+}
+
+.links-group {
+  flex: 1;
+  display: flex;
   align-items: center;
-  min-width: 0;
+  justify-content: space-evenly;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  border-radius: 1rem;
 }
 
-/* Hide buttons and navbar on small screens to avoid stacking */
-@media (max-width: 899px) {
+.switch-group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  border-radius: 1rem;
+}
 
-  .header-subelement.buttons {
-    display: flex;
-    flex: 1 1 auto;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-  }
+.burguer-group {
+  flex-shrink: 0;
+  display: none; /* Oculto por defecto en desktop */
+  align-items: center;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  border-radius: 1rem;
+}
 
-  @media (max-width: 899px) {
-    .header-subelement.buttons {
-      display: none !important;
-    }
-    .header-element.navbar {
-      display: none !important;
-    }
-    .header-element.burguer {
-      display: flex !important;
-    }
-  }
+.mobile-spacer {
+  flex: 1; /* Se expande para mantener distribución */
+  display: none; /* Oculto por defecto en desktop */
+}
 
-/* Show buttons and navbar on medium and larger screens, hide burger menu */
-@media (min-width: 900px) {
-  .header-subelement.buttons {
-    display: flex !important;
+/* === RESPONSIVE DESIGN === */
+
+/* Tablet y móvil */
+@media (max-width: 768px) {
+  .links-group {
+    display: none; /* Ocultar navegación en móvil */
   }
-  .header-element.navbar {
-    display: flex !important;
+  
+  .mobile-spacer {
+    display: block; /* Mostrar spacer en móvil */
   }
-  .header-element.burguer {
-    display: none !important;
+  
+  .burguer-group {
+    display: flex; /* Mostrar burger en móvil */
   }
 }
+
+/* Móvil pequeño */
+@media (max-width: 480px) {
+  .HeaderComponent {
+    padding: 0.25rem;
+  }
+  
+  .HeaderComponent nav {
+    gap: 0.5rem;
+  }
+  
+  .logo-group,
+  .switch-group,
+  .burguer-group {
+    padding: 0.25rem;
+  }
+}
+
