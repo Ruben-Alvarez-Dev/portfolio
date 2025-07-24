@@ -1,16 +1,29 @@
+/* Variables globales y esquema de colores por defecto */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tema claro */
+html[data-theme="light"] {
+  background-color: #ffffff;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/* Tema oscuro */
+html[data-theme="dark"] {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+/* Transición suave al cambiar tema */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {

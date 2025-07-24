@@ -1,0 +1,63 @@
+/* Overlay fullscreen semitransparente */
+/* Overlay fullscreen semitransparente con transición de opacidad */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 100;
+  padding: 0.1rem;
+}
+/* Estado abierto y cerrado para animar entrada/salida */
+.mobile-menu.open {
+  opacity: 1;
+}
+.mobile-menu.closed {
+  opacity: 0;
+}
+
+/* Botón cerrar overlay */
+.close-menu-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+}
+
+/* Lista vertical dentro del overlay */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 300px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enlaces en menú mobile */
+.mobile-link {
+  font-size: 2rem;
+  color: white;
+  padding: 0.5rem 0;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+

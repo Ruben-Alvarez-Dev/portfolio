@@ -9,6 +9,8 @@
   border: 1px solid white;
   border-radius: 1rem;
   box-sizing: border-box;
+  position: relative;
+  z-index: 101;
 }
 
 .HeaderComponent nav {
@@ -16,6 +18,7 @@
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  position: relative;
 }
 
 .logo-group {
@@ -51,6 +54,46 @@
   border: 1px solid white;
   border-radius: 1rem;
 }
+/* Estilos para switches */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+.switch input:checked + .slider {
+  background-color: #2196F3;
+}
+.switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
 
 .burguer-group {
   flex-shrink: 0;
@@ -67,6 +110,83 @@
   display: none; /* Oculto por defecto en desktop */
 }
 
+.icon-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+/* Reducir texto de idioma ligeramente */
+.lang-button {
+  font-size: 1rem;
+}
+/* Animación del icono burger */
+.burger-button {
+  transition: transform 0.3s ease;
+}
+.burger-button.open {
+  transform: rotate(90deg);
+}
+
+/* Menú móvil desplegable */
+/* Menú móvil fullscreen semitransparente */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-out;
+  z-index: 100;
+  padding: 1rem;
+}
+/* Botón para cerrar overlay */
+.close-menu-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 101;
+}
+/* Nav vertical dentro del overlay */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+}
+.mobile-link {
+  font-size: 1.5rem;
+  color: white;
+  padding: 0.75rem 0;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.mobile-link:last-child {
+  border-bottom: none;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 /* === RESPONSIVE DESIGN === */
 
 /* Tablet y móvil */
@@ -81,6 +201,8 @@
   
   .burguer-group {
     display: flex; /* Mostrar burger en móvil */
+    align-items: center;
+    padding: 0.5rem;
   }
 }
 
