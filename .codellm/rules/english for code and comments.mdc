@@ -1,0 +1,9 @@
+---
+description: english for code and comments
+globs: **
+alwaysApply: true
+---
+
+# Your rule content
+
+all code comments, and all names for references, functions, components, and any other elements inside files will be written in english, like commonly accepted as standard- You can use markdown but don't have to

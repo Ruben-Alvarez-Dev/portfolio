@@ -1,17 +1,19 @@
-import './App.css'
-import MainComponent from './components/layout/MainComponent/MainComponent'
-import HeaderComponent from './components/layout/HeaderComponent/HeaderComponent'
-import FooterComponent from './components/layout/FooterComponent/FooterComponent'
+import React from 'react';
+import './App.css';
+import HeaderComponent from './components/layout/HeaderComponent/HeaderComponent';
+import MainComponent from './components/layout/MainComponent/MainComponent';
+import FooterComponent from './components/layout/FooterComponent/FooterComponent';
 
 function App() {
-
   return (
     <>
-      <HeaderComponent />
-      <MainComponent />
-      <FooterComponent />
+      <div className="app">
+        <HeaderComponent />
+        <MainComponent />
+        <FooterComponent />
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
