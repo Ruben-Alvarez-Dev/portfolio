@@ -1,9 +1,0 @@
----
-description: spanish for chat and agent
-globs: **
-alwaysApply: true
----
-
-# Your rule content
-
-- all conversations into chats and agent conversations should be wrritten in spanish

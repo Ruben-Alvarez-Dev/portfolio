@@ -1,87 +1,120 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 import { BiGlobe } from 'react-icons/bi';
 import { FiMenu, FiX } from 'react-icons/fi';
-import { useTheme } from '../../../context/ThemeContext';
-import { useI18n } from '../../../context/I18nContext';
+import { useI18n } from '../../../i18n';
+import { useTheme } from '../../../context';
 import "./HeaderComponent.css";
 import MenuOverlay from './MenuOverlay/MenuOverlay';
 
 const HeaderComponent = () => {
+  const { t, toggleLanguage } = useI18n();
   const { theme, toggleTheme } = useTheme();
-  const { lang, changeLanguage } = useI18n();
-  // Estados para controlar renderizado y animación del overlay
   const [menuOpen, setMenuOpen] = useState(false);
   const [renderOverlay, setRenderOverlay] = useState(false);
-  // enlaces reutilizados en desktop y móvil
+  const [scrolled, setScrolled] = useState(false);
+
+  // Detectar scroll para cambiar estilo del header
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      setScrolled(isScrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const links = [
-    lang === 'en' ? 'Home' : 'Inicio',
-    lang === 'en' ? 'About' : 'Acerca',
-    lang === 'en' ? 'Projects' : 'Proyectos',
-    lang === 'en' ? 'Contact' : 'Contacto',
+    { label: t('nav.home'), href: '#hero' },
+    { label: t('nav.about'), href: '#about' },
+    { label: t('nav.experience'), href: '#experience' },
+    { label: t('nav.education'), href: '#education' },
+    { label: t('nav.projects'), href: '#projects' },
+    { label: t('nav.contact'), href: '#contact' },
   ];
+
+  const handleLinkClick = (href) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Cerrar menú móvil si está abierto
+    if (menuOpen) {
+      setMenuOpen(false);
+      setTimeout(() => setRenderOverlay(false), 300);
+    }
+  };
+
   return (
-    <header className="HeaderComponent">
-    <nav>
-      <div className="logo-group">
-  <span className="HeaderLogo">Logo</span>
-  <span className="HeaderTitle">{lang === 'en' ? 'My Portfolio' : 'Mi Portafolio'}</span>
-      </div>
+    <header className={`HeaderComponent ${scrolled ? 'scrolled' : ''}`}>
+      <nav>
+        <div className="logo-group">
+          <span className="HeaderLogo">RA</span>
+          <span className="HeaderTitle">
+            Rubén Álvarez
+          </span>
+        </div>
 
-      <div className="links-group">
-        {links.map((label, idx) => (
-          <a key={idx} href="#" className="HeaderLink">
-            {label}
-          </a>
-        ))}
-      </div>
+        <div className="links-group">
+          {links.map((link, idx) => (
+            <button 
+              key={idx} 
+              onClick={() => handleLinkClick(link.href)}
+              className="HeaderLink"
+            >
+              {link.label}
+            </button>
+          ))}
+        </div>
 
-      {/* Spacer para móvil - se expande cuando los links están ocultos */}
-      <div className="mobile-spacer"></div>
+        {/* Spacer para móvil */}
+        <div className="mobile-spacer"></div>
 
-  <div className="switch-group">
-        <button className="icon-button" onClick={toggleTheme} aria-label="Toggle theme">
-          {theme === 'dark' ? <FiSun /> : <FiMoon />}
-        </button>
-        <button
-          className="icon-button lang-button"
-          onClick={() => changeLanguage(lang === 'en' ? 'es' : 'en')}
-          aria-label="Toggle language"
-        >
-          <BiGlobe /> {lang.toUpperCase()}
-        </button>
-      </div>
-      
-      <div className="burguer-group">
-        <button
-          className={`icon-button burger-button${menuOpen ? ' open' : ''}`}
-          onClick={() => {
-            if (!menuOpen) {
-              setRenderOverlay(true);
-              setMenuOpen(true);
-            } else {
+        <div className="switch-group">
+          <button className="icon-button" onClick={toggleTheme} aria-label="Toggle theme">
+            {theme === 'dark' ? <FiSun /> : <FiMoon />}
+          </button>
+          <button
+            className="icon-button lang-button"
+            onClick={toggleLanguage}
+            aria-label="Toggle language"
+          >
+            <BiGlobe /> {t('nav.language')}
+          </button>
+        </div>
+        
+        <div className="burguer-group">
+          <button
+            className={`icon-button burger-button${menuOpen ? ' open' : ''}`}
+            onClick={() => {
+              if (!menuOpen) {
+                setRenderOverlay(true);
+                setMenuOpen(true);
+              } else {
+                setMenuOpen(false);
+                setTimeout(() => setRenderOverlay(false), 300);
+              }
+            }}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <FiX /> : <FiMenu />}
+          </button>
+        </div>
+
+        {/* Menú móvil */}
+        {renderOverlay && (
+          <MenuOverlay
+            links={links}
+            closeMenu={() => {
               setMenuOpen(false);
-              // esperar fin de transición antes de desmontar
               setTimeout(() => setRenderOverlay(false), 300);
-            }
-          }}
-          aria-label="Toggle menu"
-        >
-          {menuOpen ? <FiX /> : <FiMenu />}
-        </button>
-      </div>
-      {/* Menú móvil fullscreen semitransparente */}
-      {renderOverlay && (
-        <MenuOverlay
-          links={links}
-          closeMenu={() => {
-            setMenuOpen(false);
-            setTimeout(() => setRenderOverlay(false), 300);
-          }}
-          isOpen={menuOpen}
-        />
-      )}
-    </nav>
+            }}
+            isOpen={menuOpen}
+            onLinkClick={handleLinkClick}
+          />
+        )}
+      </nav>
     </header>
   );
 }

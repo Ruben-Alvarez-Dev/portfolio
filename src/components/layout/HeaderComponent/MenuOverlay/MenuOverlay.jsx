@@ -2,7 +2,7 @@ import React from 'react';
 import { FiX } from 'react-icons/fi';
 import './MenuOverlay.css';
 
-const MenuOverlay = ({ links, closeMenu, isOpen }) => (
+const MenuOverlay = ({ links, closeMenu, isOpen, onLinkClick }) => (
   <div className={`mobile-menu ${isOpen ? 'open' : 'closed'}`}>
     <button
       className="close-menu-button icon-button"
@@ -12,11 +12,14 @@ const MenuOverlay = ({ links, closeMenu, isOpen }) => (
       <FiX />
     </button>
     <ul className="mobile-nav">
-      {links.map((label, idx) => (
+      {links.map((link, idx) => (
         <li key={idx} className="mobile-item">
-          <a href="#" className="mobile-link">
-            {label}
-          </a>
+          <button 
+            className="mobile-link"
+            onClick={() => onLinkClick(link.href)}
+          >
+            {link.label}
+          </button>
         </li>
       ))}
     </ul>

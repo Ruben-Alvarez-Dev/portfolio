@@ -1,8 +1,17 @@
-/* Variables globales y esquema de colores por defecto */
+/* Importar variables CSS centralizadas */
+@import './variables.css';
+
+/* Reset y configuración base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: var(--font-primary);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-normal);
   color-scheme: light dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -10,26 +19,51 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Tema claro */
-html[data-theme="light"] {
-  background-color: #ffffff;
-  color: rgba(0, 0, 0, 0.87);
+html {
+  scroll-behavior: smooth;
+  transition: background-color var(--transition-base), color var(--transition-base);
 }
 
-/* Tema oscuro */
-html[data-theme="dark"] {
-  background-color: #242424;
-  color: rgba(255, 255, 255, 0.87);
-}
-/* Transición suave al cambiar tema */
+/* Configuración por defecto para tema claro */
 html {
-  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
+
+/* Enlaces base */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* Imágenes responsivas */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Utilidades de texto */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+/* Utilidades de display */
+.hidden { display: none; }
+.block { display: block; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }

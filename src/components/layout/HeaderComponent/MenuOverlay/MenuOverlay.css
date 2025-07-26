@@ -1,49 +1,62 @@
-/* Overlay fullscreen semitransparente */
-/* Overlay fullscreen semitransparente con transición de opacidad */
+/* Mobile Menu Overlay Styles */
 .mobile-menu {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 100;
-  padding: 0.1rem;
+  transition: opacity var(--transition-base);
+  z-index: 1001;
+  padding: var(--spacing-4);
 }
-/* Estado abierto y cerrado para animar entrada/salida */
+
 .mobile-menu.open {
   opacity: 1;
 }
+
 .mobile-menu.closed {
   opacity: 0;
 }
 
-/* Botón cerrar overlay */
+/* Close Button */
 .close-menu-button {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2rem;
-  color: white;
-  background: none;
+  top: var(--spacing-6);
+  right: var(--spacing-6);
+  font-size: var(--font-size-2xl);
+  color: var(--color-white);
+  background: var(--color-gray-800);
   border: none;
   cursor: pointer;
-  z-index: 101;
+  z-index: 1002;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
 }
 
-/* Lista vertical dentro del overlay */
+.close-menu-button:hover {
+  background: var(--color-primary);
+  transform: rotate(90deg);
+}
+
+/* Mobile Navigation */
 .mobile-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: var(--spacing-8);
   width: 100%;
   max-width: 300px;
   list-style: none;
@@ -51,13 +64,67 @@
   padding: 0;
 }
 
-/* Enlaces en menú mobile */
+.mobile-item {
+  width: 100%;
+}
+
 .mobile-link {
-  font-size: 2rem;
-  color: white;
-  padding: 0.5rem 0;
+  display: block;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-white);
+  background: none;
+  border: none;
+  padding: var(--spacing-4);
   width: 100%;
   text-align: center;
   text-decoration: none;
+  border-radius: var(--border-radius-lg);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  font-family: var(--font-primary);
+}
+
+.mobile-link:hover {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Animation for menu items */
+.mobile-menu.open .mobile-item {
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+.mobile-menu.open .mobile-item:nth-child(1) { animation-delay: 0.1s; }
+.mobile-menu.open .mobile-item:nth-child(2) { animation-delay: 0.2s; }
+.mobile-menu.open .mobile-item:nth-child(3) { animation-delay: 0.3s; }
+.mobile-menu.open .mobile-item:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .mobile-link {
+    font-size: var(--font-size-xl);
+    padding: var(--spacing-3);
+  }
+  
+  .close-menu-button {
+    top: var(--spacing-4);
+    right: var(--spacing-4);
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-xl);
+  }
 }
 
