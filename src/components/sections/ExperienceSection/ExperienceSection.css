@@ -1,17 +1,21 @@
 /* Experience Section Styles */
 .experience-section {
-  padding: var(--spacing-24) var(--spacing-4);
+  padding: var(--spacing-8) var(--spacing-4);
   background: var(--color-background);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
 }
 
 .experience-container {
   max-width: var(--max-width-4xl);
   margin: 0 auto;
+  flex: 1;
 }
 
 .experience-header {
   text-align: center;
-  margin-bottom: var(--spacing-8);
+  margin-bottom: var(--spacing-6);
 }
 
 .experience-title {

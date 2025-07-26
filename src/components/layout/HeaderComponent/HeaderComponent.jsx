@@ -36,7 +36,14 @@ const HeaderComponent = () => {
   const handleLinkClick = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Offset ajustado - no tan pegado a la navbar pero tampoco muy separado
+      const headerHeight = 40; // Aumentado de 20 a 40px para dar un poco más de espacio
+      const elementPosition = element.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
+      });
     }
     // Cerrar menú móvil si está abierto
     if (menuOpen) {
