@@ -37,8 +37,6 @@ const AboutSection = () => {
     }
   ];
 
-  const softSkills = t('profile.softSkills.items');
-
   return (
     <section id="about" className="about-section">
       <div className="about-container">
@@ -62,23 +60,62 @@ const AboutSection = () => {
                 </div>
               </div>
 
-              {/* Card 2: Competencias Clave */}
+              {/* Card 3: Competencias Clave */}
               <div className="skills-card">
                 <h3 className="skills-card-title">{t('profile.softSkills.title')}</h3>
-                <div className="soft-skills-list">
-                  {softSkills.map((skill, index) => (
-                    <div key={index} className="soft-skill-item">
-                      <span className="skill-bullet">•</span>
-                      <span>{skill}</span>
-                    </div>
-                  ))}
+                <div className="competencies-pills">
+                  {/* DESARROLLO & TECNOLOGÍA - AZUL */}
+                  <div className="competency-pill competency-tech">
+                    <span className="pill-icon">💻</span>
+                    <span>Full Stack Web Development (React, Node.js, PHP)</span>
+                  </div>
+                  <div className="competency-pill competency-tech">
+                    <span className="pill-icon">💻</span>
+                    <span>Microsoft Power Platform & Process Automation</span>
+                  </div>
+                  <div className="competency-pill competency-tech">
+                    <span className="pill-icon">💻</span>
+                    <span>Solution Architecture & API Design</span>
+                  </div>
+                  <div className="competency-pill competency-tech">
+                    <span className="pill-icon">💻</span>
+                    <span>Quality Control & Testing</span>
+                  </div>
+                  
+                  {/* METODOLOGÍAS & GESTIÓN - VERDE */}
+                  <div className="competency-pill competency-management">
+                    <span className="pill-icon">🏆</span>
+                    <span>Certified Scrum Master & Agile Leadership</span>
+                  </div>
+                  <div className="competency-pill competency-management">
+                    <span className="pill-icon">🏆</span>
+                    <span>Team Management & Coaching</span>
+                  </div>
+                  <div className="competency-pill competency-management">
+                    <span className="pill-icon">🏆</span>
+                    <span>Business Process Optimization</span>
+                  </div>
+                  <div className="competency-pill competency-management">
+                    <span className="pill-icon">🏆</span>
+                    <span>Training & Team Development</span>
+                  </div>
+                  
+                  {/* ANÁLISIS & ESTRATEGIA - NARANJA */}
+                  <div className="competency-pill competency-strategy">
+                    <span className="pill-icon">📊</span>
+                    <span>Data Analysis & KPI Management</span>
+                  </div>
+                  <div className="competency-pill competency-strategy">
+                    <span className="pill-icon">📊</span>
+                    <span>Crisis Management & Conflict Resolution</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Columna derecha */}
             <div className="right-column">
-              {/* Card 3: Habilidades Técnicas */}
+              {/* Card 2: Habilidades Técnicas */}
               <div className="skills-card">
                 <h3 className="skills-card-title">{t('profile.hardSkills.title')}</h3>
                 <div className="skills-tags-grid">
@@ -103,38 +140,43 @@ const AboutSection = () => {
               {/* Card 4: Habilidades Blandas */}
               <div className="skills-card">
                 <h3 className="skills-card-title">Habilidades Blandas</h3>
-                <div className="soft-skills-list">
-                  <div className="soft-skill-item">
-                    <span className="skill-bullet">•</span>
+                <div className="soft-skills-pills">
+                  {/* LIDERAZGO & EQUIPOS - PÚRPURA */}
+                  <div className="soft-skill-pill soft-skill-leadership">
+                    <span className="pill-icon">👥</span>
                     <span>Liderazgo de equipos bajo presión</span>
                   </div>
-                  <div className="soft-skill-item">
-                    <span className="skill-bullet">•</span>
+                  <div className="soft-skill-pill soft-skill-leadership">
+                    <span className="pill-icon">👥</span>
                     <span>Inteligencia emocional y empatía</span>
                   </div>
-                  <div className="soft-skill-item">
-                    <span className="skill-bullet">•</span>
-                    <span>Comunicación efectiva y formación</span>
-                  </div>
-                  <div className="soft-skill-item">
-                    <span className="skill-bullet">•</span>
-                    <span>Orientación al cliente y usuario</span>
-                  </div>
-                  <div className="soft-skill-item">
-                    <span className="skill-bullet">•</span>
-                    <span>Resolución rápida de problemas</span>
-                  </div>
-                  <div className="soft-skill-item">
-                    <span className="skill-bullet">•</span>
-                    <span>Adaptabilidad y aprendizaje continuo</span>
-                  </div>
-                  <div className="soft-skill-item">
-                    <span className="skill-bullet">•</span>
+                  <div className="soft-skill-pill soft-skill-leadership">
+                    <span className="pill-icon">👥</span>
                     <span>Gestión de relaciones y negociación</span>
                   </div>
-                  <div className="soft-skill-item">
-                    <span className="skill-bullet">•</span>
+                  
+                  {/* COMUNICACIÓN & FORMACIÓN - CIAN */}
+                  <div className="soft-skill-pill soft-skill-communication">
+                    <span className="pill-icon">🗣️</span>
+                    <span>Comunicación efectiva y formación</span>
+                  </div>
+                  <div className="soft-skill-pill soft-skill-communication">
+                    <span className="pill-icon">🗣️</span>
                     <span>Presentaciones en público</span>
+                  </div>
+                  <div className="soft-skill-pill soft-skill-communication">
+                    <span className="pill-icon">🗣️</span>
+                    <span>Orientación al cliente y usuario</span>
+                  </div>
+                  
+                  {/* RESOLUCIÓN & ADAPTABILIDAD - ROSA */}
+                  <div className="soft-skill-pill soft-skill-problem-solving">
+                    <span className="pill-icon">⚡</span>
+                    <span>Resolución rápida de problemas</span>
+                  </div>
+                  <div className="soft-skill-pill soft-skill-problem-solving">
+                    <span className="pill-icon">⚡</span>
+                    <span>Adaptabilidad y aprendizaje continuo</span>
                   </div>
                 </div>
               </div>

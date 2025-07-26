@@ -51,7 +51,7 @@
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-20);
+  gap: var(--spacing-8);
 }
 
 /* Profile Layout - Two Columns */
@@ -781,11 +781,11 @@
 /* New 2x2 Grid Layout */
 .about-header {
   text-align: center;
-  margin-bottom: var(--spacing-8); /* Aún menos espacio entre título y contenido */
+  margin-bottom: var(--spacing-8);
 }
 
 .about-title {
-  font-size: var(--font-size-3xl); /* Reducido de 4xl a 3xl */
+  font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin: 0;
@@ -794,23 +794,26 @@
 .profile-grid-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-8);
+  gap: var(--spacing-6);
+  width: 100%;
   align-items: start;
-  grid-auto-rows: auto;
 }
 
-.left-column, .right-column {
+.left-column {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-6);
-  height: fit-content;
+  height: 100%;
 }
 
-.skills-cards-container {
+.right-column {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-6);
+  height: 100%;
 }
+
+/* Eliminamos left-column y right-column, trabajamos directamente con las cards */
 
 .skills-card {
   background: var(--color-bg-primary);
@@ -819,8 +822,16 @@
   border: var(--border-width-thin) solid var(--color-border);
   box-shadow: var(--shadow-sm);
   transition: all var(--transition-fast);
-  height: fit-content;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: fit-content;
+}
+
+/* La segunda card de cada columna se estira para igualar alturas */
+.left-column .skills-card:nth-child(2),
+.right-column .skills-card:nth-child(2) {
+  flex: 1;
 }
 
 .skills-card:hover {
@@ -836,6 +847,16 @@
   padding-bottom: var(--spacing-2);
   border-bottom: 2px solid;
   border-image: linear-gradient(to right, var(--color-primary), var(--color-secondary)) 1;
+  flex-shrink: 0;
+}
+
+.profile-text,
+.soft-skills-list,
+.skills-tags-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Soft Skills List Style */
@@ -865,10 +886,128 @@
     grid-template-columns: 1fr;
     gap: var(--spacing-6);
   }
-  
-  .left-column, .right-column {
-    gap: var(--spacing-4);
-  }
+}
+
+/* Pills/Tags format for skills */
+.competencies-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.competency-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+  flex: 1 1 calc(50% - var(--spacing-3));
+  min-width: 280px;
+  border: 1px solid;
+}
+
+.competency-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* DESARROLLO & TECNOLOGÍA - Azul */
+.competency-tech {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.competency-tech:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(37, 99, 235, 0.15));
+}
+
+/* METODOLOGÍAS & GESTIÓN - Verde */
+.competency-management {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.1));
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.competency-management:hover {
+  border-color: rgba(34, 197, 94, 0.6);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(22, 163, 74, 0.15));
+}
+
+/* ANÁLISIS & ESTRATEGIA - Naranja */
+.competency-strategy {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.1), rgba(249, 115, 22, 0.1));
+  border-color: rgba(251, 146, 60, 0.3);
+}
+
+.competency-strategy:hover {
+  border-color: rgba(251, 146, 60, 0.6);
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(249, 115, 22, 0.15));
+}
+
+.soft-skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.soft-skill-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+  flex: 1 1 calc(50% - var(--spacing-3));
+  min-width: 280px;
+  border: 1px solid;
+}
+
+.soft-skill-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* LIDERAZGO & EQUIPOS - Morado */
+.soft-skill-leadership {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(147, 51, 234, 0.1));
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+.soft-skill-leadership:hover {
+  border-color: rgba(168, 85, 247, 0.6);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(147, 51, 234, 0.15));
+}
+
+/* COMUNICACIÓN & FORMACIÓN - Cian */
+.soft-skill-communication {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(8, 145, 178, 0.1));
+  border-color: rgba(6, 182, 212, 0.3);
+}
+
+.soft-skill-communication:hover {
+  border-color: rgba(6, 182, 212, 0.6);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(8, 145, 178, 0.15));
+}
+
+/* RESOLUCIÓN & ADAPTABILIDAD - Rosa */
+.soft-skill-problem-solving {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(219, 39, 119, 0.1));
+  border-color: rgba(236, 72, 153, 0.3);
+}
+
+.soft-skill-problem-solving:hover {
+  border-color: rgba(236, 72, 153, 0.6);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(219, 39, 119, 0.15));
+}
+
+.pill-icon {
+  font-size: var(--font-size-base);
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
