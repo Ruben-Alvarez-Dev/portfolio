@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ThemeContext } from './themeContext.js';
+import { ThemeContext } from './ThemeContext.jsx';
 
 // Proveedor del contexto de tema
 export const ThemeProvider = ({ children }) => {

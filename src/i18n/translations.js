@@ -5,6 +5,7 @@ export const translations = {
     nav: {
       home: "Home",
       about: "About",
+      services: "Services",
       experience: "Experience",
       education: "Education",
       projects: "Projects",
@@ -16,11 +17,10 @@ export const translations = {
     hero: {
       greeting: "Hi, I'm",
       name: "Rubén Álvarez",
-      title: "Technology Consultant & Full Stack Developer",
-      description: "Business transformation specialist with expertise in leadership and full stack development skills. Proven track record in process optimization and implementing technical solutions that drive operational excellence.",
+      title: "Tech Consultant\nScrum Master\nFull Stack Developer",
+      description: "20+ years transforming businesses through technology and leadership. Specialized in web development, Microsoft Power Platform automation, and agile team management.",
       downloadCV: "Download CV",
-      contactMe: "Contact Me",
-      techStack: "Tech Stack"
+      contactMe: "Contact Me"
     },
     
     // About Section
@@ -44,6 +44,16 @@ export const translations = {
       certifications: {
         title: "Certifications",
         items: [
+          {
+            name: "Power Platform Functional Consultant PL-200",
+            issuer: "Microsoft Corporation",
+            year: "2025 (En progreso)"
+          },
+          {
+            name: "Power Platform Developer PL-400", 
+            issuer: "Microsoft Corporation",
+            year: "2025 (En progreso)"
+          },
           {
             name: "Scrum Master Certificate (PSM I)",
             issuer: "Scrum.org",
@@ -73,41 +83,44 @@ export const translations = {
       title: "Professional Experience",
       positions: [
         {
-          title: "Tech Analyst",
+          title: "Tech Analyst - Power Platform Specialist",
           company: "Accenture, Seville",
           duration: "14 months",
-          type: "Remote technical service and assistance on demand for international partners",
+          type: "Remote technical service and Power Platform solutions for international partners",
           responsibilities: [
+            "Power Platform development and automation",
             "Remote technical service and assistance",
             "International partner support",
+            "Business process optimization",
             "On-demand technical solutions"
           ]
         },
         {
-          title: "Tech Analyst", 
+          title: "Tech Analyst - Power Apps Developer", 
           company: "Arquiconsult Management Solutions, Madrid",
           duration: "6 months",
           type: "Power Apps development, process automation, and Microsoft Dynamics 365 integration for enterprise clients",
           responsibilities: [
-            "Power Apps development",
-            "Process automation implementation", 
+            "Power Apps canvas and model-driven app development",
+            "Power Automate workflow implementation", 
             "Microsoft Dynamics 365 integration",
-            "Enterprise client solutions"
+            "Enterprise client solutions and consulting",
+            "Business process analysis and optimization"
           ]
         },
         {
-          title: "Senior Operations Manager & Team Leader",
+          title: "Senior Operations Manager & Scrum Master",
           company: "Hospitality Sector",
           duration: "10+ years",
-          type: "Led complete business transformations across multiple venues, managing cross-functional teams and implementing quality management systems",
+          type: "Led complete business transformations across multiple venues, managing cross-functional teams of 20+ people using agile methodologies",
           responsibilities: [
-            "Complete business transformation leadership",
-            "Cross-functional team management",
+            "Agile team leadership and Scrum implementation",
+            "Cross-functional team management (20+ people)",
+            "Business transformation and digital process optimization",
             "Quality management system implementation",
-            "Operational excellence and process optimization",
-            "Team development and service delivery coordination",
-            "Training and mentoring programs",
-            "High-performance standards maintenance"
+            "KPI monitoring and performance improvement",
+            "Training and mentoring programs for staff development",
+            "Stakeholder management and client relationship building"
           ]
         }
       ]
@@ -149,6 +162,50 @@ export const translations = {
           year: "2014"
         }
       ]
+    },
+    
+    // Services Section
+    services: {
+      title: "Services & Expertise",
+      subtitle: "Three specialized paths to transform your business through technology and leadership",
+      technologies: "Technologies",
+      learnMore: "Learn More",
+      development: {
+        title: "Full Stack Development",
+        description: "End-to-end web application development with modern technologies and best practices. From frontend interfaces to robust backend systems.",
+        features: [
+          "Custom web application development",
+          "API design and implementation",
+          "Database architecture and optimization",
+          "Responsive and accessible user interfaces",
+          "Performance optimization and scalability",
+          "Code review and technical consultation"
+        ]
+      },
+      powerplatform: {
+        title: "Power Platform Solutions",
+        description: "Business process automation and enterprise solutions using Microsoft Power Platform. Streamline operations and boost productivity.",
+        features: [
+          "Power Apps development (Canvas & Model-driven)",
+          "Power Automate workflow automation", 
+          "Power BI data visualization and reporting",
+          "Microsoft Dynamics 365 integration",
+          "Custom connectors and API integration",
+          "Business process analysis and optimization"
+        ]
+      },
+      leadership: {
+        title: "Team Leadership & Scrum",
+        description: "Agile team leadership and process optimization with proven track record managing teams of 20+ people in transformational environments.",
+        features: [
+          "Scrum Master and Agile coaching",
+          "Cross-functional team management",
+          "Business transformation leadership",
+          "Process optimization and automation",
+          "Training and mentoring programs",
+          "Performance management and KPI tracking"
+        ]
+      }
     },
     
     // Projects Section
@@ -209,6 +266,7 @@ export const translations = {
     nav: {
       home: "Inicio",
       about: "Sobre Mí",
+      services: "Servicios",
       experience: "Experiencia",
       education: "Formación",
       projects: "Proyectos", 
@@ -220,11 +278,10 @@ export const translations = {
     hero: {
       greeting: "Hola, soy",
       name: "Rubén Álvarez",
-      title: "Consultor Tecnológico y Desarrollador Full Stack",
-      description: "Especialista en transformación empresarial con experiencia en liderazgo y habilidades de desarrollo full stack. Historial probado en optimización de procesos e implementación de soluciones técnicas que impulsan la excelencia operacional.",
+      title: "Consultor Tech\nScrum Master\nDesarrollador Full Stack",
+      description: "Más de 20 años transformando empresas a través de tecnología y liderazgo. Especializado en desarrollo web, automatización Microsoft Power Platform y gestión ágil de equipos.",
       downloadCV: "Descargar CV",
-      contactMe: "Contáctame",
-      techStack: "Stack Tecnológico"
+      contactMe: "Contáctame"
     },
     
     // About Section
@@ -248,6 +305,16 @@ export const translations = {
       certifications: {
         title: "Certificaciones",
         items: [
+          {
+            name: "Power Platform Functional Consultant PL-200",
+            issuer: "Microsoft Corporation",
+            year: "2025 (En progreso)"
+          },
+          {
+            name: "Power Platform Developer PL-400",
+            issuer: "Microsoft Corporation",
+            year: "2025 (En progreso)"
+          },
           {
             name: "Certificado Scrum Master (PSM I)",
             issuer: "Scrum.org",
@@ -277,41 +344,44 @@ export const translations = {
       title: "Experiencia Profesional",
       positions: [
         {
-          title: "Analista Técnico",
+          title: "Analista Técnico - Especialista Power Platform",
           company: "Accenture, Sevilla",
           duration: "14 meses",
-          type: "Servicio técnico remoto y asistencia bajo demanda para socios internacionales",
+          type: "Servicio técnico remoto y soluciones Power Platform para socios internacionales",
           responsibilities: [
+            "Desarrollo y automatización en Power Platform",
             "Servicio técnico remoto y asistencia",
             "Soporte a socios internacionales", 
+            "Optimización de procesos empresariales",
             "Soluciones técnicas bajo demanda"
           ]
         },
         {
-          title: "Analista Técnico",
+          title: "Analista Técnico - Desarrollador Power Apps",
           company: "Arquiconsult Management Solutions, Madrid", 
           duration: "6 meses",
           type: "Desarrollo Power Apps, automatización de procesos e integración Microsoft Dynamics 365 para clientes empresariales",
           responsibilities: [
-            "Desarrollo de Power Apps",
-            "Implementación de automatización de procesos",
+            "Desarrollo de aplicaciones canvas y model-driven en Power Apps",
+            "Implementación de flujos de trabajo con Power Automate",
             "Integración con Microsoft Dynamics 365",
-            "Soluciones para clientes empresariales"
+            "Soluciones y consultoría para clientes empresariales",
+            "Análisis y optimización de procesos empresariales"
           ]
         },
         {
-          title: "Gerente Senior de Operaciones y Líder de Equipo",
+          title: "Gerente Senior de Operaciones y Scrum Master",
           company: "Sector Hotelero",
           duration: "10+ años", 
-          type: "Lideré transformaciones empresariales completas en múltiples establecimientos, gestionando equipos multifuncionales e implementando sistemas de gestión de calidad",
+          type: "Lideré transformaciones empresariales completas en múltiples establecimientos, gestionando equipos multifuncionales de más de 20 personas usando metodologías ágiles",
           responsibilities: [
-            "Liderazgo en transformación empresarial completa",
-            "Gestión de equipos multifuncionales",
+            "Liderazgo ágil de equipos e implementación de Scrum",
+            "Gestión de equipos multifuncionales (más de 20 personas)",
+            "Transformación empresarial y optimización de procesos digitales",
             "Implementación de sistemas de gestión de calidad",
-            "Excelencia operacional y optimización de procesos",
-            "Coordinación de desarrollo de equipos y entrega de servicios",
-            "Programas de formación y mentoría",
-            "Mantenimiento de estándares de alto rendimiento"
+            "Monitoreo de KPIs y mejora del rendimiento",
+            "Programas de formación y desarrollo de personal",
+            "Gestión de stakeholders y construcción de relaciones con clientes"
           ]
         }
       ]
@@ -353,6 +423,50 @@ export const translations = {
           year: "2014"
         }
       ]
+    },
+    
+    // Services Section
+    services: {
+      title: "Servicios y Especialidades",
+      subtitle: "Tres vías especializadas para transformar tu negocio a través de tecnología y liderazgo",
+      technologies: "Tecnologías",
+      learnMore: "Saber Más",
+      development: {
+        title: "Desarrollo Full Stack",
+        description: "Desarrollo completo de aplicaciones web con tecnologías modernas y mejores prácticas. Desde interfaces frontend hasta sistemas backend robustos.",
+        features: [
+          "Desarrollo de aplicaciones web personalizadas",
+          "Diseño e implementación de APIs",
+          "Arquitectura y optimización de bases de datos",
+          "Interfaces responsivas y accesibles",
+          "Optimización de rendimiento y escalabilidad",
+          "Revisión de código y consultoría técnica"
+        ]
+      },
+      powerplatform: {
+        title: "Soluciones Power Platform",
+        description: "Automatización de procesos empresariales y soluciones corporativas usando Microsoft Power Platform. Optimiza operaciones y aumenta la productividad.",
+        features: [
+          "Desarrollo Power Apps (Canvas y Model-driven)",
+          "Automatización de flujos con Power Automate", 
+          "Visualización de datos y reportes con Power BI",
+          "Integración con Microsoft Dynamics 365",
+          "Conectores personalizados e integración de APIs",
+          "Análisis y optimización de procesos empresariales"
+        ]
+      },
+      leadership: {
+        title: "Liderazgo de Equipos y Scrum",
+        description: "Liderazgo ágil de equipos y optimización de procesos con experiencia probada gestionando equipos de más de 20 personas en entornos de transformación.",
+        features: [
+          "Scrum Master y coaching ágil",
+          "Gestión de equipos multifuncionales",
+          "Liderazgo en transformación empresarial",
+          "Optimización y automatización de procesos",
+          "Programas de formación y mentoría",
+          "Gestión de rendimiento y seguimiento de KPIs"
+        ]
+      }
     },
     
     // Projects Section
