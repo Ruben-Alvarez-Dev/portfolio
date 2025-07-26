@@ -1,25 +1,23 @@
 import React from 'react';
-import "./MainComponent.css";
 import HeroSection from '../../sections/HeroSection/HeroSection';
 import AboutSection from '../../sections/AboutSection/AboutSection';
-import ServicesSection from '../../sections/ServicesSection/ServicesSection';
-import ExperienceSection from '../../sections/ExperienceSection/ExperienceSection';
 import EducationSection from '../../sections/EducationSection/EducationSection';
+import ExperienceSection from '../../sections/ExperienceSection/ExperienceSection';
 import ProjectsSection from '../../sections/ProjectsSection/ProjectsSection';
 import ContactSection from '../../sections/ContactSection/ContactSection';
+import './MainComponent.css';
 
 const MainComponent = () => {
   return (
-    <main className="main">
+    <main className="MainComponent">
       <HeroSection />
       <AboutSection />
-      <ServicesSection />
-      <ExperienceSection />
       <EducationSection />
+      <ExperienceSection />
       <ProjectsSection />
       <ContactSection />
     </main>
   );
-};
+}
 
 export default MainComponent;

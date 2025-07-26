@@ -5,97 +5,139 @@ import './AboutSection.css';
 const AboutSection = () => {
   const { t } = useI18n();
   
-  const skillCategories = [
+  // Dividir la descripción del perfil en párrafos
+  const profileDescription = t('profile.description');
+  const paragraphs = profileDescription.split('\n\n');
+  
+  const hardSkillCategories = [
     {
-      category: t('about.skills.frontend'),
+      category: t('profile.hardSkills.frontend'),
       technologies: [
-        "HTML", "CSS", "Bootstrap", "JavaScript", "React", "Redux"
+        "HTML", "CSS", "JavaScript", "React", "Tailwind CSS", "Bootstrap"
       ]
     },
     {
-      category: t('about.skills.backend'),
+      category: t('profile.hardSkills.backend'),
       technologies: [
-        "PHP", "Laravel", "Node.js", "Java", "C#", "MySQL"
+        "Node.js", "PHP", "Laravel", "C#", "Java", "MySQL", "Oracle"
       ]
     },
     {
-      category: t('about.skills.tools'),
+      category: t('profile.hardSkills.tools'),
       technologies: [
-        "Git & GitHub", "Docker", "Postman", "Visual Studio", "VS Code", 
-        "Trello", "Jira", "AI Tools", "Power Platform", "Azure"
+        "Git & GitHub", "VS Code", "LLM AI Tools", "Azure", "Docker", 
+        "Postman", "Power Platform", "Trello", "Jira"
       ]
     },
     {
-      category: t('about.skills.languages'),
+      category: t('profile.hardSkills.languages'),
       technologies: [
-        "English (proficient/fluent)", "Italian (intermediate)", "French (basic)"
+        "Spanish (native)", "English (fluent)", "Italian (intermediate)", "French (basic)"
       ]
     }
   ];
 
-  const certifications = t('about.certifications.items');
+  const softSkills = t('profile.softSkills.items');
 
   return (
     <section id="about" className="about-section">
       <div className="about-container">
         <div className="about-header">
-          <h2 className="about-title">{t('about.title')}</h2>
-          <p className="about-subtitle">{t('about.subtitle')}</p>
+          <h2 className="about-title">{t('profile.title')}</h2>
         </div>
 
         <div className="about-content">
-          <div className="about-text">
-            <p className="about-description">
-              {t('about.description')}
-            </p>
+          <div className="profile-grid-layout">
+            {/* Columna izquierda */}
+            <div className="left-column">
+              {/* Card 1: Descripción del perfil */}
+              <div className="skills-card">
+                <h3 className="skills-card-title">Profile</h3>
+                <div className="profile-text">
+                  {paragraphs.map((paragraph, index) => (
+                    <p key={index} className="about-description">
+                      {paragraph.trim()}
+                    </p>
+                  ))}
+                </div>
+              </div>
 
-            <div className="contact-info">
-              <div className="contact-item">
-                <strong>Email:</strong> {t('about.contact.email')}
-              </div>
-              <div className="contact-item">
-                <strong>Teléfono:</strong> {t('about.contact.phone')}
-              </div>
-              <div className="contact-item">
-                <strong>Ubicación:</strong> {t('about.contact.location')}
-              </div>
-              <div className="contact-item">
-                <strong>Movilidad:</strong> {t('about.contact.license')}
+              {/* Card 2: Competencias Clave */}
+              <div className="skills-card">
+                <h3 className="skills-card-title">{t('profile.softSkills.title')}</h3>
+                <div className="soft-skills-list">
+                  {softSkills.map((skill, index) => (
+                    <div key={index} className="soft-skill-item">
+                      <span className="skill-bullet">•</span>
+                      <span>{skill}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
 
-          <div className="skills-section">
-            <h3 className="skills-title">{t('about.skills.title')}</h3>
-            <div className="skills-grid">
-              {skillCategories.map((category, index) => (
-                <div key={index} className="skill-category">
-                  <h4 className="category-title">{category.category}</h4>
-                  <div className="tech-badges">
-                    {category.technologies.map((tech, techIndex) => (
-                      <span key={techIndex} className="tech-badge">
-                        {tech}
-                      </span>
-                    ))}
+            {/* Columna derecha */}
+            <div className="right-column">
+              {/* Card 3: Habilidades Técnicas */}
+              <div className="skills-card">
+                <h3 className="skills-card-title">{t('profile.hardSkills.title')}</h3>
+                <div className="skills-tags-grid">
+                  {hardSkillCategories.map((category, index) => (
+                    <div key={index} className="skill-category-tags">
+                      <h4 className="category-title-small">{category.category}</h4>
+                      <div className="tech-badges">
+                        {category.technologies.map((tech, techIndex) => (
+                          <span 
+                            key={techIndex} 
+                            className={`tech-badge tech-badge-${index}`}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card 4: Habilidades Blandas */}
+              <div className="skills-card">
+                <h3 className="skills-card-title">Habilidades Blandas</h3>
+                <div className="soft-skills-list">
+                  <div className="soft-skill-item">
+                    <span className="skill-bullet">•</span>
+                    <span>Liderazgo de equipos bajo presión</span>
+                  </div>
+                  <div className="soft-skill-item">
+                    <span className="skill-bullet">•</span>
+                    <span>Inteligencia emocional y empatía</span>
+                  </div>
+                  <div className="soft-skill-item">
+                    <span className="skill-bullet">•</span>
+                    <span>Comunicación efectiva y formación</span>
+                  </div>
+                  <div className="soft-skill-item">
+                    <span className="skill-bullet">•</span>
+                    <span>Orientación al cliente y usuario</span>
+                  </div>
+                  <div className="soft-skill-item">
+                    <span className="skill-bullet">•</span>
+                    <span>Resolución rápida de problemas</span>
+                  </div>
+                  <div className="soft-skill-item">
+                    <span className="skill-bullet">•</span>
+                    <span>Adaptabilidad y aprendizaje continuo</span>
+                  </div>
+                  <div className="soft-skill-item">
+                    <span className="skill-bullet">•</span>
+                    <span>Gestión de relaciones y negociación</span>
+                  </div>
+                  <div className="soft-skill-item">
+                    <span className="skill-bullet">•</span>
+                    <span>Presentaciones en público</span>
                   </div>
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="certifications-section">
-            <h3 className="certifications-title">{t('about.certifications.title')}</h3>
-            <div className="certifications-grid">
-              {certifications.map((cert, index) => (
-                <div key={index} className="certification-card">
-                  <div className="cert-badge">🏆</div>
-                  <div className="cert-info">
-                    <h4 className="cert-name">{cert.name}</h4>
-                    <p className="cert-issuer">{cert.issuer}</p>
-                    <span className="cert-year">{cert.year}</span>
-                  </div>
-                </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>

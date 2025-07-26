@@ -13,11 +13,11 @@
 /* Section Header */
 .section-header {
   text-align: center;
-  margin-bottom: var(--spacing-16);
+  margin-bottom: var(--spacing-8);
 }
 
 .section-title {
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-3xl); /* Reducido de 4xl a 3xl */
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-4);
@@ -33,9 +33,9 @@
   width: 80px;
   height: 4px;
   background: linear-gradient(
-    90deg,
-    var(--color-primary) 0%,
-    var(--color-secondary) 100%
+    to right,
+    var(--color-primary),
+    var(--color-secondary)
   );
   border-radius: var(--border-radius-full);
 }
@@ -359,7 +359,7 @@
   }
   
   .section-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl); /* Ajustado para móvil */
   }
   
   .contact-form-wrapper {

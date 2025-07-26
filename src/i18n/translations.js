@@ -4,10 +4,9 @@ export const translations = {
     // Header & Navigation
     nav: {
       home: "Home",
-      about: "About",
-      services: "Services",
-      experience: "Experience",
+      about: "Profile",
       education: "Education",
+      experience: "Experience",
       projects: "Projects",
       contact: "Contact",
       language: "ES"
@@ -23,37 +22,36 @@ export const translations = {
       contactMe: "Contact Me"
     },
     
-    // About Section
-    about: {
-      title: "About Me",
-      subtitle: "Professional Background",
-      description: "Business transformation specialist with expertise in leadership and full stack development skills. Proven track record in process optimization and implementing technical solutions that drive operational excellence. Combines analytical capabilities with hands-on development capabilities across modern web technologies.",
-      contact: {
-        email: "info@rubenalvarez.dev",
-        phone: "+34 671 35 06",
-        location: "Travel available",
-        license: "Licensed driver and own vehicle"
-      },
-      skills: {
+    // About Section (Profile)
+    profile: {
+      title: "About me",
+      languages: "profile.languages",
+      description: "Technical professional specializing in team leadership, project management, and technology solutions. My background has provided me with extensive experience leading work groups for over 10 years, connecting with people, and understanding clients' true needs.\n\nI excel at communicating effectively, mentoring and guiding professionals, as well as serving and understanding clients and their requirements. I align these capabilities with project and company objectives to design customized plans, coordinate resources from different disciplines, and execute them effectively.",
+      hardSkills: {
         title: "Technical Skills",
         frontend: "Frontend",
         backend: "Backend", 
-        tools: "Tools & Platforms",
+        tools: "Tools",
         languages: "Languages"
       },
-      certifications: {
-        title: "Certifications",
+      softSkills: {
+        title: "Core Competencies",
         items: [
-          {
-            name: "Power Platform Functional Consultant PL-200",
-            issuer: "Microsoft Corporation",
-            year: "2025 (En progreso)"
-          },
-          {
-            name: "Power Platform Developer PL-400", 
-            issuer: "Microsoft Corporation",
-            year: "2025 (En progreso)"
-          },
+          "Full Stack Web Development (React, Node.js, PHP)",
+          "Microsoft Power Platform & Process Automation",
+          "Certified Scrum Master & Agile Leadership",
+          "Solution Architecture & API Design",
+          "Team Management & Coaching",
+          "Business Process Optimization",
+          "Data Analysis & KPI Management",
+          "Quality Control & Testing",
+          "Crisis Management & Conflict Resolution",
+          "Training & Team Development"
+        ]
+      },
+      certifications: {
+        title: "Certifications & Education",
+        items: [
           {
             name: "Scrum Master Certificate (PSM I)",
             issuer: "Scrum.org",
@@ -70,9 +68,29 @@ export const translations = {
             year: "2024"
           },
           {
-            name: "Full Stack Web Developer",
+            name: "Full Stack Web Developer Bootcamp",
             issuer: "Neoland School, Madrid",
             year: "2023"
+          },
+          {
+            name: "Master's Degree in Educational Pedagogy COPyDE",
+            issuer: "Universidad de Murcia",
+            year: "2020"
+          },
+          {
+            name: "Professional Certificate in Train-the-Trainer",
+            issuer: "Universidad Antonio de Nebrija, Madrid",
+            year: "2019"
+          },
+          {
+            name: "Advanced Diploma in Web Application Development (Level 5)",
+            issuer: "IES Llerna, Lleida Sevilla",
+            year: "2018"
+          },
+          {
+            name: "Advanced Diploma in Restaurant Service Management (Level 5)",
+            issuer: "IES Atenea and IES Vesta, Sevilla-Murcia",
+            year: "2016"
           }
         ]
       }
@@ -126,88 +144,6 @@ export const translations = {
       ]
     },
     
-    // Education Section
-    education: {
-      title: "Academic Background",
-      degrees: [
-        {
-          title: "Master's Degree in Educational Pedagogy",
-          institution: "Universidad de Murcia",
-          type: "COPyDE",
-          year: "2020"
-        },
-        {
-          title: "Professional Certificate in Train-the-Trainer",
-          institution: "Universidad Antonio de Nebrija, Madrid", 
-          year: "2019"
-        },
-        {
-          title: "Advanced Diploma in Web Application Development (Level 5)",
-          institution: "IES Llerna, Lleida Sevilla",
-          year: "2018"
-        },
-        {
-          title: "Full Stack Web Developer Bootcamp",
-          institution: "Neoland School, Madrid",
-          year: "2023"
-        },
-        {
-          title: "Advanced Diploma in Restaurant Service Management (Level 5)",
-          institution: "IES Atenea and IES Vesta, Sevilla-Murcia",
-          year: "2016"
-        },
-        {
-          title: "Diploma in Business and Administration (BTEC Level 2)",
-          institution: "Sunderland College, Liverpool",
-          year: "2014"
-        }
-      ]
-    },
-    
-    // Services Section
-    services: {
-      title: "Services & Expertise",
-      subtitle: "Three specialized paths to transform your business through technology and leadership",
-      technologies: "Technologies",
-      learnMore: "Learn More",
-      development: {
-        title: "Full Stack Development",
-        description: "End-to-end web application development with modern technologies and best practices. From frontend interfaces to robust backend systems.",
-        features: [
-          "Custom web application development",
-          "API design and implementation",
-          "Database architecture and optimization",
-          "Responsive and accessible user interfaces",
-          "Performance optimization and scalability",
-          "Code review and technical consultation"
-        ]
-      },
-      powerplatform: {
-        title: "Power Platform Solutions",
-        description: "Business process automation and enterprise solutions using Microsoft Power Platform. Streamline operations and boost productivity.",
-        features: [
-          "Power Apps development (Canvas & Model-driven)",
-          "Power Automate workflow automation", 
-          "Power BI data visualization and reporting",
-          "Microsoft Dynamics 365 integration",
-          "Custom connectors and API integration",
-          "Business process analysis and optimization"
-        ]
-      },
-      leadership: {
-        title: "Team Leadership & Scrum",
-        description: "Agile team leadership and process optimization with proven track record managing teams of 20+ people in transformational environments.",
-        features: [
-          "Scrum Master and Agile coaching",
-          "Cross-functional team management",
-          "Business transformation leadership",
-          "Process optimization and automation",
-          "Training and mentoring programs",
-          "Performance management and KPI tracking"
-        ]
-      }
-    },
-    
     // Projects Section
     projects: {
       title: "Featured Projects",
@@ -243,7 +179,7 @@ export const translations = {
       info: {
         title: "Contact Information",
         email: "info@rubenalvarez.dev",
-        phone: "+34 671 35 06",
+        phone: "+34 612 05 95",
         location: "Spain (Travel Available)"
       },
       social: {
@@ -265,16 +201,13 @@ export const translations = {
     // Header & Navigation
     nav: {
       home: "Inicio",
-      about: "Sobre Mí",
-      services: "Servicios",
-      experience: "Experiencia",
+      about: "Perfil",
       education: "Formación",
-      projects: "Proyectos", 
+      experience: "Experiencia", 
+      projects: "Proyectos",
       contact: "Contacto",
       language: "EN"
-    },
-    
-    // Hero Section
+    },// Hero Section
     hero: {
       greeting: "Hola, soy",
       name: "Rubén Álvarez",
@@ -284,37 +217,36 @@ export const translations = {
       contactMe: "Contáctame"
     },
     
-    // About Section
-    about: {
-      title: "Sobre Mí",
-      subtitle: "Perfil Profesional",
-      description: "Especialista en transformación empresarial con experiencia en liderazgo y habilidades de desarrollo full stack. Historial probado en optimización de procesos e implementación de soluciones técnicas que impulsan la excelencia operacional. Combina capacidades analíticas con habilidades de desarrollo práctico en tecnologías web modernas.",
-      contact: {
-        email: "info@rubenalvarez.dev",
-        phone: "+34 671 35 06", 
-        location: "Disponible para viajar",
-        license: "Carnet de conducir y vehículo propio"
-      },
-      skills: {
+    // Profile Section
+    profile: {
+      title: "About me",
+      languages: "profile.languages",
+      description: "Profesional técnico especializado en liderazgo de equipos, gestión de proyectos y soluciones tecnológicas. Mi trayectoria me ha proporcionado amplia experiencia dirigiendo grupos de trabajo durante más de 10 años, conectando con las personas y comprendiendo las verdaderas necesidades del cliente.\n\nMe destaco comunicándome eficazmente, orientando y guiando a los profesionales, así como atendiendo y comprendiendo a los clientes y sus requerimientos. Alineo estas capacidades con los objetivos del proyecto y la empresa para diseñar planes personalizados, coordinar recursos de diferentes disciplinas y ejecutarlos de manera efectiva.",
+      hardSkills: {
         title: "Habilidades Técnicas",
         frontend: "Frontend",
         backend: "Backend",
-        tools: "Herramientas y Plataformas", 
+        tools: "Herramientas", 
         languages: "Idiomas"
       },
-      certifications: {
-        title: "Certificaciones",
+      softSkills: {
+        title: "Competencias Clave",
         items: [
-          {
-            name: "Power Platform Functional Consultant PL-200",
-            issuer: "Microsoft Corporation",
-            year: "2025 (En progreso)"
-          },
-          {
-            name: "Power Platform Developer PL-400",
-            issuer: "Microsoft Corporation",
-            year: "2025 (En progreso)"
-          },
+          "Desarrollo Web Full Stack (React, Node.js, PHP)",
+          "Microsoft Power Platform y Automatización",
+          "Scrum Master Certificado y Liderazgo Ágil",
+          "Arquitectura de Soluciones y APIs",
+          "Gestión de Equipos y Coaching",
+          "Optimización de Procesos Empresariales",
+          "Análisis de Datos y Gestión de KPIs",
+          "Control de Calidad y Testing",
+          "Gestión de Crisis y Resolución de Conflictos",
+          "Formación y Desarrollo de Equipos"
+        ]
+      },
+      certifications: {
+        title: "Certificaciones y Formación",
+        items: [
           {
             name: "Certificado Scrum Master (PSM I)",
             issuer: "Scrum.org",
@@ -331,9 +263,29 @@ export const translations = {
             year: "2024"
           },
           {
-            name: "Desarrollador Web Full Stack",
+            name: "Bootcamp Desarrollador Web Full Stack",
             issuer: "Neoland School, Madrid",
             year: "2023"
+          },
+          {
+            name: "Máster en Pedagogía Educacional COPyDE",
+            issuer: "Universidad de Murcia",
+            year: "2020"
+          },
+          {
+            name: "Certificado Profesional en Formación de Formadores",
+            issuer: "Universidad Antonio de Nebrija, Madrid",
+            year: "2019"
+          },
+          {
+            name: "Diploma Avanzado en Desarrollo de Aplicaciones Web (Nivel 5)",
+            issuer: "IES Llerna, Lleida Sevilla", 
+            year: "2018"
+          },
+          {
+            name: "Diploma Avanzado en Gestión de Servicios de Restauración (Nivel 5)",
+            issuer: "IES Atenea and IES Vesta, Sevilla-Murcia",
+            year: "2016"
           }
         ]
       }
@@ -387,86 +339,57 @@ export const translations = {
       ]
     },
     
-    // Education Section  
-    education: {
-      title: "Formación Académica",
-      degrees: [
+    // Expertise Section (Services + Experience combined)
+    expertise: {
+      title: "Experiencia y Especialidades",
+      subtitle: "Tres vías especializadas para transformar tu negocio a través de tecnología y liderazgo",
+      areas: [
         {
-          title: "Máster en Pedagogía Educacional",
-          institution: "Universidad de Murcia",
-          type: "COPyDE",
-          year: "2020"
+          id: "fullstack",
+          title: "Desarrollo Full Stack",
+          description: "Desarrollo completo de aplicaciones web con tecnologías modernas y mejores prácticas. Desde interfaces frontend hasta sistemas backend robustos.",
+          experience: "14+ meses en Accenture + 6 meses en Arquiconsult",
+          technologies: ["React", "Node.js", "PHP", "Laravel", "MySQL", "JavaScript", "HTML", "CSS"],
+          achievements: [
+            "Desarrollo y automatización en Power Platform",
+            "Servicio técnico remoto para socios internacionales",
+            "Desarrollo de aplicaciones web personalizadas",
+            "Diseño e implementación de APIs",
+            "Arquitectura y optimización de bases de datos",
+            "Optimización de rendimiento y escalabilidad"
+          ]
         },
         {
-          title: "Certificado Profesional en Formación de Formadores",
-          institution: "Universidad Antonio de Nebrija, Madrid",
-          year: "2019"
+          id: "powerplatform",
+          title: "Soluciones Power Platform",
+          description: "Automatización de procesos empresariales y soluciones corporativas usando Microsoft Power Platform. Optimiza operaciones y aumenta la productividad.",
+          experience: "20 meses de experiencia combinada en Accenture y Arquiconsult",
+          technologies: ["Power Apps", "Power Automate", "Power BI", "Dynamics 365", "Azure", "Microsoft 365"],
+          achievements: [
+            "Desarrollo de aplicaciones canvas y model-driven en Power Apps",
+            "Automatización de flujos con Power Automate",
+            "Integración con Microsoft Dynamics 365",
+            "Análisis y optimización de procesos empresariales",
+            "Conectores personalizados e integración de APIs",
+            "Soluciones y consultoría para clientes empresariales"
+          ]
         },
         {
-          title: "Diploma Avanzado en Desarrollo de Aplicaciones Web (Nivel 5)",
-          institution: "IES Llerna, Lleida Sevilla", 
-          year: "2018"
-        },
-        {
-          title: "Bootcamp Desarrollador Web Full Stack",
-          institution: "Neoland School, Madrid",
-          year: "2023"
-        },
-        {
-          title: "Diploma Avanzado en Gestión de Servicios de Restauración (Nivel 5)",
-          institution: "IES Atenea and IES Vesta, Sevilla-Murcia",
-          year: "2016"
-        },
-        {
-          title: "Diploma en Negocios y Administración (BTEC Nivel 2)",
-          institution: "Sunderland College, Liverpool", 
-          year: "2014"
+          id: "leadership",
+          title: "Liderazgo de Equipos y Scrum",
+          description: "Liderazgo ágil de equipos y optimización de procesos con experiencia probada gestionando equipos de más de 20 personas en entornos de transformación.",
+          experience: "10+ años en sector hotelero + certificación Scrum Master",
+          technologies: ["Scrum", "Agile", "Gestión de KPIs", "Optimización de Procesos", "Desarrollo de Equipos"],
+          achievements: [
+            "Lideré transformaciones empresariales completas en múltiples establecimientos",
+            "Gestión de equipos multifuncionales (más de 20 personas)",
+            "Implementación de metodología ágil y coaching Scrum",
+            "Implementación de sistemas de gestión de calidad",
+            "Programas de formación y desarrollo de personal",
+            "Gestión de stakeholders y construcción de relaciones con clientes"
+          ]
         }
       ]
-    },
-    
-    // Services Section
-    services: {
-      title: "Servicios y Especialidades",
-      subtitle: "Tres vías especializadas para transformar tu negocio a través de tecnología y liderazgo",
-      technologies: "Tecnologías",
-      learnMore: "Saber Más",
-      development: {
-        title: "Desarrollo Full Stack",
-        description: "Desarrollo completo de aplicaciones web con tecnologías modernas y mejores prácticas. Desde interfaces frontend hasta sistemas backend robustos.",
-        features: [
-          "Desarrollo de aplicaciones web personalizadas",
-          "Diseño e implementación de APIs",
-          "Arquitectura y optimización de bases de datos",
-          "Interfaces responsivas y accesibles",
-          "Optimización de rendimiento y escalabilidad",
-          "Revisión de código y consultoría técnica"
-        ]
-      },
-      powerplatform: {
-        title: "Soluciones Power Platform",
-        description: "Automatización de procesos empresariales y soluciones corporativas usando Microsoft Power Platform. Optimiza operaciones y aumenta la productividad.",
-        features: [
-          "Desarrollo Power Apps (Canvas y Model-driven)",
-          "Automatización de flujos con Power Automate", 
-          "Visualización de datos y reportes con Power BI",
-          "Integración con Microsoft Dynamics 365",
-          "Conectores personalizados e integración de APIs",
-          "Análisis y optimización de procesos empresariales"
-        ]
-      },
-      leadership: {
-        title: "Liderazgo de Equipos y Scrum",
-        description: "Liderazgo ágil de equipos y optimización de procesos con experiencia probada gestionando equipos de más de 20 personas en entornos de transformación.",
-        features: [
-          "Scrum Master y coaching ágil",
-          "Gestión de equipos multifuncionales",
-          "Liderazgo en transformación empresarial",
-          "Optimización y automatización de procesos",
-          "Programas de formación y mentoría",
-          "Gestión de rendimiento y seguimiento de KPIs"
-        ]
-      }
     },
     
     // Projects Section
@@ -504,7 +427,7 @@ export const translations = {
       info: {
         title: "Información de Contacto",
         email: "info@rubenalvarez.dev", 
-        phone: "+34 671 35 06",
+        phone: "+34 612 05 95",
         location: "España (Disponible para Viajar)"
       },
       social: {
