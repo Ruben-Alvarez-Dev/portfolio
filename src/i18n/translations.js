@@ -101,15 +101,15 @@ export const translations = {
       title: "Professional Experience",
       positions: [
         {
-          title: "Tech Analyst - Power Platform Specialist",
+          title: "Tech Analyst",
           company: "Accenture, Seville",
           duration: "14 months",
-          type: "Remote technical service and Power Platform solutions for international partners",
+          type: "Remote technical service and assistance on demand for international partners",
           responsibilities: [
-            "Power Platform development and automation",
-            "Remote technical service and assistance",
-            "International partner support",
-            "Business process optimization",
+            "International client support and assistance",
+            "Technical requirements analysis and resolution",
+            "Technical problem solving and troubleshooting",
+            "Remote technical service delivery",
             "On-demand technical solutions"
           ]
         },
@@ -127,18 +127,17 @@ export const translations = {
           ]
         },
         {
-          title: "Senior Operations Manager & Scrum Master",
+          title: "Operations Manager & Team Leader",
           company: "Hospitality Sector",
           duration: "10+ years",
-          type: "Led complete business transformations across multiple venues, managing cross-functional teams of 20+ people using agile methodologies",
+          type: "Led complete business transformations across premium venues, managing teams of up to 50 people",
           responsibilities: [
-            "Agile team leadership and Scrum implementation",
-            "Cross-functional team management (20+ people)",
-            "Business transformation and digital process optimization",
-            "Quality management system implementation",
-            "KPI monitoring and performance improvement",
-            "Training and mentoring programs for staff development",
-            "Stakeholder management and client relationship building"
+            "Operations management in luxury hotels, Michelin-starred restaurants and catering services",
+            "Team management and leadership (up to 50 people)",
+            "Professional training and development programs (certified instructor)",
+            "Business process design and quality optimization",
+            "Multi-venue coordination and franchise management",
+            "KPI monitoring and performance improvement"
           ]
         }
       ]
@@ -296,15 +295,15 @@ export const translations = {
       title: "Experiencia Profesional",
       positions: [
         {
-          title: "Analista Técnico - Especialista Power Platform",
+          title: "Analista Técnico",
           company: "Accenture, Sevilla",
           duration: "14 meses",
-          type: "Servicio técnico remoto y soluciones Power Platform para socios internacionales",
+          type: "Servicio técnico remoto y asistencia bajo demanda para socios internacionales",
           responsibilities: [
-            "Desarrollo y automatización en Power Platform",
-            "Servicio técnico remoto y asistencia",
-            "Soporte a socios internacionales", 
-            "Optimización de procesos empresariales",
+            "Soporte y asistencia a clientes internacionales",
+            "Análisis y resolución de requerimientos técnicos",
+            "Resolución de problemas técnicos y troubleshooting",
+            "Entrega de servicios técnicos remotos",
             "Soluciones técnicas bajo demanda"
           ]
         },
@@ -322,18 +321,17 @@ export const translations = {
           ]
         },
         {
-          title: "Gerente Senior de Operaciones y Scrum Master",
+          title: "Director de Operaciones y Líder de Equipos",
           company: "Sector Hotelero",
           duration: "10+ años", 
-          type: "Lideré transformaciones empresariales completas en múltiples establecimientos, gestionando equipos multifuncionales de más de 20 personas usando metodologías ágiles",
+          type: "Lideré transformaciones empresariales completas en establecimientos premium, gestionando equipos de hasta 50 personas",
           responsibilities: [
-            "Liderazgo ágil de equipos e implementación de Scrum",
-            "Gestión de equipos multifuncionales (más de 20 personas)",
-            "Transformación empresarial y optimización de procesos digitales",
-            "Implementación de sistemas de gestión de calidad",
-            "Monitoreo de KPIs y mejora del rendimiento",
-            "Programas de formación y desarrollo de personal",
-            "Gestión de stakeholders y construcción de relaciones con clientes"
+            "Gestión de operaciones en hoteles de lujo, restaurantes con estrella Michelin y servicios de catering",
+            "Gestión y liderazgo de equipos (hasta 50 personas)",
+            "Programas de formación y desarrollo profesional (instructor certificado)",
+            "Diseño de procesos empresariales y optimización de calidad",
+            "Coordinación multi-establecimiento y gestión de franquicias",
+            "Monitoreo de KPIs y mejora del rendimiento"
           ]
         }
       ]
