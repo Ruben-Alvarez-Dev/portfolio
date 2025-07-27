@@ -120,8 +120,8 @@
 
 .btn-primary:hover {
   background: var(--color-primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
+  filter: brightness(1.05);
 }
 
 .btn-secondary {
@@ -133,7 +133,7 @@
 .btn-secondary:hover {
   background: var(--color-primary);
   color: var(--color-white);
-  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.3);
 }
 
 /* Imagen */

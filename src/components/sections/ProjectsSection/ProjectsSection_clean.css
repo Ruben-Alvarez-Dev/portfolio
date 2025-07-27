@@ -1,22 +1,12 @@
 /* Projects Section Styles */
 .projects-section {
-  padding: var(--spacing-8) 0;
+  padding: var(--spacing-20) var(--spacing-4);
   background: var(--color-bg-primary);
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-6);
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-6);
 }
 
 .projects-container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-4);
 }
 
 /* Projects Header */
@@ -30,23 +20,6 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-4);
-  position: relative;
-}
-
-.projects-title::after {
-  content: '';
-  position: absolute;
-  bottom: -var(--spacing-2);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(
-    to right,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  border-radius: var(--border-radius-sm);
 }
 
 /* Filter Buttons */
@@ -62,143 +35,72 @@
 }
 
 .filter-btn {
-  padding: var(--spacing-1) var(--spacing-3);
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+  padding: var(--spacing-2) var(--spacing-4);
   border-radius: var(--border-radius-full);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
-  border: 1px solid transparent;
+  border: var(--border-width-thin) solid var(--color-border);
   transition: all var(--transition-fast);
   cursor: pointer;
   white-space: nowrap;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
-}
-
-/* Featured - Blanco */
-.filter-btn[data-category="featured"] {
-  background: rgba(100, 116, 139, 0.3);
-  color: #FFFFFF;
-  border-color: rgba(148, 163, 184, 0.5);
-}
-
-/* All - Rojo con fondo rojizo */
-.filter-btn[data-category="all"] {
-  background: rgba(239, 68, 68, 0.15);
-  color: #F87171;
-  border-color: rgba(239, 68, 68, 0.3);
-}
-
-/* Full Stack - Morado (Tools) */
-.filter-btn[data-category="fullstack"] {
-  background: rgba(168, 85, 247, 0.15);
-  color: #A855F7;
-  border-color: rgba(168, 85, 247, 0.3);
-}
-
-/* Frontend - Naranja (Languages) */
-.filter-btn[data-category="frontend"] {
-  background: rgba(251, 146, 60, 0.15);
-  color: #FB923C;
-  border-color: rgba(251, 146, 60, 0.3);
-}
-
-/* Backend - Verde (Backend) */
-.filter-btn[data-category="backend"] {
-  background: rgba(34, 197, 94, 0.15);
-  color: #4ADE80;
-  border-color: rgba(34, 197, 94, 0.3);
-}
-
-/* Power Platform - Rosa-Morado */
-.filter-btn[data-category="powerplatform"] {
-  background: rgba(236, 72, 153, 0.15);
-  color: #EC4899;
-  border-color: rgba(236, 72, 153, 0.3);
-}
-
-/* AI - Azul (Frontend) */
-.filter-btn[data-category="ai"] {
-  background: rgba(59, 130, 246, 0.15);
-  color: #60A5FA;
-  border-color: rgba(59, 130, 246, 0.3);
-}
-
-/* Azure - Cyan */
-.filter-btn[data-category="azure"] {
-  background: rgba(6, 182, 212, 0.15);
-  color: #06B6D4;
-  border-color: rgba(6, 182, 212, 0.3);
-}
-
-/* Management - Amarillo vivo */
-.filter-btn[data-category="management"] {
-  background: rgba(255, 193, 7, 0.15);
-  color: #FFC107;
-  border-color: rgba(255, 193, 7, 0.3);
-}
-
-/* Hover específico para cada categoría */
-.filter-btn[data-category="featured"]:hover {
-  border-color: rgba(148, 163, 184, 0.8);
-  box-shadow: 0 0 15px rgba(100, 116, 139, 0.4), 0 0 30px rgba(100, 116, 139, 0.2);
-  filter: brightness(1.2);
-}
-
-.filter-btn[data-category="all"]:hover {
-  border-color: rgba(239, 68, 68, 0.6);
-  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4), 0 0 30px rgba(239, 68, 68, 0.2);
-  filter: brightness(1.2);
-}
-
-.filter-btn[data-category="fullstack"]:hover {
-  border-color: rgba(168, 85, 247, 0.6);
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4), 0 0 30px rgba(168, 85, 247, 0.2);
-  filter: brightness(1.2);
-}
-
-.filter-btn[data-category="frontend"]:hover {
-  border-color: rgba(251, 146, 60, 0.6);
-  box-shadow: 0 0 15px rgba(251, 146, 60, 0.4), 0 0 30px rgba(251, 146, 60, 0.2);
-  filter: brightness(1.2);
-}
-
-.filter-btn[data-category="backend"]:hover {
-  border-color: rgba(34, 197, 94, 0.6);
-  box-shadow: 0 0 15px rgba(34, 197, 94, 0.4), 0 0 30px rgba(34, 197, 94, 0.2);
-  filter: brightness(1.2);
-}
-
-.filter-btn[data-category="powerplatform"]:hover {
-  border-color: rgba(236, 72, 153, 0.6);
-  box-shadow: 0 0 15px rgba(236, 72, 153, 0.4), 0 0 30px rgba(236, 72, 153, 0.2);
-  filter: brightness(1.2);
-}
-
-.filter-btn[data-category="ai"]:hover {
-  border-color: rgba(59, 130, 246, 0.6);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), 0 0 30px rgba(59, 130, 246, 0.2);
-  filter: brightness(1.2);
-}
-
-.filter-btn[data-category="azure"]:hover {
-  border-color: rgba(6, 182, 212, 0.6);
-  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4), 0 0 30px rgba(6, 182, 212, 0.2);
-  filter: brightness(1.2);
-}
-
-.filter-btn[data-category="management"]:hover {
-  border-color: rgba(255, 193, 7, 0.6);
-  box-shadow: 0 0 15px rgba(255, 193, 7, 0.4), 0 0 30px rgba(255, 193, 7, 0.2);
-  filter: brightness(1.2);
 }
 
 .filter-btn:hover {
-  filter: brightness(1.2);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .filter-btn.active {
-  border-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.15);
-  filter: brightness(1.3);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Category Filter Buttons Specific Colors for Active State */
+.filter-btn[data-category="featured"].active {
+  background: linear-gradient(135deg, var(--accent-color), #ffd700);
+  border-color: var(--accent-color);
+}
+
+.filter-btn[data-category="fullstack"].active {
+  background: linear-gradient(135deg, var(--accent-color), #ff6b35);
+  border-color: var(--accent-color);
+}
+
+.filter-btn[data-category="frontend"].active {
+  background: linear-gradient(135deg, #61dafb, #21d4fd);
+  border-color: #61dafb;
+}
+
+.filter-btn[data-category="backend"].active {
+  background: linear-gradient(135deg, #68d391, #38a169);
+  border-color: #68d391;
+}
+
+.filter-btn[data-category="powerplatform"].active {
+  background: linear-gradient(135deg, #742774, #c239b3);
+  border-color: #742774;
+}
+
+.filter-btn[data-category="ai"].active {
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  border-color: #6366f1;
+}
+
+.filter-btn[data-category="azure"].active {
+  background: linear-gradient(135deg, #0078d4, #40e0d0);
+  border-color: #0078d4;
+}
+
+.filter-btn[data-category="management"].active {
+  background: linear-gradient(135deg, #ffd700, #ffa500);
+  border-color: #ffd700;
 }
 
 /* Projects Grid */
@@ -214,14 +116,14 @@
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: all var(--transition-fast);
+  transition: all var(--transition-normal);
   border: var(--border-width-thin) solid var(--color-border);
 }
 
 .project-card:hover {
-  box-shadow: 0 0 20px rgba(96, 165, 250, 0.3), 0 0 40px rgba(96, 165, 250, 0.15);
-  border-color: rgba(96, 165, 250, 0.7);
-  filter: brightness(1.05);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary);
 }
 
 /* Project Image */
@@ -235,11 +137,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-normal);
 }
 
 .project-card:hover .project-image img {
-  filter: brightness(1.1);
+  transform: scale(1.05);
 }
 
 /* Project Overlay */
@@ -254,7 +156,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity var(--transition-fast);
+  transition: opacity var(--transition-normal);
 }
 
 .project-card:hover .project-overlay {
@@ -287,7 +189,7 @@
 
 .btn-live:hover {
   background: var(--color-success-dark);
-  box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+  transform: translateY(-1px);
 }
 
 .btn-code {
@@ -297,7 +199,7 @@
 
 .btn-code:hover {
   background: var(--color-secondary-dark);
-  box-shadow: 0 0 10px rgba(107, 114, 128, 0.3);
+  transform: translateY(-1px);
 }
 
 .btn-screenshots {
@@ -307,7 +209,7 @@
 
 .btn-screenshots:hover {
   background: var(--color-primary-dark);
-  box-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+  transform: translateY(-1px);
 }
 
 /* Project Content */

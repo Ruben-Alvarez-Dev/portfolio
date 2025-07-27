@@ -148,18 +148,36 @@ export const translations = {
     
     // Projects Section
     projects: {
-      title: "Featured Projects",
-      subtitle: "Some of my recent work",
+      title: "Projects",
       filters: {
+        featured: "Featured Projects",
         all: "All Projects",
         fullstack: "Full Stack",
-        frontend: "Frontend", 
+        frontend: "Frontend",
         backend: "Backend",
-        mobile: "Mobile"
+        powerplatform: "Power Platform", 
+        ai: "AI & Machine Learning",
+        azure: "Azure Cloud",
+        management: "Project Management"
+      },
+      categories: {
+        featured: "Featured Projects",
+        all: "All Projects",
+        fullstack: "Full Stack", 
+        frontend: "Frontend",
+        backend: "Backend",
+        powerplatform: "Power Platform",
+        ai: "AI & Machine Learning", 
+        azure: "Azure Cloud",
+        management: "Project Management"
       },
       viewProject: "View Project",
       viewCode: "View Code",
-      comingSoon: "Coming Soon"
+      viewDemo: "View Demo",
+      viewScreenshots: "View Screenshots",
+      comingSoon: "Coming Soon",
+      inProgress: "In Progress",
+      completed: "Completed"
     },
     
     // Contact Section
@@ -398,18 +416,36 @@ export const translations = {
     
     // Projects Section
     projects: {
-      title: "Proyectos Destacados",
-      subtitle: "Algunos de mis trabajos recientes",
+      title: "Proyectos",
       filters: {
+        featured: "Proyectos Destacados",
         all: "Todos los Proyectos",
         fullstack: "Full Stack",
         frontend: "Frontend",
-        backend: "Backend", 
-        mobile: "Móvil"
+        backend: "Backend",
+        powerplatform: "Power Platform",
+        ai: "IA y Machine Learning",
+        azure: "Azure Cloud",
+        management: "Gestión de Proyectos"
+      },
+      categories: {
+        featured: "Proyectos Destacados",
+        all: "Todos los Proyectos",
+        fullstack: "Desarrollo Full Stack",
+        frontend: "Desarrollo Frontend",
+        backend: "Desarrollo Backend",
+        powerplatform: "Microsoft Power Platform",
+        ai: "IA y Machine Learning",
+        azure: "Microsoft Azure Cloud",
+        management: "Gestión de Proyectos y Equipos"
       },
       viewProject: "Ver Proyecto",
       viewCode: "Ver Código",
-      comingSoon: "Próximamente"
+      viewDemo: "Ver Demo",
+      viewScreenshots: "Ver Capturas",
+      comingSoon: "Próximamente",
+      inProgress: "En Progreso",
+      completed: "Completado"
     },
     
     // Contact Section
