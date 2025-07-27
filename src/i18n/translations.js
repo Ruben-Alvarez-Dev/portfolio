@@ -101,43 +101,46 @@ export const translations = {
       title: "Professional Experience",
       positions: [
         {
-          title: "Tech Analyst",
+          title: "Tech Analyst - Infrastructure Support",
           company: "Accenture, Seville",
           duration: "14 months",
-          type: "Remote technical service and assistance on demand for international partners",
+          type: "IT Infrastructure support specialist providing multi-tier technical solutions for global enterprise clients",
           responsibilities: [
-            "International client support and assistance",
-            "Technical requirements analysis and resolution",
-            "Technical problem solving and troubleshooting",
-            "Remote technical service delivery",
-            "On-demand technical solutions"
+            "Identity and Access Management (IAM) troubleshooting and configuration",
+            "Hardware diagnostics, software deployment, and OS optimization across multiple platforms",
+            "Network infrastructure analysis, connectivity issues resolution, and performance optimization",
+            "Enterprise application support, integration troubleshooting, and system compatibility analysis",
+            "Incident management lifecycle: diagnosis, escalation, and cross-departmental ticket coordination",
+            "Technical documentation and knowledge base maintenance for complex infrastructure scenarios"
           ]
         },
         {
           title: "Tech Analyst - Power Apps Developer", 
-          company: "Arquiconsult Management Solutions, Madrid",
+          company: "Arquiconsult, Madrid",
           duration: "6 months",
-          type: "Power Apps development, process automation, and Microsoft Dynamics 365 integration for enterprise clients",
+          type: "Microsoft Power Platform specialist developing custom solutions and enterprise integrations for corporate clients",
           responsibilities: [
-            "Power Apps canvas and model-driven app development",
-            "Power Automate workflow implementation", 
-            "Microsoft Dynamics 365 integration",
-            "Enterprise client solutions and consulting",
-            "Business process analysis and optimization"
+            "Power Apps canvas and model-driven application development for enterprise workflows",
+            "Complex system integrations using Power Platform connectors and custom APIs", 
+            "Microsoft Dynamics 365 customization and extension development with C#",
+            "Power Automate workflow automation for business process optimization",
+            "Cross-platform data integration and real-time synchronization solutions",
+            "Technical consulting and solution architecture for digital transformation projects"
           ]
         },
         {
-          title: "Operations Manager & Team Leader",
+          title: "Business Operations Director & Team Leader",
           company: "Hospitality Sector",
           duration: "10+ years",
-          type: "Led complete business transformations across premium venues, managing teams of up to 50 people",
+          type: "Led comprehensive business transformations across premium venues with P&L responsibility and multi-unit management",
           responsibilities: [
-            "Operations management in luxury hotels, Michelin-starred restaurants and catering services",
-            "Team management and leadership (up to 50 people)",
-            "Professional training and development programs (certified instructor)",
-            "Business process design and quality optimization",
-            "Multi-venue coordination and franchise management",
-            "KPI monitoring and performance improvement"
+            "Strategic team leadership and talent development across diverse business units (teams of up to 50 people)",
+            "Extensive experience operating in high-end environments: luxury hotels, Michelin-starred restaurants, and premium catering services",
+            "Multi-unit business management including franchise operations and independent business units",
+            "Certified professional training programs design and implementation (certified instructor)",
+            "Business process optimization, quality control systems, and operational excellence initiatives",
+            "Financial management: budget planning, cost control, revenue optimization, and KPI-driven performance analysis",
+            "Stakeholder management and vendor negotiations for supply chain optimization and strategic partnerships"
           ]
         }
       ]
@@ -295,43 +298,46 @@ export const translations = {
       title: "Experiencia Profesional",
       positions: [
         {
-          title: "Analista Técnico",
+          title: "Analista Técnico - Infrastructure Support",
           company: "Accenture, Sevilla",
           duration: "14 meses",
-          type: "Servicio técnico remoto y asistencia bajo demanda para socios internacionales",
+          type: "Especialista en soporte de infraestructura IT proporcionando soluciones técnicas multinivel para clientes empresariales globales",
           responsibilities: [
-            "Soporte y asistencia a clientes internacionales",
-            "Análisis y resolución de requerimientos técnicos",
-            "Resolución de problemas técnicos y troubleshooting",
-            "Entrega de servicios técnicos remotos",
-            "Soluciones técnicas bajo demanda"
+            "Resolución de incidencias en Gestión de Identidad y Acceso (IAM) y configuración de permisos",
+            "Diagnóstico de hardware, despliegue de software y optimización de sistemas operativos multiplataforma",
+            "Análisis de infraestructura de red, resolución de problemas de conectividad y optimización de rendimiento",
+            "Soporte de aplicaciones empresariales, troubleshooting de integraciones y análisis de compatibilidad",
+            "Gestión del ciclo de vida de incidencias: diagnóstico, escalado y coordinación interdepartamental de tickets",
+            "Documentación técnica y mantenimiento de base de conocimiento para escenarios complejos de infraestructura"
           ]
         },
         {
           title: "Analista Técnico - Desarrollador Power Apps",
-          company: "Arquiconsult Management Solutions, Madrid", 
+          company: "Arquiconsult, Madrid", 
           duration: "6 meses",
-          type: "Desarrollo Power Apps, automatización de procesos e integración Microsoft Dynamics 365 para clientes empresariales",
+          type: "Especialista en Microsoft Power Platform desarrollando soluciones personalizadas e integraciones empresariales para clientes corporativos",
           responsibilities: [
-            "Desarrollo de aplicaciones canvas y model-driven en Power Apps",
-            "Implementación de flujos de trabajo con Power Automate",
-            "Integración con Microsoft Dynamics 365",
-            "Soluciones y consultoría para clientes empresariales",
-            "Análisis y optimización de procesos empresariales"
+            "Desarrollo de aplicaciones Power Apps canvas y model-driven para flujos de trabajo empresariales",
+            "Integraciones complejas de sistemas usando conectores Power Platform y APIs personalizadas",
+            "Personalización y desarrollo de extensiones Microsoft Dynamics 365 con C#",
+            "Automatización de flujos de trabajo con Power Automate para optimización de procesos empresariales",
+            "Soluciones de integración de datos multiplataforma y sincronización en tiempo real",
+            "Consultoría técnica y arquitectura de soluciones para proyectos de transformación digital"
           ]
         },
         {
-          title: "Director de Operaciones y Líder de Equipos",
+          title: "Director de Operaciones Empresariales y Líder de Equipos",
           company: "Sector Hotelero",
           duration: "10+ años", 
-          type: "Lideré transformaciones empresariales completas en establecimientos premium, gestionando equipos de hasta 50 personas",
+          type: "Lideré transformaciones empresariales integrales en establecimientos premium con responsabilidad P&L y gestión multi-unidad",
           responsibilities: [
-            "Gestión de operaciones en hoteles de lujo, restaurantes con estrella Michelin y servicios de catering",
-            "Gestión y liderazgo de equipos (hasta 50 personas)",
-            "Programas de formación y desarrollo profesional (instructor certificado)",
-            "Diseño de procesos empresariales y optimización de calidad",
-            "Coordinación multi-establecimiento y gestión de franquicias",
-            "Monitoreo de KPIs y mejora del rendimiento"
+            "Liderazgo estratégico de equipos y desarrollo de talento en diversas unidades de negocio (equipos de hasta 50 personas)",
+            "Amplia experiencia operando en entornos de alta gama: hoteles de lujo, restaurantes con estrella Michelin y servicios de catering premium",
+            "Gestión empresarial multi-unidad incluyendo operaciones de franquicia y unidades de negocio independientes",
+            "Diseño e implementación de programas de formación profesional certificada (instructor certificado)",
+            "Optimización de procesos empresariales, sistemas de control de calidad e iniciativas de excelencia operacional",
+            "Gestión financiera: planificación presupuestaria, control de costes, optimización de ingresos y análisis de rendimiento basado en KPIs",
+            "Gestión de stakeholders y negociaciones con proveedores para optimización de cadena de suministro y alianzas estratégicas"
           ]
         }
       ]
