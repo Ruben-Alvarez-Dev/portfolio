@@ -1,0 +1,102 @@
+/* ==========================================
+   SECTION HEADER - COMPONENTE COMPLETAMENTE AUTÓNOMO
+   TODOS los estilos de títulos de sección están aquí
+   ======================================== */
+
+.section-header {
+  margin-bottom: var(--spacing-2); /* Reducido de spacing-8 a spacing-2 para compensar el padding superior de Section */
+  /* padding-top eliminado: Section maneja el espaciado superior */
+}
+
+/* Alineaciones */
+.section-header--center {
+  text-align: center;
+}
+
+.section-header--left {
+  text-align: left;
+}
+
+.section-header--right {
+  text-align: right;
+}
+
+/* Subtitle */
+.section-header__subtitle {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--spacing-2);
+}
+
+/* 
+  TÍTULO H2 - TODOS los estilos aquí, autónomo
+  No depende de estilos globales, controla su propio tamaño
+*/
+.section-header__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--spacing-3) 0; /* Reset margins y espacio optimizado del subrayado */
+}
+
+/* SUBRAYADO - Siempre debajo del texto, siempre centrado */
+.section-header__title--underline {
+  position: relative;
+  display: inline-block;
+}
+
+.section-header__title--underline::after {
+  content: '';
+  position: absolute;
+  top: 100%; /* Debajo del texto, desde la parte inferior */
+  margin-top: var(--spacing-2); /* Separación del texto */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 100%
+  );
+  border-radius: var(--border-radius-full);
+}
+
+/* Description */
+.section-header__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+  max-width: 600px;
+}
+
+.section-header--center .section-header__description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: var(--spacing-1); /* Reducido aún más en móvil para mantener proporción */
+    /* Sin padding-top: Section maneja el espaciado superior */
+  }
+  
+  .section-header__title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .section-header__description {
+    font-size: var(--font-size-base);
+  }
+  
+  .section-header__title--underline::after {
+    width: 60px; /* Subrayado más pequeño en móvil */
+  }
+}

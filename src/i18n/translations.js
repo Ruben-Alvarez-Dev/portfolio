@@ -64,8 +64,23 @@ export const translations = {
           },
           {
             name: "Power Platform Fundamentals PL-900",
-            issuer: "Microsoft Corporation", 
+            issuer: "Microsoft Corporation",
             year: "2024"
+          },
+          {
+            name: "IT Specialist in Databases",
+            issuer: "Microsoft Corporation",
+            year: "2024"
+          },
+          {
+            name: "Oracle Cybersecurity",
+            issuer: "Oracle Corporation",
+            year: "2024"
+          },
+          {
+            name: "Professional Certificate in Train-the-Trainer",
+            issuer: "Universidad Antonio de Nebrija, Madrid",
+            year: "2019"
           },
           {
             name: "Full Stack Web Developer Bootcamp",
@@ -78,9 +93,9 @@ export const translations = {
             year: "2020"
           },
           {
-            name: "Professional Certificate in Train-the-Trainer",
-            issuer: "Universidad Antonio de Nebrija, Madrid",
-            year: "2019"
+            name: "Business and Administration (Level 2)",
+            issuer: "Sunderland College, Liverpool",
+            year: "2015"
           },
           {
             name: "Advanced Diploma in Web Application Development (Level 5)",
@@ -98,12 +113,13 @@ export const translations = {
     
     // Experience Section
     experience: {
-      title: "Professional Experience",
+      title: "Experience",
       positions: [
         {
           title: "Tech Analyst - Infrastructure Support",
           company: "Accenture, Seville",
           duration: "14 months",
+          year: "2024",
           type: "IT Infrastructure support specialist providing multi-tier technical solutions for global enterprise clients",
           responsibilities: [
             "Identity and Access Management (IAM) troubleshooting and configuration",
@@ -118,6 +134,7 @@ export const translations = {
           title: "Tech Analyst - Power Apps Developer", 
           company: "Arquiconsult, Madrid",
           duration: "6 months",
+          year: "2023",
           type: "Microsoft Power Platform specialist developing custom solutions and enterprise integrations for corporate clients",
           responsibilities: [
             "Power Apps canvas and model-driven application development for enterprise workflows",
@@ -132,6 +149,7 @@ export const translations = {
           title: "Business Operations Director & Team Leader",
           company: "Hospitality Sector",
           duration: "10+ years",
+          year: "2013-2023",
           type: "Led comprehensive business transformations across premium venues with P&L responsibility and multi-unit management",
           responsibilities: [
             "Strategic team leadership and talent development across diverse business units (teams of up to 50 people)",
@@ -182,8 +200,7 @@ export const translations = {
     
     // Contact Section
     contact: {
-      title: "Let's Work Together",
-      subtitle: "Ready to start your next project?",
+      title: "Contact",
       form: {
         title: "Send me a message",
         subtitle: "Fill out the form and I'll get back to you as soon as possible",
@@ -200,7 +217,9 @@ export const translations = {
         title: "Contact Information",
         email: "info@rubenalvarez.dev",
         phone: "+34 612 05 95",
-        location: "Spain (Travel Available)"
+        location: "Spain (Travel Available)",
+        github: "Ruben-Alvarez-Dev",
+        linkedin: "ruben-alvarez-dev"
       },
       social: {
         title: "Follow Me",
@@ -278,8 +297,18 @@ export const translations = {
             year: "2024"
           },
           {
-            name: "Power Platform Fundamentals PL-900", 
+            name: "Power Platform Fundamentals PL-900",
             issuer: "Microsoft Corporation",
+            year: "2024"
+          },
+          {
+            name: "IT Specialist in Databases",
+            issuer: "Microsoft Corporation",
+            year: "2024"
+          },
+          {
+            name: "Oracle Cybersecurity",
+            issuer: "Oracle Corporation",
             year: "2024"
           },
           {
@@ -293,17 +322,22 @@ export const translations = {
             year: "2020"
           },
           {
+            name: "Business and Administration (Level 2)",
+            issuer: "Sunderland College, Liverpool",
+            year: "2015"
+          },
+          {
             name: "Certificado Profesional en Formación de Formadores",
             issuer: "Universidad Antonio de Nebrija, Madrid",
             year: "2019"
           },
           {
-            name: "Diploma Avanzado en Desarrollo de Aplicaciones Web (Nivel 5)",
-            issuer: "IES Llerna, Lleida Sevilla", 
+            name: "FP Superior en Desarrollo de Aplicaciones Web",
+            issuer: "IES Llerna, Lleida Sevilla",
             year: "2018"
           },
           {
-            name: "Diploma Avanzado en Gestión de Servicios de Restauración (Nivel 5)",
+            name: "FP Superior en Dirección de Servicios de Restauración",
             issuer: "IES Atenea and IES Vesta, Sevilla-Murcia",
             year: "2016"
           }
@@ -313,12 +347,13 @@ export const translations = {
     
     // Experience Section
     experience: {
-      title: "Experiencia Profesional",
+      title: "Experiencia",
       positions: [
         {
           title: "Analista Técnico - Infrastructure Support",
           company: "Accenture, Sevilla",
           duration: "14 meses",
+          year: "2024",
           type: "Especialista en soporte de infraestructura IT proporcionando soluciones técnicas multinivel para clientes empresariales globales",
           responsibilities: [
             "Resolución de incidencias en Gestión de Identidad y Acceso (IAM) y configuración de permisos",
@@ -333,6 +368,7 @@ export const translations = {
           title: "Analista Técnico - Desarrollador Power Apps",
           company: "Arquiconsult, Madrid", 
           duration: "6 meses",
+          year: "2023",
           type: "Especialista en Microsoft Power Platform desarrollando soluciones personalizadas e integraciones empresariales para clientes corporativos",
           responsibilities: [
             "Desarrollo de aplicaciones Power Apps canvas y model-driven para flujos de trabajo empresariales",
@@ -347,6 +383,7 @@ export const translations = {
           title: "Director de Operaciones Empresariales y Líder de Equipos",
           company: "Sector Hotelero",
           duration: "10+ años", 
+          year: "2013-2023",
           type: "Lideré transformaciones empresariales integrales en establecimientos premium con responsabilidad P&L y gestión multi-unidad",
           responsibilities: [
             "Liderazgo estratégico de equipos y desarrollo de talento en diversas unidades de negocio (equipos de hasta 50 personas)",
@@ -450,8 +487,7 @@ export const translations = {
     
     // Contact Section
     contact: {
-      title: "Trabajemos Juntos",
-      subtitle: "¿Listo para comenzar tu próximo proyecto?",
+      title: "Contact",
       form: {
         title: "Envíame un mensaje",
         subtitle: "Completa el formulario y te responderé lo antes posible",
@@ -468,7 +504,9 @@ export const translations = {
         title: "Información de Contacto",
         email: "info@rubenalvarez.dev", 
         phone: "+34 612 05 95",
-        location: "España (Disponible para Viajar)"
+        location: "España (Disponible para Viajar)",
+        github: "Ruben-Alvarez-Dev",
+        linkedin: "ruben-alvarez-dev"
       },
       social: {
         title: "Sígueme",

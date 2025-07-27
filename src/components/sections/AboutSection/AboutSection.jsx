@@ -1,5 +1,6 @@
 import React from 'react';
 import { useI18n } from '../../../i18n';
+import { Section, SectionHeader, SectionContent, Grid, Flex, Card, Tag } from '../../ui';
 import './AboutSection.css';
 
 const AboutSection = () => {
@@ -38,32 +39,36 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="about-section">
-      <div className="about-container">
-        <div className="about-header">
-          <h2 className="about-title">{t('profile.title')}</h2>
-        </div>
+    <Section id="about" className="about-section">
+      <SectionHeader 
+        title={t('profile.title')}
+        align="center"
+        underline={true}
+      />
 
-        <div className="about-content">
-          <div className="profile-grid-layout">
-            {/* Columna izquierda */}
-            <div className="left-column">
-              {/* Card 1: Descripción del perfil */}
-              <div className="skills-card">
-                <h3 className="skills-card-title">Profile</h3>
-                <div className="profile-text">
+      <SectionContent layout="flex" spacing="sm" maxWidth="lg">
+        <Grid columns={2} gap="lg" responsive={true} className="about-grid">
+          {/* Columna izquierda */}
+          <Flex direction="column" gap="lg" className="about-column about-column--left">
+            {/* Card 1: Descripción del perfil */}
+            <Card variant="default" className="skills-card about-card--profile">
+              <Card.Title underline={true}>Profile</Card.Title>
+              <Card.Content>
+                <Flex direction="column" gap="sm" className="profile-text">
                   {paragraphs.map((paragraph, index) => (
                     <p key={index} className="about-description">
                       {paragraph.trim()}
                     </p>
                   ))}
-                </div>
-              </div>
+                </Flex>
+              </Card.Content>
+            </Card>
 
-              {/* Card 3: Competencias Clave */}
-              <div className="skills-card">
-                <h3 className="skills-card-title">{t('profile.softSkills.title')}</h3>
-                <div className="competencies-pills">
+            {/* Card 3: Competencias Clave */}
+            <Card variant="default" className="skills-card about-card--competencies">
+              <Card.Title underline={true}>{t('profile.softSkills.title')}</Card.Title>
+              <Card.Content>
+                <Flex direction="column" gap="sm" className="competencies-pills">
                   {/* DESARROLLO & TECNOLOGÍA - AZUL */}
                   <div className="competency-pill competency-tech">
                     <span className="pill-icon">💻</span>
@@ -81,7 +86,7 @@ const AboutSection = () => {
                     <span className="pill-icon">💻</span>
                     <span>Quality Control & Testing</span>
                   </div>
-                  
+
                   {/* METODOLOGÍAS & GESTIÓN - VERDE */}
                   <div className="competency-pill competency-management">
                     <span className="pill-icon">🏆</span>
@@ -99,7 +104,7 @@ const AboutSection = () => {
                     <span className="pill-icon">🏆</span>
                     <span>Training & Team Development</span>
                   </div>
-                  
+
                   {/* ANÁLISIS & ESTRATEGIA - NARANJA */}
                   <div className="competency-pill competency-strategy">
                     <span className="pill-icon">📊</span>
@@ -109,38 +114,43 @@ const AboutSection = () => {
                     <span className="pill-icon">📊</span>
                     <span>Crisis Management & Conflict Resolution</span>
                   </div>
-                </div>
-              </div>
-            </div>
+                </Flex>
+              </Card.Content>
+            </Card>
+          </Flex>
 
-            {/* Columna derecha */}
-            <div className="right-column">
-              {/* Card 2: Habilidades Técnicas */}
-              <div className="skills-card">
-                <h3 className="skills-card-title">{t('profile.hardSkills.title')}</h3>
-                <div className="skills-tags-grid">
+          {/* Columna derecha */}
+          <Flex direction="column" gap="lg" className="about-column about-column--right">
+            {/* Card 2: Habilidades Técnicas */}
+            <Card variant="default" className="skills-card about-card--technical">
+              <Card.Title underline={true}>{t('profile.hardSkills.title')}</Card.Title>
+              <Card.Content>
+                <Flex direction="column" gap="md" className="skills-tags-grid">
                   {hardSkillCategories.map((category, index) => (
                     <div key={index} className="skill-category-tags">
-                      <h4 className="category-title-small">{category.category}</h4>
-                      <div className="tech-badges">
+                      <h4 className="card__subtitle">{category.category}</h4>
+                      <Flex wrap="wrap" gap="xs" className="tech-badges">
                         {category.technologies.map((tech, techIndex) => (
-                          <span 
-                            key={techIndex} 
+                          <Tag
+                            key={techIndex}
+                            variant="outline"
                             className={`tech-badge tech-badge-${index}`}
                           >
                             {tech}
-                          </span>
+                          </Tag>
                         ))}
-                      </div>
+                      </Flex>
                     </div>
                   ))}
-                </div>
-              </div>
+                </Flex>
+              </Card.Content>
+            </Card>
 
-              {/* Card 4: Habilidades Blandas */}
-              <div className="skills-card">
-                <h3 className="skills-card-title">Habilidades Blandas</h3>
-                <div className="soft-skills-pills">
+            {/* Card 4: Habilidades Blandas */}
+            <Card variant="default" className="skills-card about-card--soft">
+              <Card.Title underline={true}>Habilidades Blandas</Card.Title>
+              <Card.Content>
+                <Flex direction="column" gap="sm" className="soft-skills-pills">
                   {/* LIDERAZGO & EQUIPOS - PÚRPURA */}
                   <div className="soft-skill-pill soft-skill-leadership">
                     <span className="pill-icon">👥</span>
@@ -154,7 +164,7 @@ const AboutSection = () => {
                     <span className="pill-icon">👥</span>
                     <span>Gestión de relaciones y negociación</span>
                   </div>
-                  
+
                   {/* COMUNICACIÓN & FORMACIÓN - CIAN */}
                   <div className="soft-skill-pill soft-skill-communication">
                     <span className="pill-icon">🗣️</span>
@@ -162,29 +172,33 @@ const AboutSection = () => {
                   </div>
                   <div className="soft-skill-pill soft-skill-communication">
                     <span className="pill-icon">🗣️</span>
-                    <span>Presentaciones en público</span>
+                    <span>Presentaciones técnicas y comerciales</span>
                   </div>
                   <div className="soft-skill-pill soft-skill-communication">
                     <span className="pill-icon">🗣️</span>
-                    <span>Orientación al cliente y usuario</span>
+                    <span>Documentación técnica y procesos</span>
                   </div>
-                  
-                  {/* RESOLUCIÓN & ADAPTABILIDAD - ROSA */}
-                  <div className="soft-skill-pill soft-skill-problem-solving">
-                    <span className="pill-icon">⚡</span>
-                    <span>Resolución rápida de problemas</span>
+
+                  {/* ADAPTABILIDAD & INNOVACIÓN - ROSA */}
+                  <div className="soft-skill-pill soft-skill-innovation">
+                    <span className="pill-icon">🚀</span>
+                    <span>Adaptabilidad a nuevas tecnologías</span>
                   </div>
-                  <div className="soft-skill-pill soft-skill-problem-solving">
-                    <span className="pill-icon">⚡</span>
-                    <span>Adaptabilidad y aprendizaje continuo</span>
+                  <div className="soft-skill-pill soft-skill-innovation">
+                    <span className="pill-icon">🚀</span>
+                    <span>Pensamiento crítico y resolución creativa</span>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+                  <div className="soft-skill-pill soft-skill-innovation">
+                    <span className="pill-icon">🚀</span>
+                    <span>Mentalidad de mejora continua</span>
+                  </div>
+                </Flex>
+              </Card.Content>
+            </Card>
+          </Flex>
+        </Grid>
+      </SectionContent>
+    </Section>
   );
 };
 

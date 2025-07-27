@@ -1,0 +1,125 @@
+/* ========================================
+   FLEX - COMPONENTE DE LAYOUT FLEXBOX
+   ======================================== */
+
+.flex {
+  display: flex;
+}
+
+/* === DIRECTION === */
+
+.flex--direction-row {
+  flex-direction: row;
+}
+
+.flex--direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.flex--direction-column {
+  flex-direction: column;
+}
+
+.flex--direction-column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* === JUSTIFY CONTENT === */
+
+.flex--justify-flex-start {
+  justify-content: flex-start;
+}
+
+.flex--justify-flex-end {
+  justify-content: flex-end;
+}
+
+.flex--justify-center {
+  justify-content: center;
+}
+
+.flex--justify-space-between {
+  justify-content: space-between;
+}
+
+.flex--justify-space-around {
+  justify-content: space-around;
+}
+
+.flex--justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+/* === ALIGN ITEMS === */
+
+.flex--align-stretch {
+  align-items: stretch;
+}
+
+.flex--align-flex-start {
+  align-items: flex-start;
+}
+
+.flex--align-flex-end {
+  align-items: flex-end;
+}
+
+.flex--align-center {
+  align-items: center;
+}
+
+.flex--align-baseline {
+  align-items: baseline;
+}
+
+/* === WRAP === */
+
+.flex--wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.flex--wrap-wrap {
+  flex-wrap: wrap;
+}
+
+.flex--wrap-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+
+/* === GAPS === */
+
+.flex--gap-none {
+  gap: 0;
+}
+
+.flex--gap-xs {
+  gap: var(--spacing-2);
+}
+
+.flex--gap-sm {
+  gap: var(--spacing-4);
+}
+
+.flex--gap-md {
+  gap: var(--spacing-6);
+}
+
+.flex--gap-lg {
+  gap: var(--spacing-8);
+}
+
+.flex--gap-xl {
+  gap: var(--spacing-12);
+}
+
+/* === RESPONSIVE HELPERS === */
+
+@media (max-width: 768px) {
+  .flex--responsive-column {
+    flex-direction: column;
+  }
+  
+  .flex--responsive-wrap {
+    flex-wrap: wrap;
+  }
+}

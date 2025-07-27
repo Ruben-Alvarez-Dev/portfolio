@@ -1,8 +1,21 @@
 import React, { useState } from 'react';
 import { useI18n } from '../../../i18n';
+import { Section, SectionHeader, SectionContent, Card, Button, Tag, Grid } from '../../ui';
+import RoundedButton from '../../ui/RoundedButton/RoundedButton';
 import './ProjectsSection.css';
 
 const ProjectsSection = () => {
+  const categoryColors = {
+    featured: '#FFFFFF',
+    all: '#F87171',
+    fullstack: '#A855F7',
+    frontend: '#FB923C',
+    backend: '#4ADE80',
+    powerplatform: '#EC4899',
+    ai: '#60A5FA',
+    azure: '#06B6D4',
+    management: '#FFC107',
+  };
   const { t } = useI18n();
   const [activeFilter, setActiveFilter] = useState('featured');
 
@@ -295,89 +308,99 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="projects-section">
-      <div className="projects-container">
-        <div className="projects-header">
-          <h2 className="projects-title">{t('projects.title')}</h2>
-        </div>
+    <Section id="projects" className="projects-section">
+      <SectionHeader 
+        title={t('projects.title')}
+        align="center"
+        underline={true}
+      />
 
+      <SectionContent layout="flex" spacing="sm" maxWidth="xl">
         {/* Filter Buttons */}
         <div className="filter-buttons">
           {categories.map((category) => (
-            <button
+            <RoundedButton
               key={category}
-              className={`filter-btn ${activeFilter === category ? 'active' : ''}`}
-              data-category={category}
+              title={t(`projects.categories.${category}`)}
+              color={categoryColors[category]}
+              active={activeFilter === category}
               onClick={() => setActiveFilter(category)}
-            >
-              {t(`projects.categories.${category}`)}
-            </button>
+            />
           ))}
         </div>
 
-        {/* Projects Grid */}
-        <div className="projects-grid">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="project-card">
-              <div className="project-image">
-                <img src={project.image} alt={project.title} />
-                <div className="project-overlay">
-                  <div className="project-actions">
-                    {project.liveUrl && (
-                      <a 
-                        href={project.liveUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="btn-action btn-live"
-                        title="Ver demo en vivo"
-                      >
-                        <span className="icon">🚀</span>
-                        Demo
-                      </a>
-                    )}
-                    {project.githubUrl && (
-                      <a 
-                        href={project.githubUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="btn-action btn-code"
-                        title="Ver código en GitHub"
-                      >
-                        <span className="icon">💻</span>
-                        GitHub
-                      </a>
-                    )}
-                    <button 
-                      onClick={() => handleViewScreenshots(project.id)}
-                      className="btn-action btn-screenshots"
-                      title="Ver capturas de pantalla"
-                    >
-                      <span className="icon">�️</span>
-                      Screenshots
-                    </button>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="project-content">
-                <div className="project-header">
-                  <h3 className="project-title">{project.title}</h3>
-                  <span className={`project-status status-${project.status}`}>
-                    {getStatusText(project.status)}
-                  </span>
-                </div>
-                
-                <p className="project-description">{project.description}</p>
-                
-                <div className="project-technologies">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="tech-tag">{tech}</span>
-                  ))}
-                </div>
+      {/* Projects Grid */}
+      <Grid columns="auto" gap="lg" className="projects-grid">
+        {filteredProjects.map((project) => (
+          <Card key={project.id} variant="default" hover className="project-card">
+            <Card.Image
+              src={project.image}
+              alt={project.title}
+              className="project-image card__image--aspect-video"
+            />
+            
+            <div className="project-overlay">
+              <div className="project-actions">
+                {project.liveUrl && (
+                  <Button
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="primary"
+                    size="sm"
+                    icon="🚀"
+                  >
+                    Demo
+                  </Button>
+                )}
+                {project.githubUrl && (
+                  <Button
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="secondary"
+                    size="sm"
+                    icon="💻"
+                  >
+                    GitHub
+                  </Button>
+                )}
+                <Button
+                  onClick={() => handleViewScreenshots(project.id)}
+                  variant="accent"
+                  size="sm"
+                  icon="📷"
+                >
+                  Screenshots
+                </Button>
               </div>
             </div>
-          ))}
-        </div>
+
+            <Card.Body>
+              <div className="project-header">
+                <h3 className="project-title">{project.title}</h3>
+                <Tag
+                  variant={project.status === 'completed' ? 'green' : 
+                          project.status === 'in-progress' ? 'yellow' : 'gray'}
+                  size="sm"
+                >
+                  {getStatusText(project.status)}
+                </Tag>
+              </div>
+              
+              <p className="project-description">{project.description}</p>
+              
+              <div className="project-technologies">
+                {project.technologies.map((tech, index) => (
+                  <Tag key={index} variant="outline" size="sm">
+                    {tech}
+                  </Tag>
+                ))}
+              </div>
+            </Card.Body>
+          </Card>
+        ))}
+      </Grid>
 
         {/* No projects message */}
         {filteredProjects.length === 0 && (
@@ -385,8 +408,8 @@ const ProjectsSection = () => {
             <p>{t('projects.noProjects')}</p>
           </div>
         )}
-      </div>
-    </section>
+      </SectionContent>
+    </Section>
   );
 };
 

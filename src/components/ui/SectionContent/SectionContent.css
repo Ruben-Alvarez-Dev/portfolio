@@ -1,0 +1,100 @@
+/* ========================================
+   SECTION CONTENT - COMPONENTE GENÉRICO
+   Maneja todo el contenido interno de las secciones
+   ======================================== */
+
+.section-content {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* === LAYOUTS === */
+
+.section-content--layout-default {
+  display: block;
+}
+
+.section-content--layout-flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+}
+
+.section-content--layout-grid {
+  display: grid;
+  gap: var(--spacing-6);
+}
+
+.section-content--layout-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* === SPACING === */
+
+.section-content--spacing-none {
+  padding: 0;
+}
+
+.section-content--spacing-sm {
+  padding: 0 0; /* Sin padding vertical: mejor coordinación */
+}
+
+.section-content--spacing-default {
+  padding: var(--spacing-6) 0;
+}
+
+.section-content--spacing-lg {
+  padding: var(--spacing-12) 0;
+}
+
+/* === MAX WIDTH === */
+
+.section-content--max-width-sm {
+  max-width: var(--max-width-2xl);
+}
+
+.section-content--max-width-default {
+  max-width: var(--max-width-4xl);
+}
+
+.section-content--max-width-lg {
+  max-width: var(--max-width-6xl);
+}
+
+.section-content--max-width-xl {
+  max-width: var(--max-width-7xl);
+}
+
+.section-content--max-width-full {
+  max-width: 100%;
+}
+
+/* === RESPONSIVE === */
+
+@media (min-width: 768px) {
+  .section-content--layout-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .section-content--spacing-sm {
+    padding: var(--spacing-6) 0;
+  }
+  
+  .section-content--spacing-default {
+    padding: var(--spacing-8) 0;
+  }
+  
+  .section-content--spacing-lg {
+    padding: var(--spacing-16) 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-content--spacing-lg {
+    padding: var(--spacing-20) 0;
+  }
+}

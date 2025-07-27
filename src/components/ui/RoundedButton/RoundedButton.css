@@ -1,0 +1,13 @@
+.rounded-btn {
+  border-radius: 999px;
+  padding: 0.4em 1.4em;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  margin: 0 0.4em 0.8em 0;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  /* Los estilos dinámicos (color, background, box-shadow, border) se definen inline por JS */
+}
