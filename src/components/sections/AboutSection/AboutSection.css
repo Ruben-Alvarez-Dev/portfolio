@@ -9,6 +9,7 @@
 /* === LAYOUT Y ALINEACIÓN === */
 .about-grid {
   align-items: stretch; /* Las columnas tendrán la misma altura */
+  min-height: 600px; /* Altura mínima garantizada */
 }
 
 .about-column {
@@ -46,6 +47,18 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 100%; /* Ocupar toda la altura disponible */
+}
+
+/* Hacer que los contenedores internos se expandan */
+.about-card--profile .about-description-condensed,
+.about-card--technical .skills-tags-grid,
+.about-card--competencies .competencies-list,
+.about-card--soft .soft-skills-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuir uniformemente */
 }
 
 /* === REDUCIENDO ESPACIO ENTRE TÍTULO Y CONTENIDO === */
@@ -53,7 +66,7 @@
 .about-card--competencies .card__title--underline,
 .about-card--technical .card__title--underline,
 .about-card--soft .card__title--underline {
-  margin-bottom: var(--spacing-1); /* Reducido de spacing-2 a spacing-1 (4px) */
+  margin-bottom: var(--spacing-3); /* Ajustado para mejor legibilidad (12px) */
 }
 
 /* Los contenedores de pills/badges se expanden para llenar el espacio */
@@ -116,6 +129,8 @@
 .profile-paragraph {
   margin-bottom: 1rem;
   text-align: left;
+  text-indent: 2em; /* Sangría inglesa - primera línea indentada */
+  padding-left: 0;
 }
 
 .profile-paragraph:last-child {
@@ -149,12 +164,25 @@
   line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
   text-align: justify;
-  text-indent: 2em;
+  text-indent: 2em; /* Sangría inglesa mantenida */
   margin-bottom: var(--spacing-4);
 }
 
 .about-description:last-child {
   margin-bottom: 0;
+}
+
+/* Espaciado mejorado para categorías de habilidades técnicas */
+.skill-category-tags {
+  margin-bottom: var(--spacing-4); /* Aumentado espaciado entre categorías */
+}
+
+.skill-category-tags:last-child {
+  margin-bottom: 0;
+}
+
+.skill-category-tags .card__subtitle {
+  margin-bottom: var(--spacing-3); /* Más espacio entre título y tags */
 }
 
 

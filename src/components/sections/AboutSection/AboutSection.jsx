@@ -54,19 +54,21 @@ const AboutSection = () => {
               </Card.Content>
             </Card>
 
-            {/* Card 3: Competencias Profesionales */}
+            {/* Card 3: Key Competencies */}
             <Card variant="default" className="skills-card about-card--competencies">
-              <Card.Title>{t('profile.softSkills.title')}</Card.Title>
+              <Card.Title underline={true}>{t('profile.softSkills.title')}</Card.Title>
               <Card.Content>
                 <Flex direction="column" gap="sm" className="competencies-list">
-                  {Object.entries(t('profile.softSkills.families')).map(([familyKey, family]) => 
-                    family.items.map((competency, index) => (
-                      <div key={`${familyKey}-${index}`} className="competency-item">
-                        <span className="competency-icon">✓</span>
-                        <span className={`competency-text competency-text-${family.color}`}>{competency}</span>
-                      </div>
-                    ))
-                  ).flat()}
+                  {Object.entries(t('profile.softSkills.families')).map(([familyKey, family]) => (
+                    <div key={familyKey} className="competency-item">
+                      <span className="competency-icon">✓</span>
+                      <span className={`competency-text competency-text-${family.color}`}>
+                        <strong><u>{familyKey === 'development' ? (t('nav.language') === 'EN' ? 'Development' : 'Desarrollo') : 
+                                familyKey === 'management' ? (t('nav.language') === 'EN' ? 'Management' : 'Gestión') : 
+                                (t('nav.language') === 'EN' ? 'Strategy' : 'Estrategia')}:</u></strong> {family.items.join(', ')}
+                      </span>
+                    </div>
+                  ))}
                 </Flex>
               </Card.Content>
             </Card>
@@ -75,9 +77,9 @@ const AboutSection = () => {
           {/* Columna derecha */}
           <Flex direction="column" gap="lg" className="about-column about-column--right">
             
-            {/* Card 2: Tecnologías & Herramientas */}
+            {/* Card 2: Technical Skills */}
             <Card variant="default" className="skills-card about-card--technical">
-              <Card.Title underline={true}>Tecnologías & Herramientas</Card.Title>
+              <Card.Title underline={true}>{t('profile.hardSkills.title')}</Card.Title>
               <Card.Content>
                 <Flex direction="column" gap="md" className="skills-tags-grid">
                   {techStack.map((category, index) => (
@@ -110,10 +112,6 @@ const AboutSection = () => {
               <Card.Content>
                 <Flex direction="column" gap="sm" className="soft-skills-list">
                   <div className="soft-skill-item">
-                    <span className="soft-skill-icon">👥</span>
-                    <span className="soft-skill-text">Liderazgo de Equipos y Gestión de Equipos</span>
-                  </div>
-                  <div className="soft-skill-item">
                     <span className="soft-skill-icon">🗣️</span>
                     <span className="soft-skill-text">Habilidades comunicativas, de oratoria y presentación</span>
                   </div>
@@ -127,7 +125,15 @@ const AboutSection = () => {
                   </div>
                   <div className="soft-skill-item">
                     <span className="soft-skill-icon">🎯</span>
-                    <span className="soft-skill-text">Orientación a Resultados, KPIs y Mejora Continua</span>
+                    <span className="soft-skill-text">Orientación a Resultados</span>
+                  </div>
+                  <div className="soft-skill-item">
+                    <span className="soft-skill-icon">🤝</span>
+                    <span className="soft-skill-text">Liderazgo interpersonal y trabajo en equipo</span>
+                  </div>
+                  <div className="soft-skill-item">
+                    <span className="soft-skill-icon">🌱</span>
+                    <span className="soft-skill-text">Mentoring y desarrollo de talento</span>
                   </div>
                 </Flex>
               </Card.Content>

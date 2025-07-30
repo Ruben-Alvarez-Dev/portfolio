@@ -50,7 +50,8 @@ export const translations = {
             items: [
               "Certified Scrum Master & Agile Leadership",
               "Team Leadership & Development",
-              "Project Management & Coordination"
+              "Project Management & Coordination",
+              "Strategic Team Planning & Resource Allocation"
             ]
           },
           strategy: {
@@ -58,7 +59,8 @@ export const translations = {
             items: [
               "Process Optimization & Analytics",
               "Business Intelligence & KPI Management",
-              "Strategic Planning & Implementation"
+              "Strategic Planning & Implementation",
+              "Cross-functional Collaboration & Stakeholder Management"
             ]
           }
         }
@@ -566,7 +568,8 @@ export const translations = {
             items: [
               "Scrum Master Certificado y Liderazgo Ágil",
               "Liderazgo de Equipos y Desarrollo",
-              "Gestión de Proyectos y Coordinación"
+              "Gestión de Proyectos y Coordinación",
+              "Planificación Estratégica de Equipos y Asignación de Recursos"
             ]
           },
           strategy: {
@@ -574,7 +577,8 @@ export const translations = {
             items: [
               "Optimización de Procesos y Analítica",
               "Inteligencia de Negocio y Gestión de KPIs",
-              "Planificación Estratégica e Implementación"
+              "Planificación Estratégica e Implementación",
+              "Colaboración Interfuncional y Gestión de Stakeholders"
             ]
           }
         }
