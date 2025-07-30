@@ -25,6 +25,10 @@
   /* Eliminado el efecto hover para mantener las cards estáticas */
 }
 
+.academic-card .card__body--compact {
+  padding: calc(var(--spacing-2) + 2px) !important; /* 10px móvil, 14px desktop */
+}
+
 /* === COLUMNA DERECHA - CERTIFICACIONES === */
 .certifications-column {
   display: flex;
@@ -42,7 +46,18 @@
   /* Eliminado el efecto hover para mantener las cards estáticas */
 }
 
+.certification-card .card__body--compact {
+  padding: calc(var(--spacing-2) + 2px) !important; /* 10px móvil, 14px desktop */
+}
+
 /* === CONTENIDO DE LAS CARDS === */
+.education-item {
+  align-items: flex-start !important;
+}
+
+.certification-card .education-item {
+  align-items: flex-start !important;
+}
 .education-item {
   display: flex;
   justify-content: space-between;
@@ -51,22 +66,20 @@
   width: 100%;
 }
 
-/* === ESTILOS DE TEXTO === */
-.education-name,
-.academic-name,
-.certification-name {
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-medium);
-  line-height: 1.3;
-  margin: 0;
+/* === ESTILOS DE TEXTO BASE === */
+.card-text-level-3.education-name {
+  color: var(--color-text-primary) !important;
+  font-weight: var(--font-weight-medium) !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+  font-size: 1em !important; /* Tamaño base uniforme */
 }
 
-.education-institution,
-.academic-institution,
-.certification-institution {
-  color: var(--color-text-secondary);
-  margin: 0;
-  line-height: 1.4;
+.card-text-level-3.education-institution {
+  color: var(--color-text-secondary) !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+  font-size: 0.9em !important; /* Tamaño uniforme para instituciones */
 }
 
 /* === TAGS DE AÑO === */
@@ -75,6 +88,86 @@
   flex-shrink: 0;
   white-space: nowrap;
   align-self: flex-start;
+}
+
+/* === COLORES ESPECÍFICOS POR TIPO === */
+.academic-card .card-text-level-3.education-institution {
+  color: var(--color-primary-light) !important;
+}
+
+.certification-card .card-text-level-3.education-institution {
+  color: var(--color-secondary) !important;
+}
+
+/* === INSIGNIAS DE CERTIFICACIÓN === */
+.certification-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.certification-badge:hover {
+  opacity: 1;
+}
+
+.certification-badge-link {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.certification-badge-link:hover {
+  transform: scale(1.05);
+}
+
+.certification-badge-link:hover .certification-badge {
+  opacity: 1;
+}
+
+.badge-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+  opacity: 0.95;
+}
+
+/* === WEIGHT-BASED STYLING === */
+.priority-high {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, var(--color-surface) 0%, rgba(255, 255, 255, 0.03) 100%);
+}
+
+.priority-high .card-text-level-3.education-name {
+  font-size: 1.1em !important;
+  font-weight: var(--font-weight-semibold) !important;
+}
+
+.priority-medium {
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+  background: linear-gradient(135deg, var(--color-surface) 0%, rgba(255, 255, 255, 0.01) 100%);
+}
+
+.priority-medium .card-text-level-3.education-name {
+  font-size: 1em !important;
+  font-weight: var(--font-weight-medium) !important;
+}
+
+.priority-low {
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 4px rgba(var(--color-text-secondary-rgb), 0.05);
+}
+
+.priority-low .card-text-level-3.education-name {
+  font-size: 0.9em !important;
+  font-weight: var(--font-weight-normal) !important;
 }
 
 /* === RESPONSIVE === */

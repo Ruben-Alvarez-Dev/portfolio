@@ -79,7 +79,7 @@
 
 /* === NIVEL 3: CONTENIDO COMPACTO (Education Cards) === */
 .card__body--compact {
-  padding: var(--spacing-4); /* 16px móvil, 20px desktop */
+  padding: var(--spacing-2); /* 8px móvil, 12px desktop */
   flex: 1;
 }
 

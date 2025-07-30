@@ -66,40 +66,67 @@ export const translations = {
         }
       },
       certifications: {
-        title: "Education",
+        title: "Certifications & Education",
         items: [
           {
             name: "Scrum Master Certificate (PSM I)",
             issuer: "Scrum.org",
             year: "2024",
+            type: "certification",
+            order: 1,
             featured: true
           },
           {
-            name: "Full Stack Web Developer Bootcamp",
-            issuer: "Neoland School, Madrid",
-            year: "2023",
+            name: "Azure Fundamentals AZ-900",
+            issuer: "Microsoft Corporation",
+            year: "2024",
+            type: "certification",
+            order: 2,
             featured: true
           },
           {
             name: "Power Platform Fundamentals PL-900",
             issuer: "Microsoft Corporation",
             year: "2024",
+            type: "certification",
+            order: 3,
             featured: true
           },
           {
-            name: "Azure Fundamentals AZ-900",
-            issuer: "Microsoft Corporation",
-            year: "2024"
+            name: "Full Stack Web Developer Bootcamp",
+            issuer: "Neoland School, Madrid",
+            year: "2023",
+            type: "title",
+            order: 4,
+            featured: true
           },
           {
-            name: "Advanced Diploma in Web Application Development",
-            issuer: "IES Llerna, Sevilla",
-            year: "2018"
-          },
-          {
-            name: "Master's in Educational Pedagogy",
+            name: "Master's in Educational Pedagogy COPyDE",
             issuer: "Universidad de Murcia",
-            year: "2020"
+            year: "2020",
+            type: "title",
+            order: 5
+          },
+          {
+            name: "Professional Certificate in Train-the-Trainer",
+            issuer: "Universidad Antonio de Nebrija, Madrid",
+            year: "2019",
+            type: "certification",
+            order: 6
+          },
+          {
+            name: "Advanced Diploma in Web Application Development (Level 5)",
+            issuer: "IES Llerna, Lleida Sevilla",
+            year: "2018",
+            type: "title",
+            order: 7
+          },
+          {
+            name: "Advanced Diploma in Restaurant Service Management (Level 5)",
+            issuer: "IES Atenea and IES Vesta, Sevilla-Murcia",
+            year: "2016",
+            type: "title",
+            order: 8
           }
         ]
       }
@@ -584,62 +611,67 @@ export const translations = {
         }
       },
       certifications: {
-        title: "Formación",
+        title: "Certificaciones y Formación",
         items: [
           {
             name: "Certificado Scrum Master (PSM I)",
             issuer: "Scrum.org",
-            year: "2024"
+            year: "2024",
+            type: "certification",
+            order: 1,
+            featured: true
           },
           {
             name: "Azure Fundamentals AZ-900",
             issuer: "Microsoft Corporation",
-            year: "2024"
+            year: "2024",
+            type: "certification",
+            order: 2,
+            featured: true
           },
           {
             name: "Power Platform Fundamentals PL-900",
             issuer: "Microsoft Corporation",
-            year: "2024"
-          },
-          {
-            name: "IT Specialist in Databases",
-            issuer: "Microsoft Corporation",
-            year: "2024"
-          },
-          {
-            name: "Oracle Cybersecurity",
-            issuer: "Oracle Corporation",
-            year: "2024"
+            year: "2024",
+            type: "certification",
+            order: 3,
+            featured: true
           },
           {
             name: "Bootcamp Desarrollador Web Full Stack",
             issuer: "Neoland School, Madrid",
-            year: "2023"
+            year: "2023",
+            type: "title",
+            order: 4,
+            featured: true
           },
           {
             name: "Máster en Pedagogía Educacional COPyDE",
             issuer: "Universidad de Murcia",
-            year: "2020"
-          },
-          {
-            name: "Business and Administration (Level 2)",
-            issuer: "Sunderland College, Liverpool",
-            year: "2015"
+            year: "2020",
+            type: "title",
+            order: 5
           },
           {
             name: "Certificado Profesional en Formación de Formadores",
             issuer: "Universidad Antonio de Nebrija, Madrid",
-            year: "2019"
+            year: "2019",
+            type: "certification",
+            order: 6
           },
           {
-            name: "FP Superior en Desarrollo de Aplicaciones Web",
+            name: "Diploma Avanzado en Desarrollo de Aplicaciones Web (Nivel 5)",
             issuer: "IES Llerna, Lleida Sevilla",
-            year: "2018"
+            year: "2018",
+            type: "title",
+            order: 7
           },
           {
-            name: "FP Superior en Dirección de Servicios de Restauración",
+            name: "Diploma Avanzado en Gestión de Servicios de Restauración (Nivel 5)",
             issuer: "IES Atenea and IES Vesta, Sevilla-Murcia",
-            year: "2016"
+            year: "2016",
+            type: "title",
+            order: 8
           }
         ]
       }
