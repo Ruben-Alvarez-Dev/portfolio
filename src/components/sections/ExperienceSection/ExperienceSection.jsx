@@ -17,9 +17,9 @@ const ExperienceSection = () => {
       <SectionContent layout="flex" spacing="sm" maxWidth="lg">
         <div className="experience-timeline">
           {experiences.map((exp, index) => (
-            <Flex key={index} align="start" gap="md" className="experience-item">
+            <Flex key={index} align="start" gap="md" className="experience-item" style={{ width: '100%' }}>
               <div className="experience-marker"></div>
-              <Card variant="default" className="experience-card">
+              <Card variant="default" className="experience-card" style={{ flex: 1 }}>
                 <Card.Body>
                   <Flex direction="column" gap="md">
                     <Flex justify="between" align="start" wrap="wrap" gap="sm" className="experience-header">
@@ -33,6 +33,7 @@ const ExperienceSection = () => {
                         glow={true}
                         clickable={true}
                         position={true}
+                        bordered={true}
                         className="experience-year"
                       >
                         {exp.duration}

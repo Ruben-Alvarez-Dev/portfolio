@@ -1,24 +1,34 @@
-/* ========================================
-   PROJECTS SECTION - ESTILOS ESPECÍFICOS
-   ======================================== */
+/* ProjectsSection.css - Refactorizada para seguir el patrón de las otras secciones */
+/* ProjectsSection.css - Solo estilos específicos de contenido */
 
-/* === BOTONES DE FILTRO === */
+/* Efecto de partículas de fondo - más sutil */
+.projects-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 60%, rgba(34, 197, 94, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
 
-
-/* Botones de filtro - restaurados con gradiente, borde y sombra */
+/* Filter Buttons Container */
 .filter-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--spacing-3);
   justify-content: center;
-  margin-bottom: var(--spacing-12);
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-6);
 }
 
 
-
-
 .filter-btn {
-  padding: var(--spacing-1) var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-4);
   border-radius: var(--border-radius-full);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
@@ -27,41 +37,20 @@
   cursor: pointer;
   white-space: nowrap;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(8px);
 }
 
+/* Colores específicos para cada categoría de filtro */
 .filter-btn[data-category="featured"] {
   background: rgba(100, 116, 139, 0.3);
   color: #FFFFFF;
   border-color: rgba(148, 163, 184, 0.5);
 }
-.filter-btn[data-category="featured"].active,
-.filter-btn[data-category="featured"]:hover {
-  background: rgba(100, 116, 139, 0.7);
-  color: #FFFFFF;
-  border-color: rgba(148, 163, 184, 0.8);
-  box-shadow: 0 0 15px rgba(100, 116, 139, 0.4), 0 0 30px rgba(100, 116, 139, 0.2), 0 0 12px 2px #fff;
-  filter: brightness(1.3);
-}
 
 .filter-btn[data-category="all"] {
   background: rgba(239, 68, 68, 0.15);
-  color: #F87171;
+  color: #EF4444;
   border-color: rgba(239, 68, 68, 0.3);
-}
-.filter-btn[data-category="all"].active,
-.filter-btn[data-category="all"]:hover {
-  background: rgba(239, 68, 68, 0.4);
-  color: #F87171 !important;
-  border-color: rgba(239, 68, 68, 0.6);
-  box-shadow: 0 0 24px 6px #F87171, 0 0 30px rgba(239, 68, 68, 0.2);
-  filter: brightness(1.4);
-}
-.filter-btn[data-category="all"].active {
-  background: rgba(239, 68, 68, 0.4);
-  color: #F87171 !important;
-  border-color: transparent;
-  box-shadow: 0 0 24px 6px #fff, 0 0 40px rgba(239,68,68,0.15);
-  filter: brightness(1.4);
 }
 
 .filter-btn[data-category="fullstack"] {
@@ -69,35 +58,11 @@
   color: #A855F7;
   border-color: rgba(168, 85, 247, 0.3);
 }
-.filter-btn[data-category="fullstack"].active,
-.filter-btn[data-category="fullstack"]:hover {
-  background: rgba(168, 85, 247, 0.4);
-  color: #A855F7 !important;
-  border-color: rgba(168, 85, 247, 0.6);
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4), 0 0 30px rgba(168, 85, 247, 0.2), 0 0 12px 2px #fff;
-  filter: brightness(1.4);
-}
 
 .filter-btn[data-category="frontend"] {
   background: rgba(251, 146, 60, 0.15);
   color: #FB923C;
   border-color: rgba(251, 146, 60, 0.3);
-}
-.filter-btn[data-category="frontend"].active,
-.filter-btn[data-category="frontend"]:hover {
-  background: rgba(251, 146, 60, 0.4);
-  color: #FB923C !important;
-  border-color: rgba(251, 146, 60, 0.6);
-  box-shadow: 0 0 24px 6px #FB923C, 0 0 30px rgba(251, 146, 60, 0.2);
-  filter: brightness(1.4);
-}
-
-.filter-btn[data-category="frontend"].active {
-  background: rgba(251, 146, 60, 0.4);
-  color: #FB923C !important;
-  border-color: transparent;
-  box-shadow: 0 0 24px 6px #fff, 0 0 40px rgba(251,146,60,0.15);
-  filter: brightness(1.4);
 }
 
 .filter-btn[data-category="backend"] {
@@ -105,41 +70,11 @@
   color: #4ADE80;
   border-color: rgba(34, 197, 94, 0.3);
 }
-.filter-btn[data-category="backend"].active,
-.filter-btn[data-category="backend"]:hover {
-  background: rgba(34, 197, 94, 0.4);
-  color: #4ADE80 !important;
-  border-color: rgba(34, 197, 94, 0.6);
-  box-shadow: 0 0 24px 6px #4ADE80, 0 0 30px rgba(34, 197, 94, 0.2);
-  filter: brightness(1.4);
-}
-.filter-btn[data-category="backend"].active {
-  background: rgba(34, 197, 94, 0.4);
-  color: #4ADE80 !important;
-  border-color: transparent;
-  box-shadow: 0 0 24px 6px #fff, 0 0 40px rgba(34,197,94,0.15);
-  filter: brightness(1.4);
-}
 
 .filter-btn[data-category="powerplatform"] {
   background: rgba(236, 72, 153, 0.15);
   color: #EC4899;
   border-color: rgba(236, 72, 153, 0.3);
-}
-.filter-btn[data-category="powerplatform"].active,
-.filter-btn[data-category="powerplatform"]:hover {
-  background: rgba(236, 72, 153, 0.4);
-  color: #EC4899 !important;
-  border-color: rgba(236, 72, 153, 0.6);
-  box-shadow: 0 0 24px 6px #EC4899, 0 0 30px rgba(236, 72, 153, 0.2);
-  filter: brightness(1.4);
-}
-.filter-btn[data-category="powerplatform"].active {
-  background: rgba(236, 72, 153, 0.4);
-  color: #EC4899 !important;
-  border-color: transparent;
-  box-shadow: 0 0 24px 6px #fff, 0 0 40px rgba(236,72,153,0.15);
-  filter: brightness(1.4);
 }
 
 .filter-btn[data-category="ai"] {
@@ -147,41 +82,11 @@
   color: #60A5FA;
   border-color: rgba(59, 130, 246, 0.3);
 }
-.filter-btn[data-category="ai"].active,
-.filter-btn[data-category="ai"]:hover {
-  background: rgba(59, 130, 246, 0.4);
-  color: #60A5FA !important;
-  border-color: rgba(59, 130, 246, 0.6);
-  box-shadow: 0 0 24px 6px #60A5FA, 0 0 30px rgba(59, 130, 246, 0.2);
-  filter: brightness(1.4);
-}
-.filter-btn[data-category="ai"].active {
-  background: rgba(59, 130, 246, 0.4);
-  color: #60A5FA !important;
-  border-color: transparent;
-  box-shadow: 0 0 24px 6px #fff, 0 0 40px rgba(59,130,246,0.15);
-  filter: brightness(1.4);
-}
 
 .filter-btn[data-category="azure"] {
   background: rgba(6, 182, 212, 0.15);
   color: #06B6D4;
   border-color: rgba(6, 182, 212, 0.3);
-}
-.filter-btn[data-category="azure"].active,
-.filter-btn[data-category="azure"]:hover {
-  background: rgba(6, 182, 212, 0.4);
-  color: #06B6D4 !important;
-  border-color: rgba(6, 182, 212, 0.6);
-  box-shadow: 0 0 24px 6px #06B6D4, 0 0 30px rgba(6, 182, 212, 0.2);
-  filter: brightness(1.4);
-}
-.filter-btn[data-category="azure"].active {
-  background: rgba(6, 182, 212, 0.4);
-  color: #06B6D4 !important;
-  border-color: transparent;
-  box-shadow: 0 0 24px 6px #fff, 0 0 40px rgba(6,182,212,0.15);
-  filter: brightness(1.4);
 }
 
 .filter-btn[data-category="management"] {
@@ -189,109 +94,137 @@
   color: #FFC107;
   border-color: rgba(255, 193, 7, 0.3);
 }
-.filter-btn[data-category="management"].active,
+
+/* Hover effects para cada categoría */
+.filter-btn[data-category="featured"]:hover {
+  border-color: rgba(148, 163, 184, 0.8);
+  box-shadow: 0 0 15px rgba(100, 116, 139, 0.4), 0 0 30px rgba(100, 116, 139, 0.2);
+  filter: brightness(1.2);
+}
+
+.filter-btn[data-category="all"]:hover {
+  border-color: rgba(239, 68, 68, 0.6);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.4), 0 0 30px rgba(239, 68, 68, 0.2);
+  filter: brightness(1.2);
+}
+
+.filter-btn[data-category="fullstack"]:hover {
+  border-color: rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.4), 0 0 30px rgba(168, 85, 247, 0.2);
+  filter: brightness(1.2);
+}
+
+.filter-btn[data-category="frontend"]:hover {
+  border-color: rgba(251, 146, 60, 0.6);
+  box-shadow: 0 0 15px rgba(251, 146, 60, 0.4), 0 0 30px rgba(251, 146, 60, 0.2);
+  filter: brightness(1.2);
+}
+
+.filter-btn[data-category="backend"]:hover {
+  border-color: rgba(34, 197, 94, 0.6);
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.4), 0 0 30px rgba(34, 197, 94, 0.2);
+  filter: brightness(1.2);
+}
+
+.filter-btn[data-category="powerplatform"]:hover {
+  border-color: rgba(236, 72, 153, 0.6);
+  box-shadow: 0 0 15px rgba(236, 72, 153, 0.4), 0 0 30px rgba(236, 72, 153, 0.2);
+  filter: brightness(1.2);
+}
+
+.filter-btn[data-category="ai"]:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4), 0 0 30px rgba(59, 130, 246, 0.2);
+  filter: brightness(1.2);
+}
+
+.filter-btn[data-category="azure"]:hover {
+  border-color: rgba(6, 182, 212, 0.6);
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.4), 0 0 30px rgba(6, 182, 212, 0.2);
+  filter: brightness(1.2);
+}
+
 .filter-btn[data-category="management"]:hover {
-  background: rgba(255, 193, 7, 0.4);
-  color: #FFC107 !important;
   border-color: rgba(255, 193, 7, 0.6);
-  box-shadow: 0 0 24px 6px #FFC107, 0 0 30px rgba(255, 193, 7, 0.2);
-  filter: brightness(1.4);
-}
-.filter-btn[data-category="management"].active {
-  background: rgba(255, 193, 7, 0.4);
-  color: #FFC107 !important;
-  border-color: transparent;
-  box-shadow: 0 0 24px 6px #fff, 0 0 40px rgba(255,193,7,0.15);
-  filter: brightness(1.4);
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.4), 0 0 30px rgba(255, 193, 7, 0.2);
+  filter: brightness(1.2);
 }
 
-/* === TARJETAS DE PROYECTO === */
-
-.project-card:hover {
-  box-shadow: 0 0 20px rgba(96, 165, 250, 0.3), 0 0 40px rgba(96, 165, 250, 0.15);
-  border-color: rgba(96, 165, 250, 0.7);
-  filter: brightness(1.05);
+.filter-btn:hover {
+  filter: brightness(1.2);
 }
 
-/* Overlay de la imagen */
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity var(--transition-fast);
+.filter-btn.active {
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 255, 255, 0.15);
+  filter: brightness(1.3);
 }
 
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
-.project-actions {
-  display: flex;
-  gap: var(--spacing-3);
-}
-
-/* === CONTENIDO DEL PROYECTO === */
-
-.project-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: var(--spacing-3);
-  gap: var(--spacing-3);
+/* Projects Grid - Máximo 3 columnas, responsive */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-6);
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 
 
-
-
-.project-title {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-  margin: 0;
-  line-height: 1.3;
-  flex: 1;
-  text-shadow: 0 0 8px rgba(96, 165, 250, 0.25), 0 0 2px rgba(0,0,0,0.12);
-}
-
-.project-description {
-  color: var(--color-text-secondary);
-  line-height: 1.6;
-  margin-bottom: var(--spacing-4);
-  font-size: var(--font-size-sm);
-}
-
-.project-technologies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-2);
-}
-
-/* === MENSAJE SIN PROYECTOS === */
-
+/* No projects message */
 .no-projects {
   text-align: center;
   padding: var(--spacing-12) var(--spacing-4);
-  color: var(--color-text-secondary);
+  color: var(--color-gray-400);
+  font-size: var(--font-size-lg);
 }
 
-/* === RESPONSIVE === */
-
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-5);
+  }
+  
   .filter-buttons {
     gap: var(--spacing-2);
   }
   
-  .project-header {
-    flex-direction: column;
-    align-items: flex-start;
+  .filter-btn {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-3);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: var(--spacing-12) 0;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  
+  .filter-buttons {
     gap: var(--spacing-2);
+    margin-bottom: var(--spacing-6);
+  }
+
+  .filter-btn {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-2);
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-buttons {
+    padding: 0 var(--spacing-2);
+  }
+
+  .filter-btn {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
   }
 }

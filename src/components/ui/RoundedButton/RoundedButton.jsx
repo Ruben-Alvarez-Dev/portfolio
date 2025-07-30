@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './RoundedButton.css';
 
-const RoundedButton = ({ title, onClick, color = '#A855F7', active = false }) => {
+const RoundedButton = ({ title, onClick, color = '#A855F7', active = false, 'data-category': dataCategory, ...props }) => {
   const [hover, setHover] = useState(false);
   const baseColor = color;
   
@@ -26,39 +26,42 @@ const RoundedButton = ({ title, onClick, color = '#A855F7', active = false }) =>
     background: `rgba(${hexToRgbString(baseColor)}, ${active ? 0.25 : hover ? 0.2 : 0.15})`,
     
     // Color del texto: más intenso cuando está activo, más brillante en hover
-    color: active 
-      ? `rgba(${hexToRgbString(baseColor)}, 1)` // Color más intenso cuando está activo
-      : hover 
-        ? `rgba(${hexToRgbString(baseColor)}, 1)` // Color brillante en hover
-        : baseColor, // Color normal por defecto
-    
+    color: active
+      ? baseColor // Usa el color base intenso cuando está activo
+      : hover
+        ? baseColor // Color base en hover
+        : `rgba(${hexToRgbString(baseColor)}, 0.85)`, // Color más tenue por defecto
+
     // Borde del mismo color que el texto
     border: `1px solid ${baseColor}`,
-    
-    // Box shadow para el halo/glow - AUMENTADA LA INTENSIDAD
-    boxShadow: active 
-      ? `0 0 16px 4px rgba(255, 255, 255, 0.5), 0 0 32px 8px rgba(255, 255, 255, 0.25)` // Halo blanco cuando está activo - más intenso
-      : hover 
-        ? `0 0 16px 4px rgba(${hexToRgbString(baseColor)}, 0.5), 0 0 28px 6px rgba(${hexToRgbString(baseColor)}, 0.25)` // Halo del color del botón en hover - más intenso
+
+    // Box shadow para el halo/glow - RESPLANDOR REDUCIDO
+    boxShadow: active
+      ? `0 0 12px 3px rgba(255, 255, 255, 0.5), 0 0 24px 6px rgba(255, 255, 255, 0.25)` // Halo blanco cuando está activo - menos amplio
+      : hover
+        ? `0 0 12px 3px rgba(${hexToRgbString(baseColor)}, 0.5), 0 0 20px 4px rgba(${hexToRgbString(baseColor)}, 0.25)` // Halo del color del botón en hover - menos amplio
         : 'none', // Sin halo por defecto
-    
+
     // Brillo del texto: más intenso cuando está activo, brillante en hover
-    filter: active 
-      ? 'brightness(1.4) saturate(1.3)' // Más intenso cuando está activo
-      : hover 
+    filter: active
+      ? 'brightness(1.5) saturate(1.4)' // Más intenso cuando está activo
+      : hover
         ? 'brightness(1.3) saturate(1.2)' // Brillante en hover
         : 'brightness(1)', // Normal por defecto
-    
-    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+
+    // Transición suave
+    transition: 'all 0.3s ease',
   };
 
   return (
     <button
-      className={`rounded-btn${active ? ' active' : ''}`}
+      className="rounded-btn"
       style={buttonStyles}
       onClick={onClick}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
+      data-category={dataCategory}
+      {...props}
     >
       {title}
     </button>

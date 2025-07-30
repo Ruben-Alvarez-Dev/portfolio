@@ -70,6 +70,7 @@ const EducationSection = () => {
                       glow={true}
                       clickable={true}
                       position={true}
+                      bordered={true}
                       className="academic-year"
                     >
                       {edu.year}
@@ -109,6 +110,7 @@ const EducationSection = () => {
                         glow={true}
                         clickable={true}
                         position={true}
+                        bordered={true}
                         className="certification-year"
                       >
                         {cert.year}

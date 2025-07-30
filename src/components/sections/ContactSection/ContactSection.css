@@ -1,9 +1,34 @@
 /* ========================================
-   CONTACT SECTION - ESTILOS ESPECÍFICOS ÚNICOS
-   Layout y estructura delegados a componentes base
+   CONTACT SECTION - COMPACTA Y ELEGANTE
    ======================================== */
 
-/* === TÍTULOS Y TEXTOS ESPECÍFICOS === */
+/* === LAYOUT PRINCIPAL === */
+.contact-section {
+  position: relative;
+  background: var(--color-bg-primary);
+  overflow: hidden;
+  /* ELIMINADO: padding - lo maneja SectionHeader */
+}
+
+/* Efecto de partículas de fondo más sutil */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* === TÍTULOS Y TEXTOS COMPACTOS === */
+.contact-text {
+  /* ELIMINADO margin-top para alinear con título */
+}
 
 .contact-text h3 {
   font-size: var(--font-size-xl);
@@ -15,50 +40,200 @@
 .contact-text p {
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
-}
-
-.contact-methods h4 {
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
   margin-bottom: var(--spacing-4);
 }
 
-/* === CONTACT LINKS ESPECÍFICOS === */
-
-.contact-link a {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  transition: color 0.2s ease;
+/* === MÉTODOS DE CONTACTO COMPACTOS === */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3);
 }
 
-.contact-link a:hover {
-  color: var(--color-primary);
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  transform: scaleY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: bottom;
+}
+
+.contact-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--color-primary-alpha), var(--color-secondary-alpha));
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.contact-link:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: var(--color-primary-alpha);
+}
+
+.contact-link:hover::before {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.contact-link:hover::after {
+  opacity: 0.03;
+}
+
+/* === ICONOS COMPACTOS === */
 .contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--border-radius-full);
+  color: white;
   font-size: var(--font-size-lg);
   flex-shrink: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px 0 rgba(59, 130, 246, 0.2);
+  position: relative;
+  overflow: hidden;
 }
 
-/* === FORMULARIO ESPECÍFICO === */
+.contact-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  border-radius: inherit;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
 
-.contact-form h3 {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
+.contact-link:hover .contact-icon {
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 4px 12px 0 rgba(59, 130, 246, 0.3);
+}
+
+.contact-link:hover .contact-icon::before {
+  opacity: 1;
+}
+
+/* === INFORMACIÓN DE CONTACTO === */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.contact-label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1px;
+}
+
+.contact-info a {
   color: var(--color-text-primary);
-  margin-bottom: var(--spacing-6);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  transition: all 0.3s ease;
+  position: relative;
 }
 
+.contact-info a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  transition: width 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: var(--color-primary);
+  transform: translateX(2px);
+}
+
+.contact-info a:hover::after {
+  width: 100%;
+}
+
+/* === FORMULARIO COMPACTO === */
+.contact-form-wrapper {
+  position: relative;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-top: var(--spacing-4); /* AÑADIDO: Baja el formulario */
+}
+
+.contact-form-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+}
+
+/* === CAMPOS DEL FORMULARIO COMPACTOS === */
 .form-group {
   margin-bottom: var(--spacing-4);
+  position: relative;
+}
+
+.form-group:first-child {
+  margin-top: var(--spacing-4);
 }
 
 .form-group label {
   display: block;
-  margin-bottom: var(--spacing-2);
-  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-1);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
 
 .form-group input,
@@ -69,7 +244,17 @@
   border-radius: var(--border-radius-md);
   background: var(--color-input-bg);
   color: var(--color-text-primary);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-size: var(--font-size-sm);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  backdrop-filter: blur(5px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-text-tertiary);
+  font-style: italic;
+  transition: opacity 0.3s ease;
 }
 
 .form-group input:focus,
@@ -77,42 +262,152 @@
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px var(--color-primary-alpha);
+  transform: translateY(-1px);
+  background: var(--color-card-bg);
 }
 
-.submit-button {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: white;
-  border: none;
-  padding: var(--spacing-3) var(--spacing-6);
-  border-radius: var(--border-radius-md);
-  font-weight: var(--font-weight-semibold);
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+  opacity: 0.7;
 }
 
-.submit-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px var(--color-primary-alpha);
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+  color: var(--color-primary);
 }
 
-.status-message {
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+  line-height: var(--line-height-relaxed);
+}
+
+/* === BOTÓN DE ENVÍO CON DEGRADADO === */
+.form-submit-wrapper {
   margin-top: var(--spacing-4);
-  padding: var(--spacing-3);
-  border-radius: var(--border-radius-md);
-  background: var(--color-success-bg);
-  color: var(--color-success);
   text-align: center;
 }
 
-/* === RESPONSIVE === */
+/* Estilos específicos para el botón de submit con degradado */
+.contact-form .form-submit-wrapper .btn {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border: none;
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: var(--spacing-3) var(--spacing-6);
+  border-radius: var(--border-radius-lg);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px 0 rgba(59, 130, 246, 0.3);
+}
 
-@media (max-width: 768px) {
-  .contact-form h3 {
-    font-size: var(--font-size-lg);
+.contact-form .form-submit-wrapper .btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-form .form-submit-wrapper .btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px 0 rgba(59, 130, 246, 0.4);
+}
+
+.contact-form .form-submit-wrapper .btn:hover::before {
+  opacity: 1;
+}
+
+.contact-form .form-submit-wrapper .btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.contact-form .form-submit-wrapper .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.contact-form .form-submit-wrapper .btn:disabled:hover {
+  transform: none;
+  box-shadow: 0 4px 15px 0 rgba(59, 130, 246, 0.3);
+}
+
+/* === ANIMACIONES SUAVES === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-link {
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.contact-link:nth-child(1) { animation-delay: 0.05s; }
+.contact-link:nth-child(2) { animation-delay: 0.1s; }
+.contact-link:nth-child(3) { animation-delay: 0.15s; }
+.contact-link:nth-child(4) { animation-delay: 0.2s; }
+
+/* === RESPONSIVE DESIGN COMPACTO === */
+@media (max-width: 1024px) {
   .contact-text h3 {
     font-size: var(--font-size-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-link {
+    padding: var(--spacing-2) var(--spacing-3);
+    gap: var(--spacing-2);
+  }
+
+  .contact-icon {
+    width: 36px;
+    height: 36px;
+    font-size: var(--font-size-base);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: var(--spacing-2);
+  }
+
+  .form-group textarea {
+    min-height: 70px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-links {
+    gap: var(--spacing-2);
+  }
+
+  .contact-link {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-3);
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .contact-text h3 {
+    font-size: var(--font-size-base);
   }
 }
