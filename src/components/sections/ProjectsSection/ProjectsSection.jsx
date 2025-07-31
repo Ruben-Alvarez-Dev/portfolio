@@ -1,70 +1,22 @@
-import { useState, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import { useI18n } from '../../../i18n';
+import { useProjects } from '../../../hooks/useProjectsWorking';
 import { Section, SectionHeader, SectionContent } from '../../ui';
 import ProjectCard from './ProjectCard';
 import './ProjectsSection.css';
 
 const ProjectsSection = () => {
   const { t } = useI18n();
-  const projects = t('projects.items');
-  const categories = t('projects.categories');
-  // Cambiar estado inicial a 'all' para mostrar todos los proyectos al cargar
-  const [activeFilter, setActiveFilter] = useState('all');
+  const { getProjectsByCategory, categories } = useProjects();
+  const [activeCategory, setActiveCategory] = useState('featured');
 
-  // Orden específico de las categorías según lo solicitado
-  const categoryOrder = ['featured', 'all', 'fullstack', 'frontend', 'backend', 'powerplatform', 'ai', 'azure', 'management'];
-
-  // Función para obtener el texto del estado
-  const getStatusText = (status) => {
-    const statusMap = {
-      'completed': t('projects.status.completed'),
-      'in-progress': t('projects.status.inProgress'),
-      'planned': t('projects.status.planned')
-    };
-    return statusMap[status] || status;
+  const getCategoryLabel = (categoryId) => {
+    return t(`projects.categories.${categoryId}`) || categoryId;
   };
 
-  // Función para manejar la visualización de screenshots
-  const handleViewScreenshots = (projectId) => {
-    // Aquí puedes implementar la lógica para mostrar screenshots
-    console.log('Ver screenshots del proyecto:', projectId);
-  };
-
-  const [filteredProjects, setFilteredProjects] = useState([]);
-
-  useEffect(() => {
-    let filtered = [];
-    if (activeFilter === 'all') {
-      filtered = projects;
-    } else if (activeFilter === 'featured') {
-      filtered = projects.filter(project => project.featured === true).slice(0, 3);
-    } else {
-      filtered = projects.filter(project => project.category === activeFilter);
-    }
-    
-    // Sort by ID to ensure consistent order across languages
-    filtered = filtered.sort((a, b) => a.id - b.id);
-    
-    setFilteredProjects(filtered);
-
-    // Crear lista para debug
-    const debugList = filtered.map(p => ({ id: p.id, title: p.title, featured: p.featured }));
-    console.log('Filtered projects debug list:', debugList);
-
-    // Trampa para detectar proyectos sin featured true en filtro featured
-    if (activeFilter === 'featured') {
-      const invalidProjects = filtered.filter(p => p.featured !== true);
-      if (invalidProjects.length > 0) {
-        console.warn('Warning: Projects without featured=true found in featured filter:', invalidProjects);
-      }
-    }
-  }, [activeFilter, projects]);
-
-  // Añadir log en el manejador de cambio de filtro para verificar el valor
-  const handleFilterChange = (category) => {
-    console.log('Filter changed to:', category);
-    setActiveFilter(category);
-  };
+  const filteredProjects = useMemo(() => {
+    return getProjectsByCategory(activeCategory);
+  }, [getProjectsByCategory, activeCategory]);
 
   return (
     <Section id="projects" className="projects-section">
@@ -77,15 +29,15 @@ const ProjectsSection = () => {
       <SectionContent layout="flex" spacing="sm" maxWidth="lg">
         {/* Filter Buttons */}
         <div className="filter-buttons">
-          {categoryOrder.map((category) => (
+          {categories.map((category) => (
             <button
-              key={category}
-              className={`filter-btn ${activeFilter === category ? 'active' : ''}`}
-              onClick={() => handleFilterChange(category)}
-              data-category={category}
+              key={category.id}
+              className={`filter-btn ${activeCategory === category.id ? 'active' : ''}`}
+              onClick={() => setActiveCategory(category.id)}
+              data-category={category.id}
               type="button"
             >
-              {categories[category]}
+              {getCategoryLabel(category.id)}
             </button>
           ))}
         </div>
@@ -97,8 +49,6 @@ const ProjectsSection = () => {
               <ProjectCard
                 key={project.id}
                 project={project}
-                getStatusText={getStatusText}
-                onViewScreenshots={handleViewScreenshots}
               />
             ))
           ) : (

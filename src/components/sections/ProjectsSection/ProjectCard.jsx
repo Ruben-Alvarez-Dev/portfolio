@@ -1,11 +1,10 @@
-import { useI18n } from '../../../i18n/useI18n';
-import Button from '../../ui/Button/Button';
-import Tag from '../../ui/Tag/Tag';
+import React from 'react';
+import { Button, Tag } from '../../ui';
+import { useI18n } from '../../../i18n';
 import './ProjectCard.css';
 
-const ProjectCard = ({ project, getStatusText, onViewScreenshots }) => {
+const ProjectCard = ({ project }) => {
   const { t } = useI18n();
-
   const handleViewProject = () => {
     if (project.liveUrl) {
       window.open(project.liveUrl, '_blank');
@@ -19,19 +18,19 @@ const ProjectCard = ({ project, getStatusText, onViewScreenshots }) => {
   };
 
   const handleViewScreenshots = () => {
-    onViewScreenshots(project.id);
+    // onViewScreenshots(project.id); // Removed this line as onViewScreenshots is not passed as a prop
   };
 
   const getStatusVariant = (status) => {
     switch (status) {
       case 'completed':
-        return 'green';
-      case 'in-progress':
-        return 'yellow';
+        return 'success';
+      case 'inProgress':
+        return 'warning';
       case 'planned':
-        return 'blue';
+        return 'info';
       default:
-        return 'gray';
+        return 'default';
     }
   };
 
@@ -89,15 +88,18 @@ const ProjectCard = ({ project, getStatusText, onViewScreenshots }) => {
       
       <div className="project-content">
         <div className="project-header">
-          <h3 className="project-title">{project.title}</h3>
+          <h3 className="project-title">
+            {project.title}
+          </h3>
+          <p className="project-description">
+            {project.description}
+          </p>
         </div>
-        
-        <p className="project-description">{project.description}</p>
         
         <div className="project-footer">
           <div className="project-status">
             <Tag variant={getStatusVariant(project.status)} size="sm">
-              {getStatusText(project.status)}
+              {t(`projects.status.${project.status}`)}
             </Tag>
           </div>
 

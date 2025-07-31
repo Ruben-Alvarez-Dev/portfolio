@@ -1,4 +1,5 @@
 import React from 'react';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import './Card.css';
 
 const Card = ({ 
@@ -20,13 +21,15 @@ const Card = ({
   const CardComponent = clickable ? 'button' : 'div';
 
   return (
-    <CardComponent 
-      className={baseClasses} 
-      onClick={onClick}
-      type={clickable ? 'button' : undefined}
-    >
-      {children}
-    </CardComponent>
+    <ErrorBoundary>
+      <CardComponent 
+        className={baseClasses} 
+        onClick={onClick}
+        type={clickable ? 'button' : undefined}
+      >
+        {children}
+      </CardComponent>
+    </ErrorBoundary>
   );
 };
 
@@ -78,10 +81,13 @@ Card.Image = ({ src, alt, className = '' }) => (
 );
 
 // === NUEVOS COMPONENTES DE TEXTO UNIFICADO ===
-Card.Text = ({ children, level = 3, className = '', as: Element = 'p', ...props }) => (
-  <Element className={`card-text-level-${level} ${className}`} {...props}>
-    {children}
-  </Element>
-);
+Card.Text = ({ children, level = 3, className = '', as = 'p', ...props }) => {
+  const Element = as;
+  return (
+    <Element className={`card-text-level-${level} ${className}`} {...props}>
+      {children}
+    </Element>
+  );
+};
 
 export default Card;
