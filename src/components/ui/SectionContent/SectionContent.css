@@ -39,12 +39,16 @@
   padding: 0;
 }
 
+.section-content--spacing-xs {
+  padding: var(--spacing-4) 0; /* Añadido espaciado xs para EducationSection */
+}
+
 .section-content--spacing-sm {
-  padding: 0 0; /* Sin padding vertical: mejor coordinación */
+  padding: var(--spacing-6) 0; /* Añadido padding vertical */
 }
 
 .section-content--spacing-default {
-  padding: var(--spacing-6) 0;
+  padding: var(--spacing-8) 0;
 }
 
 .section-content--spacing-lg {
@@ -80,12 +84,16 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   
-  .section-content--spacing-sm {
+  .section-content--spacing-xs {
     padding: var(--spacing-6) 0;
   }
   
-  .section-content--spacing-default {
+  .section-content--spacing-sm {
     padding: var(--spacing-8) 0;
+  }
+  
+  .section-content--spacing-default {
+    padding: var(--spacing-10) 0;
   }
   
   .section-content--spacing-lg {

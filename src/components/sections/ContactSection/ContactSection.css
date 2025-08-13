@@ -8,6 +8,8 @@
   background: var(--color-bg-primary);
   overflow: hidden;
   /* ELIMINADO: padding - lo maneja SectionHeader */
+  padding-bottom: 0; /* Anula el padding inferior de 25vh */
+  min-height: 100vh; /* Anula el min-height de 125vh */
 }
 
 /* Efecto de partículas de fondo más sutil */
@@ -27,7 +29,7 @@
 
 /* === TÍTULOS Y TEXTOS COMPACTOS === */
 .contact-text {
-  /* ELIMINADO margin-top para alinear con título */
+  margin: 0; /* Sin margen superior para alinear con título */
 }
 
 .contact-text h3 {

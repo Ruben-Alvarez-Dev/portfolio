@@ -37,7 +37,7 @@ const ContactSection = () => {
   };
 
   return (
-    <Section id="contact" className="contact-section" padding="sm">
+    <Section id="contact" className="contact-section">
       <SectionHeader 
         title={t('contact.title')}
         align="center"
@@ -50,9 +50,9 @@ const ContactSection = () => {
           {/* Columna izquierda - Información de contacto */}
           <Flex direction="column" gap="sm">
             <div className="contact-text">
-              <h3>¡Hablemos!</h3>
+              <h3>{t('contact.form.title')}</h3>
               <p>
-                ¿Buscas un desarrollador freelance para tu próximo proyecto? ¿Necesitas colaboración técnica o estás considerando incorporar talento a tu equipo? Me encantaría conocer más sobre tu propuesta y cómo puedo aportar valor a tus objetivos.
+                {t('contact.form.subtitle')}
               </p>
             </div>
 
@@ -76,7 +76,7 @@ const ContactSection = () => {
                     <FiPhone />
                   </div>
                   <div className="contact-info">
-                    <span className="contact-label">Teléfono</span>
+                    <span className="contact-label">{t('contact.info.title').split(' ')[0]}</span>
                     <a href={`tel:${t('contact.info.phone')}`}>
                       {t('contact.info.phone')}
                     </a>
@@ -132,7 +132,7 @@ const ContactSection = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Tu nombre completo"
+                    placeholder={t('contact.form.name')}
                     required
                   />
                 </div>
@@ -145,7 +145,7 @@ const ContactSection = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="tu@email.com"
+                    placeholder="example@email.com"
                     required
                   />
                 </div>
@@ -158,7 +158,7 @@ const ContactSection = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Asunto del mensaje"
+                    placeholder={t('contact.form.subject')}
                     required
                   />
                 </div>
@@ -170,7 +170,7 @@ const ContactSection = () => {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Escribe tu mensaje aquí..."
+                    placeholder={t('contact.form.message')}
                     required
                   />
                 </div>

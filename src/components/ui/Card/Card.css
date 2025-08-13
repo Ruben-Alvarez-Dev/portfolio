@@ -11,15 +11,16 @@
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  padding: 1rem;
 }
 
 /* Hover effect universal y discreto para todas las cards */
 .card:hover {
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.15),
-    0 0 25px rgba(255, 255, 255, 0.12),
-    0 4px 12px rgba(0, 0, 0, 0.15);
-  /* Sin transform - eliminado completamente el desplazamiento */
+    0 0 0 1px rgba(255, 255, 255, 0.15), /* Borde exterior sutil */
+    0 0 15px rgba(255, 255, 255, 0.1), /* Resplandor suave */
+    0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra general */
+  filter: brightness(1.05); /* Ligero aclaramiento */
 }
 
 .card--hover:hover {
@@ -65,44 +66,26 @@
    SISTEMA UNIFICADO DE NIVELES DE CONTENIDO
    ======================================== */
 
-/* === NIVEL 1: CONTENIDO PRINCIPAL (About Profile, Experience Main) === */
-.card__content {
-  padding: var(--spacing-6); /* 24px móvil, 32px desktop */
+/* === CONTENIDO GENÉRICO === */
+.card__content,
+.card__body,
+.card__header,
+.card__footer,
+.card__title {
+  padding: 1rem;
   flex: 1;
 }
 
-/* === NIVEL 2: CONTENIDO ESTÁNDAR (Experience Cards) === */
-.card__body {
-  padding: var(--spacing-6); /* 24px móvil, 32px desktop */
-  flex: 1;
+.card * {
+  padding: 0;
 }
 
-/* === NIVEL 3: CONTENIDO COMPACTO (Education Cards) === */
-.card__body--compact {
-  padding: var(--spacing-2); /* 8px móvil, 12px desktop */
-  flex: 1;
-}
-
-/* === NIVEL 4: CONTENIDO MÍNIMO (Small Cards, Tags) === */
-.card__body--minimal {
-  padding: var(--spacing-3); /* 12px móvil, 16px desktop */
-  flex: 1;
-}
-
-/* === HEADERS Y FOOTERS === */
 .card__header {
-  padding: var(--spacing-6);
   border-bottom: var(--border-width-thin) solid var(--color-border);
 }
 
 .card__footer {
-  padding: var(--spacing-6);
   border-top: var(--border-width-thin) solid var(--color-border);
-}
-
-/* === TÍTULOS === */
-.card__title {
-  padding: var(--spacing-6);
 }
 
 .card__title h3 {
@@ -206,27 +189,11 @@
 
 /* === RESPONSIVE === */
 @media (min-width: 768px) {
-  .card__header,
+  .card__content,
   .card__body,
+  .card__header,
   .card__footer,
-  .card__content {
-    padding: var(--spacing-8); /* 32px en desktop */
-  }
-
-  .card__body--compact {
-    padding: var(--spacing-5); /* 20px en desktop */
-  }
-
-  .card__body--minimal {
-    padding: var(--spacing-4); /* 16px en desktop */
-  }
-
   .card__title {
-    padding: var(--spacing-8);
-  }
-
-  .card__title--underline {
-    padding-bottom: var(--spacing-6);
-    margin-bottom: var(--spacing-3);
+    padding: 1rem; /* Mantenemos el padding base */
   }
 }

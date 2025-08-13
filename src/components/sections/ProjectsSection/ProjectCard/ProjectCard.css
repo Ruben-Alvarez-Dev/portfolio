@@ -1,0 +1,200 @@
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-card-background, var(--color-white));
+  border: var(--border-width-thin) solid var(--color-border, var(--color-gray-200));
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+}
+
+.project-card:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 0 25px rgba(255, 255, 255, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--color-gray-100);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(2px);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-actions button {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+}
+
+.project-actions button:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.project-actions button:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.project-card:hover .project-actions button {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.project-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 0;
+}
+
+.project-actions button {
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-2) var(--spacing-4);
+  min-width: 140px;
+  width: 100%;
+}
+
+.project-actions .btn-view-project {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.project-actions .btn-view-project:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.project-actions .btn-view-code {
+  background-color: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.project-actions .btn-view-code:hover {
+  background-color: #059669;
+  border-color: #059669;
+}
+
+.project-actions .btn-view-screenshots {
+  background-color: #f59e0b;
+  color: white;
+  border-color: #f59e0b;
+}
+
+.project-actions .btn-view-screenshots:hover {
+  background-color: #d97706;
+  border-color: #d97706;
+}
+
+.project-content {
+  padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-header {
+  margin-bottom: var(--spacing-4);
+}
+
+.project-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-2) 0;
+  line-height: var(--line-height-tight);
+}
+
+.project-description {
+  font-size: 15px;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-secondary);
+  margin: 0;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Eliminamos el margen especial para el status-tag */
+
+.project-footer {
+  margin-top: auto;
+  padding-top: var(--spacing-4);
+  border-top: var(--border-width-thin) solid var(--color-border);
+}
+
+.project-status-text {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-2);
+}
+
+@media (min-width: 768px) {
+  .project-content {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-content {
+    padding: 0;
+  }
+  
+  .project-title {
+    font-size: var(--font-size-base);
+  }
+  
+  .project-description {
+    font-size: var(--font-size-sm);
+  }
+  
+  .project-actions {
+    gap: var(--spacing-1);
+  }
+  
+  .project-actions button {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-2);
+  }
+}

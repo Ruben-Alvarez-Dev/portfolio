@@ -16,7 +16,7 @@ export const translations = {
     hero: {
       greeting: "Hi, I'm",
       name: "Rubén Álvarez",
-      title: "Tech Consultant\nScrum Master\nFull Stack Developer",
+      title: "Tech Analyst",
       description: "10+ years coordinating teams, resources and operations with focus on process optimization, client relations and business negotiation. I apply strong communication skills and operational expertise to connect business needs with technological solutions.",
       downloadCV: "Download CV",
       contactMe: "Contact me",
@@ -508,8 +508,8 @@ export const translations = {
     contact: {
       title: "Contact",
       form: {
-        title: "Send me a message",
-        subtitle: "Fill out the form and I'll get back to you as soon as possible",
+        title: "Let's talk!",
+        subtitle: "Looking for a freelance developer for your next project? Need technical collaboration or considering adding talent to your team? I'd love to learn more about your proposal and how I can add value to your goals.",
         name: "Full Name",
         email: "Email Address",
         subject: "Subject",
@@ -561,7 +561,7 @@ export const translations = {
     hero: {
       greeting: "Hola, soy",
       name: "Rubén Álvarez",
-      title: "Consultor Tech\nScrum Master\nDesarrollador Full Stack",
+      title: "Analista Técnico",
       description: "10+ años coordinando equipos, recursos y operaciones con enfoque en optimización de procesos, relaciones con clientes y negociación empresarial. Aplico sólidas habilidades comunicativas y experiencia operativa para conectar necesidades de negocio con soluciones tecnológicas.",
       downloadCV: "Descargar CV",
       contactMe: "Contáctame",
@@ -682,49 +682,45 @@ export const translations = {
       title: "Experiencia",
       positions: [
         {
-          title: "Analista Técnico - Infrastructure Support",
+          title: "Analista Técnico - Soporte de Infraestructura",
           company: "Accenture, Sevilla",
           duration: "14 meses",
           year: "2024",
-          type: "Especialista en soporte de infraestructura IT proporcionando soluciones técnicas multinivel para clientes empresariales globales",
+          type: "Especialista en infraestructura IT proporcionando soluciones técnicas para clientes empresariales globales",
           responsibilities: [
-            "Resolución de incidencias en Gestión de Identidad y Acceso (IAM) y configuración de permisos",
-            "Diagnóstico de hardware, despliegue de software y optimización de sistemas operativos multiplataforma",
-            "Análisis de infraestructura de red, resolución de problemas de conectividad y optimización de rendimiento",
-            "Soporte de aplicaciones empresariales, troubleshooting de integraciones y análisis de compatibilidad",
-            "Gestión del ciclo de vida de incidencias: diagnóstico, escalado y coordinación interdepartamental de tickets",
-            "Documentación técnica y mantenimiento de base de conocimiento para escenarios complejos de infraestructura"
+            "Configuración y resolución de problemas de Gestión de Identidad y Acceso (IAM)",
+            "Soporte de aplicaciones empresariales y análisis de integración de sistemas",
+            "Gestión de incidencias: diagnóstico, escalado y coordinación entre equipos",
+            "Documentación técnica y mantenimiento de base de conocimiento"
           ]
         },
         {
           title: "Analista Técnico - Desarrollador Power Apps",
-          company: "Arquiconsult, Madrid", 
+          company: "Arquiconsult, Madrid",
           duration: "6 meses",
           year: "2023",
-          type: "Especialista en Microsoft Power Platform desarrollando soluciones personalizadas e integraciones empresariales para clientes corporativos",
+          type: "Desarrollador de Microsoft Power Platform creando soluciones personalizadas para clientes corporativos",
           responsibilities: [
-            "Desarrollo de aplicaciones Power Apps canvas y model-driven para flujos de trabajo empresariales",
-            "Integraciones complejas de sistemas usando conectores Power Platform y APIs personalizadas",
-            "Personalización y desarrollo de extensiones Microsoft Dynamics 365 con C#",
-            "Automatización de flujos de trabajo con Power Automate para optimización de procesos empresariales",
-            "Soluciones de integración de datos multiplataforma y sincronización en tiempo real",
-            "Consultoría técnica y arquitectura de soluciones para proyectos de transformación digital"
+            "Desarrollo de aplicaciones canvas y model-driven en Power Apps",
+            "Integraciones de sistemas usando conectores Power Platform y APIs",
+            "Personalización de Microsoft Dynamics 365 con C#",
+            "Automatización de flujos de trabajo con Power Automate para optimización de procesos",
+            "Consultoría técnica y arquitectura de soluciones"
           ]
         },
         {
-          title: "Director de Operaciones Empresariales y Líder de Equipos",
+          title: "Director de Operaciones de Negocio y Líder de Equipo",
           company: "Sector Hotelero",
-          duration: "10+ años", 
+          duration: "10+ años",
           year: "2013-2023",
-          type: "Lideré transformaciones empresariales integrales en establecimientos premium con responsabilidad P&L y gestión multi-unidad",
+          type: "Lideré operaciones de negocio integrales con responsabilidad P&L y gestión multi-unidad",
           responsibilities: [
-            "Liderazgo estratégico de equipos y desarrollo de talento en diversas unidades de negocio (equipos de hasta 50 personas)",
-            "Amplia experiencia operando en entornos de alta gama: hoteles de lujo, restaurantes con estrella Michelin y servicios de catering premium",
-            "Gestión empresarial multi-unidad incluyendo operaciones de franquicia y unidades de negocio independientes",
-            "Diseño e implementación de programas de formación profesional certificada (instructor certificado)",
-            "Optimización de procesos empresariales, sistemas de control de calidad e iniciativas de excelencia operacional",
-            "Gestión financiera: planificación presupuestaria, control de costes, optimización de ingresos y análisis de rendimiento basado en KPIs",
-            "Gestión de stakeholders y negociaciones con proveedores para optimización de cadena de suministro y alianzas estratégicas"
+            "Liderazgo de equipos y desarrollo de talento (gestioné equipos de hasta 50 personas)",
+            "Gestión de negocios multi-unidad incluyendo operaciones de franquicia",
+            "Optimización de procesos de negocio y sistemas de control de calidad",
+            "Planificación presupuestaria, control de costes y análisis de rendimiento basado en KPIs",
+            "Gestión de stakeholders y negociaciones con proveedores",
+            "Diseño e implementación de programas de formación profesional (instructor certificado)"
           ]
         }
       ]
@@ -1110,8 +1106,8 @@ export const translations = {
     contact: {
       title: "Contacto",
       form: {
-        title: "Envíame un mensaje",
-        subtitle: "Completa el formulario y te responderé lo antes posible",
+        title: "¡Hablemos!",
+        subtitle: "¿Buscas un desarrollador freelance para tu próximo proyecto? ¿Necesitas colaboración técnica o estás considerando incorporar talento a tu equipo? Me encantaría conocer más sobre tu propuesta y cómo puedo aportar valor a tus objetivos.",
         name: "Nombre Completo",
         email: "Dirección de Email",
         subject: "Asunto",
@@ -1153,20 +1149,24 @@ export const getTranslation = (language, key) => {
   const keys = key.split('.');
   let translation = translations[language];
   
+  // Intentar obtener la traducción en el idioma solicitado
   for (const k of keys) {
     if (translation && translation[k]) {
       translation = translation[k];
     } else {
-      // Fallback al inglés si no se encuentra la traducción
-      translation = translations.en;
+      // Si no se encuentra en el idioma solicitado, intentar en inglés
+      let fallbackTranslation = translations.en;
+      
+      // Recorrer la ruta completa en el idioma de fallback
       for (const fallbackKey of keys) {
-        if (translation && translation[fallbackKey]) {
-          translation = translation[fallbackKey];
+        if (fallbackTranslation && fallbackTranslation[fallbackKey]) {
+          fallbackTranslation = fallbackTranslation[fallbackKey];
         } else {
-          return key; // Devolver la clave si no se encuentra traducción
+          return key; // Si tampoco está en inglés, devolver la clave
         }
       }
-      break;
+      
+      return fallbackTranslation; // Devolver la traducción en inglés
     }
   }
   

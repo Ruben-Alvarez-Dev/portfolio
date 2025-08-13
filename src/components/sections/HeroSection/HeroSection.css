@@ -1,86 +1,27 @@
-/* HeroSection - Estilos específicos de contenido y efectos */
-
-/* BACKGROUND específico con gradiente - ya se maneja por Section con gradientBg */
 .hero-section {
-  overflow: hidden;
-}
-
-/* BOTONES específicos del Hero */
-.hero-actions {
-  display: flex;
-  gap: var(--spacing-4);
-  flex-wrap: wrap;
-  margin-bottom: var(--spacing-4);
-}
-
-.btn-primary,
-.btn-secondary {
-  padding: var(--spacing-4) var(--spacing-8);
-  border-radius: var(--border-radius-lg);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-  border: none;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-2);
-}
-
-.btn-primary {
-  background: var(--color-primary);
-  color: var(--color-white);
-  box-shadow: var(--shadow-base);
-}
-
-.btn-primary:hover {
-  background: var(--color-primary-dark);
-  box-shadow: 0 0 15px rgba(37, 99, 235, 0.4);
-  filter: brightness(1.05);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--color-primary);
-  border: var(--border-width-medium) solid var(--color-primary);
-}
-
-.btn-secondary:hover {
-  background: var(--color-primary);
-  color: var(--color-white);
-  box-shadow: 0 0 12px rgba(96, 165, 250, 0.3);
-}
-
-/* ESTRUCTURA específica del Hero - ahora usa Section component */
-.hero-content {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-8);
-  height: 100%;
+  align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .hero-main {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--spacing-12);
+  display: flex;
   align-items: center;
+  justify-content: center;
+  gap: var(--spacing-12);
+  width: 100%;
+  flex-wrap: wrap;
+  padding-top: 80px;
 }
 
-/* TEXTO con animaciones específicas */
 .hero-text {
-  animation: slideInLeft 0.8s ease-out;
+  flex: 1;
   max-width: 600px;
 }
 
-.hero-titles {
-  margin-bottom: var(--spacing-6);
-}
-
 .hero-greeting {
-  display: block;
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-medium);
   color: var(--color-text-secondary);
@@ -88,15 +29,10 @@
 }
 
 .hero-name {
-  display: block;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-secondary) 100%
-  );
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -104,7 +40,7 @@
 }
 
 .hero-subtitle {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin-bottom: var(--spacing-6);
@@ -112,37 +48,34 @@
   white-space: pre-line;
 }
 
-/* Eliminar el subrayado global que se aplica a section h2 */
+/* Eliminar la línea decorativa global de los h2 de sección */
 .hero-subtitle::after {
   display: none;
 }
 
 .hero-description {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   margin-bottom: var(--spacing-8);
 }
 
-/* IMAGEN con animaciones específicas */
-.hero-image {
-  animation: slideInRight 0.8s ease-out 0.2s both;
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-4);
+  flex-wrap: wrap;
 }
 
 .hero-image-container {
-  position: relative;
-  width: clamp(200px, 20vw, 280px);
-  height: clamp(200px, 20vw, 280px);
+  flex-shrink: 0;
+  width: clamp(180px, 20vw, 250px);
+  height: clamp(180px, 20vw, 250px);
 }
 
 .image-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-light) 0%,
-    var(--color-secondary) 100%
-  );
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,13 +83,7 @@
   font-weight: var(--font-weight-bold);
   font-size: clamp(2rem, 8vw, 4rem);
   border-radius: 50%;
-  box-shadow: var(--shadow-2xl);
   border: var(--spacing-1) solid var(--color-border);
-}
-
-/* SCROLL INDICATOR específico - posicionado relative a Section */
-.hero-section {
-  position: relative;
 }
 
 .hero-scroll-indicator {
@@ -175,163 +102,39 @@
   animation: bounce 2s infinite;
 }
 
-/* ANIMACIONES específicas del Hero */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate(-50%, 20px);
-  }
-  to {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-/* RESPONSIVE específico del Hero */
-@media (min-width: 1400px) {
-  .hero-text {
-    max-width: 700px;
-  }
-}
-
-@media (max-width: 1199px) and (min-width: 900px) {
-  .hero-image-container {
-    width: clamp(220px, 18vw, 250px);
-    height: clamp(220px, 18vw, 250px);
-  }
-}
-
-/* Tablets y móviles (hasta 899px) */
 @media (max-width: 899px) {
   .hero-main {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-8);
+    flex-direction: column;
     text-align: center;
   }
-  
-  .hero-image {
-    order: -1; /* Imagen arriba en móvil */
+
+  .hero-image-container {
+    order: -1;
+    margin-bottom: var(--spacing-8);
   }
-  
-  .hero-text {
-    max-width: 100%;
-  }
-  
+
   .hero-actions {
     justify-content: center;
   }
 }
 
-/* Móvil responsive */
-@media (max-width: 600px) {
-  .hero-actions {
-    flex-direction: column;
-    width: 100%;
-  }
-  
-  .btn-primary,
-  .btn-secondary {
-    width: 100%;
-    max-width: 280px;
-  }
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-@media (max-width: 479px) {
-  .hero-container {
-    padding: calc(60px + var(--spacing-4)) var(--spacing-2) var(--spacing-4);
-  }
-  
-  .hero-content {
-    gap: var(--spacing-4);
-  }
-  
-  .hero-main {
-    gap: var(--spacing-4);
-  }
-  
-  .btn-primary,
-  .btn-secondary {
-    padding: var(--spacing-3) var(--spacing-6);
-    font-size: var(--font-size-sm);
-  }
-  
-  .hero-image-container {
-    width: clamp(150px, 40vw, 200px);
-    height: clamp(150px, 40vw, 200px);
-  }
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
-/* === IMAGEN === */
-.hero-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: slideInRight 0.8s ease-out 0.2s both;
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
 }
 
-.hero-image-container {
-  position: relative;
-  width: clamp(200px, 20vw, 280px);
-  height: clamp(200px, 20vw, 280px);
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
 }
-
-.image-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary-light) 0%,
-    var(--color-secondary) 100%
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-white);
-  font-weight: var(--font-weight-bold);
-  font-size: clamp(2rem, 8vw, 4rem);
-  border-radius: 50%;
-  box-shadow: var(--shadow-2xl);
-  border: var(--spacing-1) solid var(--color-border);
-}
-
-/* === INDICADOR DE SCROLL === */
-.scroll-arrow {
-  font-size: var(--font-size-2xl);
-  margin-bottom: var(--spacing-2);
-  animation: bounce 2s infinite;
-}
-

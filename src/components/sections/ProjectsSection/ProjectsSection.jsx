@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useI18n } from '../../../i18n';
 import { Section, SectionHeader, SectionContent } from '../../ui';
-import ProjectCard from './ProjectCard';
+import ProjectCard from './ProjectCard/ProjectCard';
 import './ProjectsSection.css';
 
 const ProjectsSection = () => {
   const { t } = useI18n();
   const projects = t('projects.items');
   const categories = t('projects.categories');
-  // Cambiar estado inicial a 'all' para mostrar todos los proyectos al cargar
-  const [activeFilter, setActiveFilter] = useState('all');
+  // Estado inicial 'featured' para mostrar proyectos destacados al cargar
+  const [activeFilter, setActiveFilter] = useState('featured');
 
   // Orden específico de las categorías según lo solicitado
   const categoryOrder = ['featured', 'all', 'fullstack', 'frontend', 'backend', 'powerplatform', 'ai', 'azure', 'management'];
@@ -38,6 +38,12 @@ const ProjectsSection = () => {
       filtered = projects;
     } else if (activeFilter === 'featured') {
       filtered = projects.filter(project => project.featured === true).slice(0, 3);
+    } else if (activeFilter === 'frontend') {
+      // Para frontend, mostrar proyectos frontend y fullstack
+      filtered = projects.filter(project => project.category === 'frontend' || project.category === 'fullstack');
+    } else if (activeFilter === 'backend') {
+      // Para backend, mostrar proyectos backend y fullstack
+      filtered = projects.filter(project => project.category === 'backend' || project.category === 'fullstack');
     } else {
       filtered = projects.filter(project => project.category === activeFilter);
     }

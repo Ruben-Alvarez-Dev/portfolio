@@ -8,26 +8,23 @@
 /* === LAYOUT PRINCIPAL === */
 .education-grid {
   align-items: start;
-  gap: var(--spacing-6);
+  gap: var(--spacing-4); /* Reducido para aprovechar mejor el espacio vertical */
 }
 
 /* === SUBTÍTULOS DE SECCIÓN === */
 
-/* === COLUMNA IZQUIERDA - ACADÉMICA === */
+/* === COLUMNAS - ESTILOS UNIFICADOS === */
+/* Contenedor para títulos académicos */
 .academic-column {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-3);
+  gap: var(--spacing-2);
 }
 
-.academic-card {
-  width: 100%;
-  /* Eliminado el efecto hover para mantener las cards estáticas */
-}
+/* Estilos eliminados - ya no son necesarios */
 
-.academic-card .card__body--compact {
-  padding: calc(var(--spacing-2) + 2px) !important; /* 10px móvil, 14px desktop */
-}
+/* Padding uniforme para ambos tipos de tarjetas */
+/* Estilos movidos a EducationalCard.css */
 
 /* === COLUMNA DERECHA - CERTIFICACIONES === */
 .certifications-column {
@@ -38,137 +35,20 @@
 .certifications-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-3);
-}
-
-.certification-card {
-  width: 100%;
-  /* Eliminado el efecto hover para mantener las cards estáticas */
-}
-
-.certification-card .card__body--compact {
-  padding: calc(var(--spacing-2) + 2px) !important; /* 10px móvil, 14px desktop */
+  gap: var(--spacing-2);
 }
 
 /* === CONTENIDO DE LAS CARDS === */
-.education-item {
-  align-items: flex-start !important;
-}
-
-.certification-card .education-item {
-  align-items: flex-start !important;
-}
-.education-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--spacing-2);
-  width: 100%;
-}
-
-/* === ESTILOS DE TEXTO BASE === */
-.card-text-level-3.education-name {
-  color: var(--color-text-primary) !important;
-  font-weight: var(--font-weight-medium) !important;
-  line-height: 1.3 !important;
-  margin: 0 !important;
-  font-size: 1em !important; /* Tamaño base uniforme */
-}
-
-.card-text-level-3.education-institution {
-  color: var(--color-text-secondary) !important;
-  margin: 0 !important;
-  line-height: 1.4 !important;
-  font-size: 0.9em !important; /* Tamaño uniforme para instituciones */
-}
+/* Estilos movidos a EducationalCard.css */
 
 /* === TAGS DE AÑO === */
-.academic-year,
-.certification-year {
-  flex-shrink: 0;
-  white-space: nowrap;
-  align-self: flex-start;
-}
-
-/* === COLORES ESPECÍFICOS POR TIPO === */
-.academic-card .card-text-level-3.education-institution {
-  color: var(--color-primary-light) !important;
-}
-
-.certification-card .card-text-level-3.education-institution {
-  color: var(--color-secondary) !important;
-}
+/* Clases eliminadas - no se usan en el JSX actual */
 
 /* === INSIGNIAS DE CERTIFICACIÓN === */
-.certification-badge {
-  width: 64px;
-  height: 64px;
-  border-radius: 8px;
-  object-fit: contain;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
-  align-self: flex-start;
-  margin: 0;
-}
-
-.certification-badge:hover {
-  opacity: 1;
-}
-
-.certification-badge-link {
-  display: inline-block;
-  cursor: pointer;
-  transition: transform 0.2s ease;
-}
-
-.certification-badge-link:hover {
-  transform: scale(1.05);
-}
-
-.certification-badge-link:hover .certification-badge {
-  opacity: 1;
-}
-
-.badge-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 6px;
-  opacity: 0.95;
-}
+/* Estilos movidos a EducationalCard.css */
 
 /* === WEIGHT-BASED STYLING === */
-.priority-high {
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
-  background: linear-gradient(135deg, var(--color-surface) 0%, rgba(255, 255, 255, 0.03) 100%);
-}
-
-.priority-high .card-text-level-3.education-name {
-  font-size: 1.1em !important;
-  font-weight: var(--font-weight-semibold) !important;
-}
-
-.priority-medium {
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
-  background: linear-gradient(135deg, var(--color-surface) 0%, rgba(255, 255, 255, 0.01) 100%);
-}
-
-.priority-medium .card-text-level-3.education-name {
-  font-size: 1em !important;
-  font-weight: var(--font-weight-medium) !important;
-}
-
-.priority-low {
-  border: 1px solid var(--color-border);
-  box-shadow: 0 1px 4px rgba(var(--color-text-secondary-rgb), 0.05);
-}
-
-.priority-low .card-text-level-3.education-name {
-  font-size: 0.9em !important;
-  font-weight: var(--font-weight-normal) !important;
-}
+/* Estilos movidos a EducationalCard.css */
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
@@ -181,9 +61,5 @@
     grid-template-columns: 1fr;
   }
 
-  .education-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--spacing-2);
-  }
+  /* .education-item eliminada - no se usa */
 }

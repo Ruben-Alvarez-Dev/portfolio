@@ -1,3 +1,4 @@
+es/* ProjectCard.css - Basado en Card.css */
 .project-card {
   display: flex;
   flex-direction: column;
@@ -11,13 +12,16 @@
   height: 100%;
 }
 
+/* Hover effect - borde más brillante */
 .project-card:hover {
+  border-color: var(--color-gray-400);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.15),
     0 0 25px rgba(255, 255, 255, 0.12),
     0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Imagen del proyecto */
 .project-image {
   position: relative;
   overflow: hidden;
@@ -32,6 +36,7 @@
   display: block;
 }
 
+/* Overlay simple sin efectos */
 .project-overlay {
   position: absolute;
   top: 0;
@@ -51,53 +56,50 @@
   opacity: 1;
 }
 
+/* Botones de acción en línea */
 .project-actions {
   display: flex;
-  gap: var(--spacing-1);
+  gap: var(--spacing-2);
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
-.project-actions button {
-  font-size: var(--font-size-xs);
-  padding: var(--spacing-1) var(--spacing-2);
-  min-width: auto;
-}
-
+/* Estilos específicos para cada botón */
 .project-actions .btn-view-project {
-  background-color: #3b82f6 !important;
-  color: white !important;
-  border-color: #3b82f6 !important;
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
 }
 
 .project-actions .btn-view-project:hover {
-  background-color: #2563eb !important;
-  border-color: #2563eb !important;
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 }
 
 .project-actions .btn-view-code {
-  background-color: #10b981 !important;
-  color: white !important;
-  border-color: #10b981 !important;
+  background-color: var(--color-success);
+  color: white;
+  border-color: var(--color-success);
 }
 
 .project-actions .btn-view-code:hover {
-  background-color: #059669 !important;
-  border-color: #059669 !important;
+  background-color: var(--color-success-dark);
+  border-color: var(--color-success-dark);
 }
 
 .project-actions .btn-view-screenshots {
-  background-color: #f59e0b !important;
-  color: white !important;
-  border-color: #f59e0b !important;
+  background-color: var(--color-warning);
+  color: white;
+  border-color: var(--color-warning);
 }
 
 .project-actions .btn-view-screenshots:hover {
-  background-color: #d97706 !important;
-  border-color: #d97706 !important;
+  background-color: var(--color-warning-dark);
+  border-color: var(--color-warning-dark);
 }
 
+/* Contenido usando el sistema de Card */
 .project-content {
   padding: var(--spacing-6);
   flex: 1;
@@ -109,6 +111,7 @@
   margin-bottom: var(--spacing-4);
 }
 
+/* Título usando el sistema de tipografía de Card */
 .project-title {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
@@ -117,6 +120,7 @@
   line-height: var(--line-height-tight);
 }
 
+/* Descripción usando el sistema de tipografía de Card */
 .project-description {
   font-size: 15px;
   font-weight: var(--font-weight-normal);
@@ -126,6 +130,7 @@
   flex: 1;
 }
 
+/* Footer con borde como en Card */
 .project-footer {
   margin-top: auto;
   padding-top: var(--spacing-4);
@@ -152,6 +157,7 @@
   gap: var(--spacing-2);
 }
 
+/* Responsive igual que Card */
 @media (min-width: 768px) {
   .project-content {
     padding: var(--spacing-8);
@@ -180,3 +186,17 @@
     padding: var(--spacing-1) var(--spacing-2);
   }
 }
+
+/* Estado featured - borde azul */
+.project-card[data-featured="true"] {
+  border-color: var(--color-primary);
+  border-width: var(--border-width-medium);
+}
+
+.project-card[data-featured="true"]:hover {
+  border-color: var(--color-primary-light);
+  box-shadow:
+    0 0 0 1px rgba(59, 130, 246, 0.3),
+    0 0 25px rgba(59, 130, 246, 0.2),
+    0 4px 12px rgba(0, 0, 0, 0.15);
+}egro e

@@ -4,10 +4,14 @@
 
 .section {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; /* Altura mínima de 100vh */
   display: flex;
   flex-direction: column;
   position: relative;
+  box-sizing: border-box;
+  padding-bottom: 0; /* 25vh de padding inferior */
+  justify-content: flex-start; /* Alinea el contenido desde arriba */
+  overflow: visible; /* Permite que el contenido exceda los límites si es necesario */
 }
 
 .section--centered {
@@ -30,8 +34,8 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  flex: 1;
   position: relative;
+  padding-top: var(--spacing-12); /* Añadimos padding superior */
 }
 
 /* === VARIANTES DE PADDING === */

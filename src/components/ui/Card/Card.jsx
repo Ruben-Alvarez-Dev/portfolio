@@ -37,13 +37,13 @@ Card.Header = ({ children, className = '' }) => (
   </div>
 );
 
-Card.Body = ({ children, className = '', level = 'standard' }) => {
-  const levelClass = level === 'compact' ? 'card__body--compact' : 
-                    level === 'minimal' ? 'card__body--minimal' : 
-                    'card__body';
+Card.Body = ({ children, className = '', variant = 'standard' }) => {
+  const variantClass = variant === 'compact' ? 'card__body--compact' : 
+                      variant === 'minimal' ? 'card__body--minimal' : 
+                      'card__body';
   
   return (
-    <div className={`${levelClass} ${className}`}>
+    <div className={`${variantClass} ${className}`}>
       {children}
     </div>
   );
@@ -77,11 +77,14 @@ Card.Image = ({ src, alt, className = '' }) => (
   </div>
 );
 
-// === NUEVOS COMPONENTES DE TEXTO UNIFICADO ===
-Card.Text = ({ children, level = 3, className = '', as: Element = 'p', ...props }) => (
-  <Element className={`card-text-level-${level} ${className}`} {...props}>
-    {children}
-  </Element>
-);
+// === COMPONENTE DE TEXTO SIMPLIFICADO ===
+Card.Text = ({ children, className = '', as = 'p', ...props }) => {
+  const Element = as;
+  return (
+    <Element className={className} {...props}>
+      {children}
+    </Element>
+  );
+};
 
 export default Card;

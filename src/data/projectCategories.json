@@ -1,0 +1,114 @@
+{
+  "categories": [
+    {
+      "id": "featured",
+      "order": 0,
+      "translations": {
+        "en": "Featured",
+        "es": "Destacados"
+      },
+      "colorClass": "tag--blue"
+    },
+    {
+      "id": "all",
+      "order": 1,
+      "translations": {
+        "en": "All Projects",
+        "es": "Todos"
+      },
+      "colorClass": "tag--gray"
+    },
+    {
+      "id": "fullstack",
+      "order": 2,
+      "translations": {
+        "en": "Full Stack",
+        "es": "Full Stack"
+      },
+      "colorClass": "tag--purple"
+    },
+    {
+      "id": "frontend",
+      "order": 3,
+      "translations": {
+        "en": "Frontend",
+        "es": "Frontend"
+      },
+      "colorClass": "tag--orange"
+    },
+    {
+      "id": "backend",
+      "order": 4,
+      "translations": {
+        "en": "Backend",
+        "es": "Backend"
+      },
+      "colorClass": "tag--green"
+    },
+    {
+      "id": "powerplatform",
+      "order": 5,
+      "translations": {
+        "en": "Power Platform",
+        "es": "Power Platform"
+      },
+      "colorClass": "tag--pink"
+    },
+    {
+      "id": "ai",
+      "order": 6,
+      "translations": {
+        "en": "AI & ML",
+        "es": "IA & ML"
+      },
+      "colorClass": "tag--blue"
+    },
+    {
+      "id": "azure",
+      "order": 7,
+      "translations": {
+        "en": "Azure",
+        "es": "Azure"
+      },
+      "colorClass": "tag--cyan"
+    },
+    {
+      "id": "management",
+      "order": 8,
+      "translations": {
+        "en": "Management",
+        "es": "Gestión"
+      },
+      "colorClass": "tag--yellow"
+    }
+  ],
+  "status": [
+    {
+      "id": "completed",
+      "translations": {
+        "en": "Completed",
+        "es": "Completado"
+      },
+      "variant": "success",
+      "colorClass": "tag--green"
+    },
+    {
+      "id": "inProgress",
+      "translations": {
+        "en": "In Progress",
+        "es": "En Progreso"
+      },
+      "variant": "warning",
+      "colorClass": "tag--yellow"
+    },
+    {
+      "id": "planned",
+      "translations": {
+        "en": "Planned",
+        "es": "Planificado"
+      },
+      "variant": "info",
+      "colorClass": "tag--blue"
+    }
+  ]
+}

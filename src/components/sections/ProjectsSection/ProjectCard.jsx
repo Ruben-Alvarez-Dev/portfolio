@@ -16,29 +16,20 @@ const ProjectCard = ({ project, getStatusText, onViewScreenshots }) => {
     if (project.githubUrl) {
       window.open(project.githubUrl, '_blank');
     }
-  };
+  }to
 
   const handleViewScreenshots = () => {
     onViewScreenshots(project.id);
   };
 
-  const getStatusVariant = (status) => {
-    switch (status) {
-      case 'completed':
-        return 'green';
-      case 'in-progress':
-        return 'yellow';
-      case 'planned':
-        return 'blue';
-      default:
-        return 'gray';
-    }
-  };
-
+  // Lógica para determinar qué botones mostrar
   const hasLiveUrl = project.liveUrl;
   const hasGithubUrl = project.githubUrl;
   const hasScreenshots = project.demoType === 'screenshots';
 
+  // Si tiene demo y code, no mostrar screenshots
+  // Si solo tiene code, mostrar solo code
+  // Si solo tiene screenshots, mostrar solo screenshots
   const showDemo = hasLiveUrl;
   const showCode = hasGithubUrl;
   const showScreenshots = hasScreenshots && !hasLiveUrl && !hasGithubUrl;
@@ -96,14 +87,14 @@ const ProjectCard = ({ project, getStatusText, onViewScreenshots }) => {
         
         <div className="project-footer">
           <div className="project-status">
-            <Tag variant={getStatusVariant(project.status)} size="sm">
+            <Tag variant="success" size="sm">
               {getStatusText(project.status)}
             </Tag>
           </div>
 
           <div className="project-tech">
             {project.technologies.map((tech, index) => (
-              <Tag key={index} variant="gray" size="sm">
+              <Tag key={index} variant={`tech-${index % 4}`} size="sm">
                 {tech}
               </Tag>
             ))}

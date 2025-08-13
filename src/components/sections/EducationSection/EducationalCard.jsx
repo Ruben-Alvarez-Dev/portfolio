@@ -1,45 +1,21 @@
 import React from 'react';
-import { Card, Flex, Tag } from '../../ui';
+import Card from '../../ui/Card/Card';
+import './EducationalCard.css';
 
 const EducationalCard = ({ item, type }) => {
-  // Get priority class based on weight
-  const getPriorityClass = (weight) => {
-    switch (weight) {
-      case 1:
-        return 'priority-high';
-      case 2:
-        return 'priority-medium';
-      case 3:
-      default:
-        return 'priority-low';
-    }
-  };
-
-  const priorityClass = getPriorityClass(item.weight);
-  const cardClass = type === 'title' ? 'academic-card' : 'certification-card';
+  const cardClass = 'educational-card';
+  const weightClass = `weight-${item.weight}`;
 
   return (
-    <Card variant="default" className={`${cardClass} ${priorityClass}`}>
-      <Card.Body level="minimal">
-        <Flex justify="between" align="start" gap={type === 'title' ? 'md' : 'none'} className="education-item">
-          <Flex direction="column" gap="xs">
-            <Card.Text
-              level={3}
-              as="h4"
-              className="education-name"
-            >
-              {item.name}
-            </Card.Text>
-            <Card.Text
-              level={3}
-              as="p"
-              className="education-institution"
-            >
-              {item.issuer}, {item.year}
-            </Card.Text>
-          </Flex>
+    <Card className={`${cardClass} ${weightClass}`}>
+      <Card.Body>
+        {/* Primera fila: título y badge */}
+        <div className="educational-card-header">
+          <span className="educationalcard-title">
+            {item.name}
+          </span>
           {type === 'certification' && item.badge && (
-            <Flex direction="column" align="end" gap="none" style={{alignSelf: 'flex-start', marginTop: '-6px'}}>
+            <div className="badge-container">
               {item.certificationUrl ? (
                 <a
                   href={item.certificationUrl}
@@ -76,9 +52,14 @@ const EducationalCard = ({ item, type }) => {
                   }}
                 />
               )}
-            </Flex>
+            </div>
           )}
-        </Flex>
+        </div>
+        
+        {/* Segunda fila: subtítulo */}
+        <p className="educationalcard-subtitle">
+          {item.issuer}, {item.year}
+        </p>
       </Card.Body>
     </Card>
   );

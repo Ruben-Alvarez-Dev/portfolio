@@ -18,10 +18,10 @@ const EducationSection = () => {
         underline={true}
       />
 
-      <SectionContent layout="flex" spacing="sm" maxWidth="lg">
-        <Grid columns={2} gap="lg" responsive={true} className="education-grid">
+      <SectionContent layout="flex" spacing="xs" maxWidth="lg">
+        <Grid columns={2} gap="md" responsive={true} className="education-grid">
           {/* Columna izquierda: Formación Académica - 1 card por fila */}
-          <Flex direction="column" gap="md" className="academic-column">
+          <Flex direction="column" gap="sm" className="academic-column">
             {academicEducation.map((edu, index) => (
               <EducationalCard
                 key={index}
@@ -32,8 +32,8 @@ const EducationSection = () => {
           </Flex>
 
           {/* Columna derecha: Certificaciones Técnicas - Grid de 2 columnas */}
-          <Flex direction="column" gap="md" className="certifications-column">
-            <Grid columns={2} gap="md" className="certifications-grid">
+          <Flex direction="column" gap="sm" className="certifications-column">
+            <Grid columns={2} gap="sm" className="certifications-grid">
               {technicalCertifications.map((cert, index) => (
                 <EducationalCard
                   key={index}
